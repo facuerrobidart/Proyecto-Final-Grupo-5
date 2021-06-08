@@ -1,8 +1,23 @@
 # Proyecto-Final-Grupo-5
 
 
-__Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum__
+* 📋 __Temática y descripción del sitio:__
+   El proyectó será un eCommerce que conecte artistas que quieran vender y dar a
+   conocer su arte con entusiastas del mismo que deseen adquirir estas obras. Por
+   lo tanto, el sitio será un intermediario entre artista y cliente.
+   
+* 👀 __Público objetivo:__
+    Artistas y entusiastas del arte.
+    
+* 💻 __Páginas referentes:__
+    1. https://cottgallery.art/
+    2. https://www.ebay.com/
+    3. https://www.virtualgallery.com/
+    4. https://www.artexpone.com/
+    5. https://www.mercadolibre.com.ar/
+
+* 🔲 __Tablero:__
+    https://trello.com/trabajofinaldigitalhouse
+
+* 💁 __Sobre Nosotros:__
+    1. Facundo Errobidart: Tengo 20 años, soy estudiante de Ingeniería Informática en la UNMDP. 
