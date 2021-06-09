@@ -21,3 +21,4 @@
 
 * 💁 __Sobre Nosotros:__
     1. Facundo Errobidart: Tengo 20 años, soy estudiante de Ingeniería Informática en la UNMDP. 
+    2. Pablo A. Zajac: 42 years old! Mi trabajo es IT; soy papá de una princesa llamada "Sarah" y mi hobby es la guitarra (entre otros)!
