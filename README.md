@@ -25,5 +25,5 @@
     3. Emilio Baudracco: 42 años, contador y estudiante IT
     4. Daniel Martinez: 45 años, analista en comercio internacional y estudiante IT.
 
-*__WIREFRAMES:__ https://imgur.com/a/XBpqm1f
+* :__WIREFRAMES:__ https://imgur.com/a/XBpqm1f
 
