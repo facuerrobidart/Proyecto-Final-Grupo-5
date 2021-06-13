@@ -22,4 +22,5 @@
 * 💁 __Sobre Nosotros:__
     1. Facundo Errobidart: Tengo 20 años, soy estudiante de Ingeniería Informática en la UNMDP.
     2. Pablo A. Zajac: 42 years old! Mi trabajo es IT; soy papá de una princesa llamada "Sarah" y mi hobby es la guitarra (entre otros)!
-    3. Emilio Baudracco: 42 años, contador y estudiante IT 
+    3. Emilio Baudracco: 42 años, contador y estudiante IT
+    4. Daniel Martinez: 45 años, analista en comercio internacional y estudiante IT.
