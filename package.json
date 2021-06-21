@@ -1,0 +1,22 @@
+{
+  "name": "proyecto-final-grupo-5",
+  "version": "1.0.0",
+  "description": "* 📋 __Temática y descripción del sitio:__\r    El proyectó será un eCommerce que conecte artistas que quieran vender y dar a\r    conocer su arte con entusiastas del mismo que deseen adquirir estas obras. Por\r    lo tanto, el sitio será un intermediario entre artista y cliente.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facuerrobidart/Proyecto-Final-Grupo-5.git"
+  },
+  "author": "Facundo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facuerrobidart/Proyecto-Final-Grupo-5/issues"
+  },
+  "homepage": "https://github.com/facuerrobidart/Proyecto-Final-Grupo-5#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
