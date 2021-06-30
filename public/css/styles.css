@@ -1,0 +1,11 @@
+.busqueda{
+    display: flex;
+    justify-content: right;
+}
+form .busqueda:focus{
+    color:white;
+}
+.busqueda button{
+    height: fit-content;
+    justify-content: center;
+}
