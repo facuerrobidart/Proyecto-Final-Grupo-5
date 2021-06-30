@@ -9,3 +9,15 @@ form .busqueda:focus{
     height: fit-content;
     justify-content: center;
 }
+.iconos{
+    text-align: right;
+    margin-right: 1%;
+    margin-top:1%;
+}
+
+.logo{
+    margin-left: 1.5%;
+}
+.buscador{
+    margin-left:2%;
+}
