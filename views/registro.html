@@ -64,35 +64,35 @@
                 <div class="form-row">
                   <div class="col">
                     <label for="nombre">Nombre</label>
-                    <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme">
+                    <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" required>
                   </div>
                   <div class="col">
                     <label for="apellido">Apellido</label>
-                    <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito">
+                    <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito" required>
                   </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com">
+                      <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com" required>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="contraseña">Contraseña</label>
-                      <input type="password" class="form-control" name="contraseña">
+                      <input type="password" class="form-control" name="contraseña" required>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="direccion">Dirección</label>
-                    <input type="text" class="form-control" name="direccion" placeholder="Ej: Calle falsa 123">
+                    <input type="text" class="form-control" name="direccion" placeholder="Ej: Calle falsa 123" required>
                   </div>
                   <div class="form-group">
-                    <label for="piso">Piso/Departamento</label>
+                    <label for="piso">Piso/Departamento (Opcional)</label>
                     <input type="text" class="form-control" name="piso" placeholder="Ej: Piso 7 Dpto 2">
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="ciudad">Ciudad/Barrio</label>
-                      <input type="text" class="form-control" name="ciudad">
+                      <input type="text" class="form-control" name="ciudad" required>
                     </div>
                     <div class="form-group col-md-4">
                       <label for="inputState">Provincia</label>
@@ -126,17 +126,15 @@
                     </div>
                     <div class="form-group col-md-2">
                       <label for="codigoPostal">Código Postal</label>
-                      <input type="text" class="form-control" name="codigoPostal">
+                      <input type="text" class="form-control" name="codigoPostal" required>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="terminos">
-                      <label class="form-check-label" for="terminos">
-                        Check me out
-                      </label>
+                  <div class="row-auto my-1">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                      <input type="checkbox" class="custom-control-input" name="terminos" required>
+                      <label class="custom-control-label" for="terminos">Acepto los <a href="terminos.html">Términos de Servicio</a></label>
                     </div>
-                </div>
+                  </div>
                 <button type="submit" class="btn btn-primary">Registrarse</button>
             </form>
       </div>
