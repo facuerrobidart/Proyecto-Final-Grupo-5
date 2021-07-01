@@ -21,3 +21,18 @@ form .busqueda:focus{
 .buscador{
     margin-left:2%;
 }
+
+footer{
+    background-color: beige;
+}
+
+div.tarjeta{
+    margin:1%;
+    padding: 1%;
+    width:30%;
+    display: inline-block;
+}
+p.copy{
+    color:gray;
+    font-style: italic;
+}
