@@ -43,13 +43,9 @@ div.panel{
     display:inline-block;
     margin: 1%;
     width: 98%;
+    padding: 1%;
 }
-label{
-    display: inline-block;
-}
+
 h5.titulo{
     margin:1%
-}
-.panel input{
-    margin-left: 2%;
 }
