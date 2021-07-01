@@ -1,6 +1,10 @@
 *{
     box-sizing: border-box;
 }
+.logoPagina{
+    width: 5%;
+    border-radius: 100%;
+}
 .busqueda{
     display: flex;
     justify-content: right;
@@ -11,6 +15,7 @@ form .busqueda:focus{
 .busqueda button{
     height: fit-content;
     justify-content: center;
+
 }
 .iconos{
     text-align: right;
