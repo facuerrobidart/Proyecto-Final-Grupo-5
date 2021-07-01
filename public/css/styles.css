@@ -49,3 +49,15 @@ div.panel{
 h5.titulo{
     margin:1%
 }
+.form-group{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.BotonEnvio{
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+.login{
+    margin: 20px;
+}
