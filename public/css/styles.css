@@ -66,3 +66,92 @@ h5.titulo{
 .login{
     margin: 20px;
 }
+
+
+.body-carrito{
+    background-color:#f8f9fa ;
+}
+.contenedorPrincipal{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+}
+.tituloCarrito{
+    margin-left: 30px;
+    font-style: normal;
+    font-weight: 100;
+}
+.contenedor-carrito{
+    width: 90%;
+    height:300px ;
+    display: flex;
+    margin-left: 30px;
+
+}
+
+.contenedor-carrito div{
+
+    border: solid 1px black;
+    margin-bottom: 0px;
+}
+.foto{
+    width: 30%;
+}
+.fotoProducto{
+    width: 100%;
+    height: 100%;
+}
+.descripcion{
+    width: 30%;
+}
+.precio{
+    width: 15%;
+}
+.cantidad {
+    width: 10%;
+}
+.total{
+    width: 15%;
+}
+
+div h6{
+    text-align:center;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+
+}
+.botonAgregar{
+    width: 90%;
+    margin-left: 30px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+
+}
+.carrito{
+    margin-bottom: 30px;
+}
+
+.pagar{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+}
+.pagar div{
+    border: 1px  solid black;
+    width: 30%;
+}
+
+.pagar div h6{
+    width: 90%;
+    border: none;
+    text-align:center;
+    margin-left: 5px;
+    padding: 3px;
+}
+.botonPagar{
+ padding: 5px;
+ text-align: center;
+
+}
