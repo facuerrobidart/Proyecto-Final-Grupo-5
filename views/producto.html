@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Bienvenido al sitio</title> <!--esto despues se reemplaza por el nombre del sitio-->
+  <link rel="stylesheet" href="css/styles.css"/>
+  <!--ICONOS-->
+  <script src="https://kit.fontawesome.com/c51793de38.js" crossorigin="anonymous"></script>
+  <!--FUENTES-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!--BOOTSTRAP-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!--VIEWPORT-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--MATERIALIZE-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <!--CSS PRODUCTO-->
+  <link rel="stylesheet" href="css/producto.css"/>
+
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light px-2">
+        <img src="./images/pexels-free-creative-stuff-1193743.jpg" alt="logo" class="logoPagina">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ofertas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Artistas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vender</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ayuda</a>
+            </li>
+          </ul>
+          <!--BUSQUEDA-->
+          <form class="form-inline my-2 my-lg-0 buscador w-50">
+            <input class="busqueda form-control mr-sm-2 ml-auto" type="search" placeholder="Buscá algo increible" aria-label="Busqueda">
+          </form>
+          <button class="btn btn-outline-success my-2 my-sm-0 me-auto mx-2 buscar" type="submit"><i class="fas fa-search"></i></button>
+          <!--ICONOS DE USUARIO-->
+          <a href="login.html" class="iconos"><i class="far fa-user"></i></a>
+          <a href="carrito-compra.html" class="iconos"><i class="fas fa-shopping-cart"></i></a>
+          <a href="index.html" class="iconos"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+        <div class = "card-wrapper">
+            <div class = "card">
+              <!-- card left -->
+              <div class = "product-imgs">
+                <div class = "img-display">
+                  <div class = "img-showcase">
+                    <img src = "https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvZGF2aWQtYnktbWljaGVsYW5nZWxvLWpidTAzLmpwZyIsInJlc2l6ZSw4MDAiXX0.RoW8t6LYw_gFe9r0M16vK7HNQYSGGxxoSinRoisDI1c.jpg">
+                    <img src = "https://media.timeout.com/images/103166739/630/472/image.jpg">
+                    <img src = "https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc4NTk4NjgxNjM0NTI3/hith-art-heists-scream-2.jpg">
+                    <img src = "https://scottishwildlifetrust.org.uk/wp-content/uploads/2017/09/1.-Boss-oak-730x468.jpg">
+                  </div>
+                </div>
+                <div class = "img-select">
+                  <div class = "img-item">
+                    <a href = "#" data-id = "1">
+                      <img src = "https://historia-arte.com/_/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbSI6WyJcL2FydHdvcmtcL2ltYWdlRmlsZVwvZGF2aWQtYnktbWljaGVsYW5nZWxvLWpidTAzLmpwZyIsInJlc2l6ZSw4MDAiXX0.RoW8t6LYw_gFe9r0M16vK7HNQYSGGxxoSinRoisDI1c.jpg">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "2">
+                      <img src = "https://media.timeout.com/images/103166739/630/472/image.jpg">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "3">
+                      <img src = "https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc4NTk4NjgxNjM0NTI3/hith-art-heists-scream-2.jpg">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "4">
+                      <img src = "https://scottishwildlifetrust.org.uk/wp-content/uploads/2017/09/1.-Boss-oak-730x468.jpg">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- card right -->
+              <div class = "product-content">
+                <h2 class = "product-title">Colección personal</h2>
+                <a href = "#" class = "product-link">visitar la tienda del vendedor</a>
+                <div class = "product-rating">
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star"></i>
+                  <i class = "fas fa-star-half-alt"></i>
+                  <span>4.7(21)</span>
+                </div>
+      
+                <div class = "product-price">
+                  <p class = "last-price">Precio original: <span>$100,000.00</span></p>
+                  <p class = "new-price">Precio actual: <span>$75,000.00 (25%)</span></p>
+                </div>
+      
+                <div class = "product-detail">
+                  <h4>Sobre este producto: </h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, perferendis eius. Dignissimos, labore suscipit. Unde.</p>
+                  <ul>
+                    <li>Color: <span>Black</span></li>
+                    <li>Available: <span>in stock</span></li>
+                    <li>Category: <span>Shoes</span></li>
+                    <li>Shipping Area: <span>All over the world</span></li>
+                    <li>Shipping Fee: <span>Free</span></li>
+                  </ul>
+                </div>
+      
+                <div class = "purchase-info">
+                  <button type = "button" class = "btn ignorar">
+                    Añadir al carrito  <i class = "fas fa-shopping-cart fa-sm"></i>
+                  </button>
+                  <button type = "button" class = "btn ignorar">
+                    Comprar
+                  </button>
+                </div>
+      
+                <div class = "social-links">
+                  <p>Share At: </p>
+                  <a href = "#">
+                    <i class = "fab fa-facebook-f"></i>
+                  </a>
+                  <a href = "#">
+                    <i class = "fab fa-twitter"></i>
+                  </a>
+                  <a href = "#">
+                    <i class = "fab fa-instagram"></i>
+                  </a>
+                  <a href = "#">
+                    <i class = "fab fa-whatsapp"></i>
+                  </a>
+                  <a href = "#">
+                    <i class = "fab fa-pinterest"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>    
+        <script src="js/script.js"></script> 
+    </main>
+    <footer>
+      <div class="tarjeta">
+        <a href="contacto.html">¿Tenés una consulta? Contactanos</a>
+        <br>
+        <a href="facebook.com/nuestroPerfil"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <br>
+        <a href="twitter.com/nuestroPerfil"><i class="fab fa-twitter-square"></i> Twitter</a>
+      </div>
+      <div class="tarjeta">
+        <a href="nosotros.html">Sobre nosotros</a>
+        <br>
+        <a href="mapaSitio.html">Mapa del sitio</a>
+        <br>
+        <a href="servicio.html">Terminos de servicio</a>
+      </div>
+      <div class="tarjeta">
+        <p class="copy"><i class="far fa-copyright"></i> 2021 NuestraCompañía SRL, todos los derechos reservados</p>
+      </div>
+    </footer>
+</body>
+</html>
