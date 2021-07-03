@@ -155,3 +155,22 @@ div h6{
  text-align: center;
 
 }
+form.login{
+    margin:0%;
+    padding: 3%;
+    width:95%;
+}
+div.flexLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width:768px){
+    form.login{
+        width: 50%;
+        height: 100%;
+    }
+    div.flexLogin{
+        height: 50vh;
+    }
+}
