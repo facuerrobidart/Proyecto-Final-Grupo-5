@@ -30,7 +30,8 @@
 <body>
   <header>
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light px-2">
-      <a class="navbar-brand logo" href="#">Logo</a>
+      <img src="./images/pexels-free-creative-stuff-1193743.jpg" alt="logo" class="logoPagina">
+     
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -63,31 +64,29 @@
             class="fas fa-search"></i></button>
         <!--ICONOS DE USUARIO-->
         <a href="login.html" class="iconos"><i class="far fa-user"></i></a>
-        <a href="carrito.html" class="iconos"><i class="fas fa-shopping-cart"></i></a>
+        <a href="carrito-compra.html" class="iconos"><i class="fas fa-shopping-cart"></i></a>
         <a href="index.html" class="iconos"><i class="fas fa-sign-out-alt"></i></a>
       </div>
     </nav>
   </header>
   <main>
     <h4 class="login">Login</h4>
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <div class="BotonEnvio">
-      <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </form>
+    <div class=flexLogin>
+      <form class="login">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="tumail@proveedor.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+          <a href="recupContraseña.html">¿Olvidaste tu contraseña?</a>
+        <div class="BotonEnvio">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
   </main>
   <footer>
     <div class="tarjeta">
