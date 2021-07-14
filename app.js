@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+
+app.use("view engine","ejs");
 app.use(express.static(path.resolve(__dirname,"./public")));
 app.use(express.static(path.resolve(__dirname,"./views")));
 app.listen(process.env.PORT || 3000,()=>{console.log("Corriendo en puerto 3000");});
