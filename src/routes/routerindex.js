@@ -4,3 +4,6 @@ const controller = require("./../controllers/controllerIndex");
 
 
 router.get("/",controller.index);
+
+
+module.exports=router;
