@@ -6,7 +6,8 @@ const controller = require("./../controllers/controllerProducto");
 
 router.get("/",controller.producto);
 router.get("/carrito",controller.carrito);
-router.get("/crear", controller.crear)
+router.get("/crear", controller.crear);
+router.get("/editar", controller.editar)
 
 
 module.exports=router;

@@ -6,7 +6,10 @@ const controller = {
         res.render("./products/carrito-compra");
     },
     crear: (req, res) => {
-        res.render("./products/crearProducto")
+        res.render("./products/crearProducto");
+    },
+    editar: (req, res) =>{
+        res.render("./products/editarProducto");
     }
 }
 
