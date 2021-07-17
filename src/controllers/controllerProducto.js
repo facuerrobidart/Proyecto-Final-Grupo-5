@@ -1,9 +1,9 @@
 const controller = {
     producto: (req,res)=>{
-        res.render("producto");
+        res.render("./products/producto");
     },
     carrito: (req,res)=>{
-        res.render("carrito-compra");
+        res.render("./products/carrito-compra");
     }
 }
 
