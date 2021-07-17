@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <%- include('./../partials/head') %>
+
+      <body>
+        <%- include('./../partials/header') %>
+
+
+
+    <main class="">
+      <h1 class="titulo"> ¡Hola Bienvenido!!!</h1>
+      <h2 class="titulo"> Contanos que queres Publicar </h2>
+
+      <form action="/" method="GET">
+
+        <label for="CategoriaProducto" class=""> Categoria de Producto</label>
+        <div>
+          <label for="categoriasProducto">
+            <input type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros </label>
+        </div>
+        <div>
+          <label for="categoriaProducto">
+            <input type="checkbox" name="categoriasProducto" value="esculturas"> Esculturas </label>
+        </div>
+        <div>
+          <label for="categoriasProducto">
+            <input type="checkbox" name="categoriasProducto" value="pinturasLienzo"> Pinturas en Lienzo</label>
+        </div>
+        <div>
+          <label for="categoriasProducto">
+            <input type="checkbox" name="categoriasProducto" value="fotografias"> Fotografias</label>
+        </div>
+
+        <div>
+          <label for="categoriasProducto">
+            <input type="checkbox" name="categoriasProducto" value="serigrafia"> Serigrafia</label>
+        </div>
+        </div>
+
+        <div>
+          <label for="foto-Perfil" class=""> Imagen de Producto</label>
+          <div><input type="file" name="fotoProducto" accept=".jpg"></div>
+        </div>
+
+        <div>
+          <label for="nombre-artista" class=""> Nombre de Artista</label>
+          <input type="text" placeholder="Nombre de Artista" name="nombre-artista" id="nombre-artista" class="">
+        </div>
+
+      <div>
+        <label for="caracteristicas-producto"> Detalle Producto</label>
+        <textarea name="caracteristicas-producto" id="" cols="30" rows="10" ></textarea>
+      </div>
+
+
+        <div>
+          <label for="condicionProducto" class=""> Condicion Producto </label>
+          <div>
+            <label for="condicionProducto "><input type="radio" name="condicionProducto" id="condicionProducto" value="nuevo">
+              Nuevo </label>
+            <label for="condicionProducto"><input type="radio" name="condicionProducto" id="condicionProducto"
+                value="usado"> Usado </label>
+            <label for="condicionProducto"><input type="radio" name="condicionProducto" id="condicionProducto" value="Reacondicionado"> Reacondicionado
+            </label>
+          </div>
+        </div>
+
+        <div class="">
+          <button type="reset" class="button">Borrar Datos</button>
+          <button type="submit" class="button">Confirmar</button>
+        </div>
+      </form>
+
+  </main>
+
+  <%- include('./../partials/footer') %>
+
+
+</body>
+
+</html>
