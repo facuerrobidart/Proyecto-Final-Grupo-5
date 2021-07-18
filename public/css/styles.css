@@ -169,7 +169,36 @@ div.flexLogin{
     align-items: center;
 }
 
+.formCrear{
+    text-align:center
+}
 
+.formularioCrear{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.labelCrear{
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+
+}
+
+
+.checkboxCategoria{
+    font-size: 15px;
+}
+
+#inputsChecbox{
+    opacity: 1;
+    position: inherit;
+}
+
+#inputTex{
+    text-align:center;
+    
+}
 
 @media (min-width:768px){
     form.login{
@@ -179,5 +208,5 @@ div.flexLogin{
     div.flexLogin{
         height: 50vh;
     }
-    
+
 }
