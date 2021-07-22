@@ -7,7 +7,7 @@ const routerUser = require("./src/routes/routeruser");
 const methodOverride = require("method-override");
 
 //SETTINGS
-app.use(express.urlencoded({ extended: false });
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.set("view engine","ejs");
 app.use(methodOverride("_method"));
