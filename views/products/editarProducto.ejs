@@ -7,74 +7,82 @@
 
 
 
-      <main class="">
-        <h1 class="titulo"> ¡Hola Bienvenido!!!</h1>
+      <main class="formCrear">
+        <h1 class="titulo"> ¡Hola Bienvenidos!!!</h1>
         <h2 class="titulo"> Contanos que necesitas Editar </h2>
 
-        <form action="/" method="GET">
+        <form action="/" method="GET" clas="formularioCrear">
 
-          <label for="CategoriaProducto" class=""> Categoria de Producto</label>
+          <label for="CategoriaProducto" class="labelCrear"> Categoria de Producto</label>
           <div>
-            <label for="categoriasProducto">
-              <input type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros </label>
+            <label for="categoriasProducto" class="checkboxCategoria">
+              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros </label>
           </div>
           <div>
-            <label for="categoriaProducto">
-              <input type="checkbox" name="categoriasProducto" value="esculturas"> Esculturas </label>
+            <label for="categoriaProducto" class="checkBoxCategoria">
+              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="esculturas"> Esculturas
+            </label>
           </div>
           <div>
-            <label for="categoriasProducto">
-              <input type="checkbox" name="categoriasProducto" value="pinturasLienzo"> Pinturas en Lienzo</label>
+            <label for="categoriasProducto" class="checkBoxCategoria">
+              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="pinturasLienzo"> Pinturas en
+              Lienzo</label>
           </div>
           <div>
-            <label for="categoriasProducto">
-              <input type="checkbox" name="categoriasProducto" value="fotografias"> Fotografias</label>
-          </div>
-
-          <div>
-            <label for="categoriasProducto">
-              <input type="checkbox" name="categoriasProducto" value="serigrafia"> Serigrafia</label>
-          </div>
+            <label for="categoriasProducto" class="checkBoxCategoria">
+              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="fotografias">
+              Fotografias</label>
           </div>
 
           <div>
-            <label for="foto-Perfil" class=""> Imagen de Producto</label>
+            <label for="categoriasProducto" clas="checkBoxCategoria">
+              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="serigrafia"> Serigrafia</label>
+          </div>
+          </div>
+
+          <div>
+            <label for="foto-Perfil" class="labelCrear"> Imagen de Producto</label>
             <div><input type="file" name="fotoProducto" accept=".jpg"></div>
           </div>
 
           <div>
-            <label for="nombre-artista" class=""> Nombre de Artista</label>
-            <input type="text" placeholder="Nombre de Artista" name="nombre-artista" id="nombre-artista" class="">
+            <label for="nombre-artista" class="labelCrear"> Nombre de Artista
+              <input id="inputTex" type="text" placeholder="Nombre de Artista" name="nombre-artista"
+                id="nombre-artista">
+            </label>
           </div>
 
           <div>
-            <label for="caracteristicas-producto"> Detalle Producto</label>
-            <textarea name="caracteristicas-producto" id="" cols="30" rows="10"></textarea>
+            <label for="caracteristicas-producto" class="labelCrear"> Detalle Producto
+              <textarea id="inputTex" name="caracteristicas-producto" cols="30" rows="10"
+                placeholder="Detalle Producto"></textarea>
+            </label>
           </div>
 
 
           <div>
-            <label for="condicionProducto" class=""> Condicion Producto </label>
+            <label for="condicionProducto" class="labelCrear"> Condicion Producto </label>
             <div>
-              <label for="condicionProducto "><input type="radio" name="condicionProducto" id="condicionProducto"
-                  value="nuevo">
+              <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
+                  id="condicionProducto" value="nuevo">
                 Nuevo </label>
-              <label for="condicionProducto"><input type="radio" name="condicionProducto" id="condicionProducto"
-                  value="usado"> Usado </label>
-              <label for="condicionProducto"><input type="radio" name="condicionProducto" id="condicionProducto"
-                  value="Reacondicionado"> Reacondicionado
+              <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
+                  id="condicionProducto" value="usado"> Usado </label>
+              <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
+                  id="condicionProducto" value="Reacondicionado"> Reacondicionado
               </label>
             </div>
           </div>
 
           <div>
-              <label for="precio"> Precio Producto </label>
-              <input type="text" placeholder="Precio Producto" name="precio">
+            <label for="precio" class="labelCrear"> Precio Producto
+              <input id="inputTex" type="text" placeholder="Precio Producto" name="precio">
+            </label>
           </div>
 
           <div class="">
-            <button type="reset" class="button">Borrar Datos</button>
-            <button type="submit" class="button">Editar</button>
+            <button type="reset" class="btn btn-secondary">Borrar Datos</button>
+            <button type="submit" class="btn btn-secondary">Editar</button>
           </div>
         </form>
 
