@@ -11,3 +11,8 @@ Hicimos una puesta en común de las correcciones del sprint 2 y planificamos la
 división del sprint 3. Casi todo el trabajo fue hecho el mismo día de la reunion.
 No encontramos grandes obstáculos que dificulten el progreso, más allá de aquellos
 que uno se encuentra cuando utiliza una herramienta nueva.
+
+* 📋 __Reunión 1/8:__
+Puesta en común del sprint anterior y planificación del sprint 3. A día de la reu-
+nión aún falta trabajo por hacer. Realizamos la división de trabajo y armamos el
+tablero. Creemos que vamos a llegar en tiempo y forma.
