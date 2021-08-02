@@ -53,6 +53,9 @@ const controller = {
 
     editar: (req, res) =>{
         res.render("./products/editarProducto");
+    },
+    all: (req,res) =>{
+        res.render("./products/listaProductos");
     }
 }
 
