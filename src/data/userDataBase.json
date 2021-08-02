@@ -1,0 +1,32 @@
+[
+ {
+  "id": 1,
+  "nombre": "Juan",
+  "apellido": "perez",
+  "email": "jperez@gmail.com",
+  "contraseña": 123,
+  "direccion": "las playas 123",
+  "ciudad": "cordoba",
+  "provincia": "cordoba"
+ },
+ {
+  "id": 2,
+  "nombre": "Daniel",
+  "apellido": "Martinez",
+  "email": "daniel.martinez17.03.76@gmail.com",
+  "contraseña": "daniel123",
+  "direccion": "betinoti 2929",
+  "ciudad": "cordoba",
+  "provincia": "Córdoba"
+ },
+ {
+  "id": 3,
+  "nombre": "Daniel",
+  "apellido": "Martinez",
+  "email": "daniel.martinez17.03.76@gmail.com",
+  "contraseña": "daniel123",
+  "direccion": "betinoti 2929",
+  "ciudad": "cordoba",
+  "provincia": "Córdoba"
+ }
+]

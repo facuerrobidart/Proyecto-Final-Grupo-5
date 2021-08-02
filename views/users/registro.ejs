@@ -8,82 +8,76 @@
       <main class="login">
         <h5 class="titulo">Registrate para ser parte de nuestra comunidad</h5>
         <div class="panel">
-          <form>
+          <form accion="/user/register" method="POST" >
             <div class="form-row">
               <div class="col">
-                <label for="nombre">Nombre</label>
+                <label >Nombre</label>
                 <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" required>
               </div>
               <div class="col">
-                <label for="apellido">Apellido</label>
+                <label >Apellido</label>
                 <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="email">Email</label>
+                <label >Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com" required>
               </div>
               <div class="form-group col-md-6">
-                <label for="contraseña">Contraseña</label>
+                <label >Contraseña</label>
                 <input type="password" class="form-control" name="contraseña" required>
               </div>
             </div>
             <div class="form-group">
-              <label for="direccion">Dirección</label>
+              <label >Dirección</label>
               <input type="text" class="form-control" name="direccion" placeholder="Ej: Calle falsa 123" required>
             </div>
             <div class="form-group">
-              <label for="piso">Piso/Departamento (Opcional)</label>
+              <label >Piso/Departamento (Opcional)</label>
               <input type="text" class="form-control" name="piso" placeholder="Ej: Piso 7 Dpto 2">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="ciudad">Ciudad/Barrio</label>
+                <label >Ciudad/Barrio</label>
                 <input type="text" class="form-control" name="ciudad" required>
               </div>
               <div class="form-group col-md-4">
-                <label for="inputState">Provincia</label>
-                <select id="inputState" class="form-control" required>
+                <label >Provincia</label>
+                <select name= "provincia" id="inputState" class="form-control" required>
                   <option selected>Elija uno</option>
-                  <option>Buenos Aires</option>
-                  <option>Capital Federal</option>
-                  <option>Catamarca</option>
-                  <option>Chaco</option>
-                  <option>Chubut</option>
-                  <option>Córdoba</option>
-                  <option>Corrientes</option>
-                  <option>Entre Ríos</option>
-                  <option>Formosa</option>
-                  <option>Jujuy</option>
-                  <option>La Pampa</option>
-                  <option>La Rioja</option>
-                  <option>Mendoza</option>
-                  <option>Misiones</option>
-                  <option>Neuquén</option>
-                  <option>Río Negro</option>
-                  <option>Salta</option>
-                  <option>San Juan</option>
-                  <option>San Luis</option>
-                  <option>Santa Cruz</option>
-                  <option>Santa Fe</option>
-                  <option>Santiago del Estero</option>
-                  <option>Tierra del Fuego</option>
-                  <option>Tucumán</option>
+                  <option value="Buenos Aires">Buenos Aires</option>
+                  <option value="Capital Federal">Capital Federal</option>
+                  <option value="Catamarca">Catamarca</option>
+                  <option value="Chaco">Chaco</option>
+                  <option value="Chubut">Chubut</option>
+                  <option value="Córdoba">Córdoba</option>
+                  <option value="Corrientes">Corrientes</option>
+                  <option value="Entre Ríos">Entre Ríos</option>
+                  <option value="Formosa">Formosa</option>
+                  <option value="Jujuy">Jujuy</option>
+                  <option value="La Pampa">La Pampa</option>
+                  <option value="La Rioja">La Rioja</option>
+                  <option value="Mendoza">Mendoza</option>
+                  <option value="Misiones">Misiones</option>
+                  <option value="Neuquén">Neuquén</option>
+                  <option value="Río Negro">Río Negro</option>
+                  <option value="Salta">Salta</option>
+                  <option value="San Juan">San Juan</option>
+                  <option value="San Luis">San Luis</option>
+                  <option value="Santa Cruz">Santa Cruz</option>
+                  <option value="Santa Fe">Santa Fe</option>
+                  <option value="Santiago del Estero">Santiago del Estero</option>
+                  <option value="Tierra del Fuego">Tierra del Fuego</option>
+                  <option value="Tucumán">Tucumán</option>
                 </select>
               </div>
               <div class="form-group col-md-2">
-                <label for="codigoPostal">Código Postal</label>
+                <label >Código Postal</label>
                 <input type="text" class="form-control" name="codigoPostal" required>
               </div>
             </div>
-            <div class="row-auto my-1">
-              <div class="custom-control custom-checkbox mr-sm-2">
-                <input type="checkbox" class="custom-control-input" name="terminos" required>
-                <label class="custom-control-label" for="terminos">Acepto los <a href="terminos.html">Términos de
-                    Servicio</a></label>
-              </div>
-            </div>
+            
             <button type="submit" class="btn btn-primary">Registrarse</button>
           </form>
         </div>
