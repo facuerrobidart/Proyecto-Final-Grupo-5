@@ -129,3 +129,9 @@ body {
   div.contenedorFlex{
       display: flex;
   }
+  p.precio{
+    margin:0.1%;
+  }
+  button{
+    margin: 0.1%;
+  }

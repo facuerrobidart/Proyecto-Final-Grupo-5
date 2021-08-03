@@ -2,6 +2,7 @@
  {
   "id": 1,
   "categoriasProducto": "cuadros",
+  "titulo": "Obra de ejemplo",
   "fotoProducto": "",
   "nombreArtista": "Guille Leal",
   "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
@@ -10,6 +11,7 @@
  },
  {
   "id": 2,
+  "titulo": "Obra de ejemplo",
   "categoriasProducto": "pinturas de lienzo",
   "fotoProducto": "fotoProducto-1627830765649.jpg",
   "nombreArtista": "Rick Venu",

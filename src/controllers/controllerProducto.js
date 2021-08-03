@@ -19,12 +19,12 @@ const controller = {
     },
     crearProducto:(req, res) => {
 
-        nombreFoto = req.file.filename
+        nombreFoto = req.file.filename;
 
         idProducto = 0
         for (i=0; i<productos.length; i++){
             if(idProducto < productos[i].id){
-                 idProducto = idProducto +1
+                 idProducto = idProducto +1;
             }
         }
         idProducto = idProducto + 1
@@ -55,7 +55,7 @@ const controller = {
         res.render("./products/editarProducto");
     },
     all: (req,res) =>{
-        res.render("./products/listaProductos");
+        res.render("./products/listaProductos",{productos:productos});
     }
 }
 
