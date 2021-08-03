@@ -3,30 +3,25 @@
 
 <%- include('./../partials/head') %>
 <title>Todos los Productos</title>
-<link rel="stylesheet" href="/css/productCard.css"/>
+<link rel="stylesheet" href="/css/lista.css">
 <body>
     <%- include('./../partials/header') %>
-    <div class="contenedorFlex">
-        <% for(let p of productos){ %>
-        <div class="wrapper">
-            <div class="product-img">
-            <img src="http://bit.ly/2tMBBTd" height="420" width="327">
+    <div class='container-fluid'>
+        <% for(let p of productos){%>
+        <div class="card mx-auto col-md-3 col-10 mt-5"> 
+            <div class= "imgContainer">
+            <img class='mx-auto img-thumbnail' src="/images/<%= p.fotoProducto %>"  width="190" height="200"/>
             </div>
-            <div class="product-info">
-            <div class="product-text">
-                <h1><%= p.titulo %></h1>
-                <h2><%= p.nombreArtista%></h2>
-                <p><%= p.caracteristicasProducto%></p>
-            </div>
-            <div class="product-price-btn">
-                <p class="precio"><span><%= p.precio%></span>$</p>
-                <br>
-                <button type="button">Ver detalle</button>
-            </div>
+            <div class="card-body text-center mx-auto">
+                <div class='cvp'>
+                    <h5 class="card-title font-weight-bold"><%= p.titulo %></h5>
+                    <p class="card-text">$<%= p.precio %></p> <a href="#" class="btn details px-auto">Comprar</a><br /> <a href="#" class="btn cart px-auto">Añadir a carrito</a>
+                </div>
             </div>
         </div>
         <% } %>
     </div>
+
     <%- include('./../partials/footer') %>
 </body>
 

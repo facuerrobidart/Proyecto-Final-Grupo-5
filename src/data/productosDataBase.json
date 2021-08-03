@@ -3,7 +3,7 @@
   "id": 1,
   "categoriasProducto": "cuadros",
   "titulo": "Obra de ejemplo",
-  "fotoProducto": "",
+  "fotoProducto": "mona-lisa.jpg",
   "nombreArtista": "Guille Leal",
   "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
   "condicionProducto": "Nuevo",
@@ -18,5 +18,65 @@
   "caracteristicasProducto": "cascadas al lienzo",
   "condicionProducto": "nuevo",
   "precio": "10000"
- }
+ },
+ {
+    "id": 1,
+    "categoriasProducto": "cuadros",
+    "titulo": "Obra de ejemplo",
+    "fotoProducto": "mona-lisa.jpg",
+    "nombreArtista": "Guille Leal",
+    "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
+    "condicionProducto": "Nuevo",
+    "precio": 10000
+   },
+   {
+    "id": 2,
+    "titulo": "Obra de ejemplo",
+    "categoriasProducto": "pinturas de lienzo",
+    "fotoProducto": "fotoProducto-1627830765649.jpg",
+    "nombreArtista": "Rick Venu",
+    "caracteristicasProducto": "cascadas al lienzo",
+    "condicionProducto": "nuevo",
+    "precio": "10000"
+   },
+   {
+    "id": 1,
+    "categoriasProducto": "cuadros",
+    "titulo": "Obra de ejemplo",
+    "fotoProducto": "mona-lisa.jpg",
+    "nombreArtista": "Guille Leal",
+    "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
+    "condicionProducto": "Nuevo",
+    "precio": 10000
+   },
+   {
+    "id": 2,
+    "titulo": "Obra de ejemplo",
+    "categoriasProducto": "pinturas de lienzo",
+    "fotoProducto": "fotoProducto-1627830765649.jpg",
+    "nombreArtista": "Rick Venu",
+    "caracteristicasProducto": "cascadas al lienzo",
+    "condicionProducto": "nuevo",
+    "precio": "10000"
+   },
+   {
+    "id": 1,
+    "categoriasProducto": "cuadros",
+    "titulo": "Obra de ejemplo",
+    "fotoProducto": "mona-lisa.jpg",
+    "nombreArtista": "Guille Leal",
+    "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
+    "condicionProducto": "Nuevo",
+    "precio": 10000
+   },
+   {
+    "id": 2,
+    "titulo": "Obra de ejemplo",
+    "categoriasProducto": "pinturas de lienzo",
+    "fotoProducto": "fotoProducto-1627830765649.jpg",
+    "nombreArtista": "Rick Venu",
+    "caracteristicasProducto": "cascadas al lienzo",
+    "condicionProducto": "nuevo",
+    "precio": "10000"
+   }
 ]
