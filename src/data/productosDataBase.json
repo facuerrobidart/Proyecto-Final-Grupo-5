@@ -7,7 +7,7 @@
   "nombreArtista": "Guille Leal",
   "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
   "condicionProducto": "Nuevo",
-  "precio": 10000
+  "precio": "10000"
  },
  {
   "id": 2,
@@ -27,7 +27,7 @@
     "nombreArtista": "Guille Leal",
     "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
     "condicionProducto": "Nuevo",
-    "precio": 10000
+    "precio": "10000"
    },
    {
     "id": 2,
@@ -77,6 +77,6 @@
     "nombreArtista": "Rick Venu",
     "caracteristicasProducto": "cascadas al lienzo",
     "condicionProducto": "nuevo",
-    "precio": "10000"
+    "precio": 10000
    }
 ]

@@ -9,7 +9,18 @@ const productos = JSON.parse(fs.readFileSync(pathProductos,"utf-8"));
 
 const controller = {
     producto: (req,res)=>{
-        res.render("./products/producto");
+        let id = req.params.id;
+        let producto;
+        for (let p of productos){
+            if (p.id==id){
+                producto = p;
+                break;
+            }
+        }
+        if (producto!=undefined)
+            res.render("./products/producto",{producto:producto});
+        else
+            res.send("El articulo no existe!!!!");
     },
     carrito: (req,res)=>{
         res.render("./products/carrito-compra");
