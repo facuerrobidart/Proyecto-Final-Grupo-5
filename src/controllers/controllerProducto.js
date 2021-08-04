@@ -9,7 +9,18 @@ const productos = JSON.parse(fs.readFileSync(pathProductos,"utf-8"));
 
 const controller = {
     producto: (req,res)=>{
-        res.render("./products/producto");
+        let id = req.params.id;
+        let producto;
+        for (let p of productos){
+            if (p.id==id){
+                producto = p;
+                break;
+            }
+        }
+        if (producto!=undefined)
+            res.render("./products/producto",{producto:producto});
+        else
+            res.send("El articulo no existe!!!!");
     },
     carrito: (req,res)=>{
         res.render("./products/carrito-compra");
@@ -19,12 +30,12 @@ const controller = {
     },
     crearProducto:(req, res) => {
 
-        nombreFoto = req.file.filename
+        nombreFoto = req.file.filename;
 
         idProducto = 0
         for (i=0; i<productos.length; i++){
             if(idProducto < productos[i].id){
-                 idProducto = idProducto +1
+                 idProducto = idProducto +1;
             }
         }
         idProducto = idProducto + 1
@@ -53,6 +64,9 @@ const controller = {
 
     editar: (req, res) =>{
         res.render("./products/editarProducto");
+    },
+    all: (req,res) =>{
+        res.render("./products/listaProductos",{productos:productos});
     }
 }
 

@@ -21,11 +21,12 @@ const upload = multer( {storage:storage})
 
 
 
-router.get("/",controller.producto);
+
 router.get("/carrito",controller.carrito);
 router.get("/crear", controller.crear);
-router.post("/crear", upload.single("fotoProducto"), controller.crearProducto)
-router.get("/editar", controller.editar)
-
+router.post("/crear", upload.single("fotoProducto"), controller.crearProducto);
+router.get("/editar", controller.editar);
+router.get("/all",controller.all);
+router.get("/:id",controller.producto);
 
 module.exports=router;

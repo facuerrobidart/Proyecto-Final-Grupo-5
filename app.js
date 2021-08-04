@@ -6,12 +6,14 @@ const routerProducto = require("./src/routes/routerProducto");
 const routerUser = require("./src/routes/routeruser");
 const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
+const session = require("express-session");
 //SETTINGS
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.set("view engine","ejs");
 app.use(methodOverride("_method"));
 app.use(cookieParser());
+app.use(session({secret: "este es un secreto"}));
 
 //CARPETAS PUBLICAS
 app.use(express.static(path.resolve(__dirname,"./public")));
