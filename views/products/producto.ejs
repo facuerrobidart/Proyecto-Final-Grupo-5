@@ -6,44 +6,45 @@
 <link rel="stylesheet" href="/css/producto.css" />
   <body>
     <%- include('./../partials/header') %>
-    <div class="container mt-5 mb-5">
-      <div class="row d-flex justify-content-center">
-          <div class="col-md-10">
-              <div class="card">
-                  <div class="row">
-                      <div class="col-md-6 images">
-                          <div class="images p-3">
-                              <div class="text-center p-4"> <img id="main-image" src="/images/<%= producto.fotoProducto %>" width="250" /> </div>
-                              <div class="thumbnail text-center"> <img onclick="change_image(this)" src="/images/<%= producto.fotoProducto %>" width="70"></div>
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                          <div class="product p-4">
-                             
-                              <div class="mt-4 mb-3"> <span class="text-uppercase text-muted brand"><%= producto.nombreArtista%></span>
-                                  <h5 class="text-uppercase"><%=producto.titulo%></h5>
-                                  <div class="price d-flex flex-row align-items-center"> <span class="act-price">$<%= producto.precio %></span></div>
-                              </div>
-                              <p class="about"><%= producto.caracteristicasProducto %></p>
-                              <div class="cart mt-4 align-items-center"> <button class=" botones btn btn-danger text-uppercase mr-2 px-4">Añadir al carrito</button> <br>
+    <main>
+    <div class="container products-wrapper">
+		<div class="product-detail">
+			<div class="row">
+				<div class="col-12 col-lg-8 contienneImg">
+					<img src="/images/<%=producto.fotoProducto%>" alt="product image" class="product-detail-img imgProd">
+					<p class="product-detail-description">
+						<%=producto.caracteristicasProducto%>
+					</p>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="product-detail-info">
+						<h2 class="product-detail-title"><%=producto.titulo%></h2>
+						
+							<p class="product-detail-price">
+								$<%=producto.precio%>
+							</p>
 
-                              <button class="botones btn btn-danger text-uppercase mr-2 px-4">Comprar</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <script>
-    function change_image(image){
-      var container = document.getElementById("main-image");
-      container.src = image.src;
-      }
-      document.addEventListener("DOMContentLoaded", function(event) {
-      });
-  </script>
+						<ul class="actions-list">
+							<li>
+								<i class="fas fa-credit-card"></i>
+								<p>Pagá en 12 cuotas sin interes</p>
+							</li>
+							<li>
+								<i class="fas fa-store"></i>
+								<p>Retiro gratis en locales del vendedor</p>
+							</li>
+						</ul>
+
+						<a class="waves-effect waves-light btn">COMPRAR</a>
+                        <a class="waves-effect waves-light btn">AGREGAR AL CARRITO</a>
+
+						<hr>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+    </main>
     <%- include('./../partials/footer') %>
   </body>
 
