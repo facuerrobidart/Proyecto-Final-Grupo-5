@@ -11,11 +11,13 @@
         <h1 class="titulo"> ¡Hola Bienvenidos!!!</h1>
         <h2 class="titulo"> Contanos que necesitas Editar </h2>
 
-        <form action="/" method="GET" clas="formularioCrear">
+        <!--<form action="/" method="GET" clas="formularioCrear">-->
+        <form action="/producto/editar/<%=ProductoaEditar.id%>?_method=PUT" method="POST" class="formularioCrear">
 
           <label for="CategoriaProducto" class="labelCrear"> Categoria de Producto</label>
           <div>
             <label for="categoriasProducto" class="checkboxCategoria">
+
               <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros </label>
           </div>
           <div>
@@ -47,15 +49,15 @@
 
           <div>
             <label for="nombre-artista" class="labelCrear"> Nombre de Artista
-              <input id="inputTex" type="text" placeholder="Nombre de Artista" name="nombre-artista"
-                id="nombre-artista">
+              <input value="<%= ProductoaEditar.nombreArtista %>" id="inputTex" type="text"
+                placeholder="Nombre de Artista" name="nombre-artista" id="nombre-artista">
             </label>
           </div>
 
           <div>
             <label for="caracteristicas-producto" class="labelCrear"> Detalle Producto
               <textarea id="inputTex" name="caracteristicas-producto" cols="30" rows="10"
-                placeholder="Detalle Producto"></textarea>
+                placeholder="Detalle Producto"><%= ProductoaEditar.caracteristicasProducto %></textarea>
             </label>
           </div>
 
@@ -64,8 +66,7 @@
             <label for="condicionProducto" class="labelCrear"> Condicion Producto </label>
             <div>
               <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
-                  id="condicionProducto" value="nuevo">
-                Nuevo </label>
+                  id="condicionProducto" value="nuevo">Nuevo </label>
               <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
                   id="condicionProducto" value="usado"> Usado </label>
               <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
@@ -76,7 +77,8 @@
 
           <div>
             <label for="precio" class="labelCrear"> Precio Producto
-              <input id="inputTex" type="text" placeholder="Precio Producto" name="precio">
+              <input value="<%= ProductoaEditar.precio %>" id="inputTex" type="text" placeholder="Precio Producto"
+                name="precio">
             </label>
           </div>
 
