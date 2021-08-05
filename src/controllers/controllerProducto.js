@@ -1,5 +1,6 @@
 
 const fs = require("fs");
+const { dirname } = require("path");
 const path = require("path");
 
 const pathProductos = path.join(__dirname, "../../src/data/productosDataBase.json");
@@ -85,14 +86,25 @@ const controller = {
     actualizar: (req, res) => {
 
         let id = req.params.id;
-        //let productoEncontrado;
+
+        let productoEncontrado;
+
+        for (let s of productos) {
+            if (id == s.id) {
+                productoEncontrado = s;
+            }
+        }
+
+        let nombreImagenEditar = req.file.filename;
+
+        fs.unlinkSync(path.join(__dirname, "../../public/images/", productoEncontrado.fotoProducto));
+
 
         for (let s of productos) {
             if (id == s.id) {
                 s.titulo = req.body.titulo;
                 s.categoriasProducto = req.body.categoriasProducto;
-                s.nombreArtista = req.body.nombreArtista;
-                s.fotoProducto = nombreFoto
+                s.fotoProducto = nombreImagenEditar;
                 s.nombreArtista = req.body.nombreArtista;
                 s.caracteristicasProducto = req.body.caracteristicasProducto;
                 s.condicionProducto = req.body.condicionProducto;

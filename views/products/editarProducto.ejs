@@ -12,95 +12,214 @@
         <h2 class="titulo"> Contanos que necesitas Editar </h2>
 
         <!--<form action="/" method="GET" clas="formularioCrear">-->
-        <form action="/producto/editar/<%=ProductoaEditar.id%>?_method=PUT" method="POST" class="formularioCrear">
+        <form action="/producto/editar/<%=ProductoaEditar.id%>?_method=PUT" method="POST" class="formularioCrear"
+          enctype="multipart/form-data">
+
+          <div>
+            <label for="titulo" class="labelCrear"> Título
+              <input value="<%= ProductoaEditar.titulo %>" id="inputTex" type="text" placeholder="Título de obra"
+                name="titulo">
+            </label>
+          </div>
 
           <label for="CategoriaProducto" class="labelCrear"> Categoria de Producto</label>
-          <div>
-            <label for="categoriasProducto" class="checkboxCategoria">
-
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros </label>
-          </div>
-          <div>
-            <label for="categoriaProducto" class="checkBoxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="esculturas"> Esculturas
-            </label>
-          </div>
-          <div>
-            <label for="categoriasProducto" class="checkBoxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="pinturasLienzo"> Pinturas en
-              Lienzo</label>
-          </div>
-          <div>
-            <label for="categoriasProducto" class="checkBoxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="fotografias">
-              Fotografias</label>
-          </div>
-
-          <div>
-            <label for="categoriasProducto" clas="checkBoxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="serigrafia"> Serigrafia</label>
-          </div>
-          </div>
-
-          <div>
-            <label for="foto-Perfil" class="labelCrear"> Imagen de Producto</label>
-            <div><input type="file" name="fotoProducto" accept=".jpg"></div>
-          </div>
-
-          <div>
-            <label for="nombre-artista" class="labelCrear"> Nombre de Artista
-              <input value="<%= ProductoaEditar.nombreArtista %>" id="inputTex" type="text"
-                placeholder="Nombre de Artista" name="nombre-artista" id="nombre-artista">
-            </label>
-          </div>
-
-          <div>
-            <label for="caracteristicas-producto" class="labelCrear"> Detalle Producto
-              <textarea id="inputTex" name="caracteristicas-producto" cols="30" rows="10"
-                placeholder="Detalle Producto"><%= ProductoaEditar.caracteristicasProducto %></textarea>
-            </label>
-          </div>
-
-
-          <div>
-            <label for="condicionProducto" class="labelCrear"> Condicion Producto </label>
+          <% if (ProductoaEditar.categoriasProducto=="cuadros" ) { %>
             <div>
-              <% if (ProductoaEditar.condicionProducto=="nuevo" ) { %>
-                <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
-                    id="condicionProducto" value="nuevo" checked>Nuevo </label>
-                <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
-                    id="condicionProducto" value="usado"> Usado </label>
-                <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
-                    id="condicionProducto" value="reacondicionado"> Reacondicionado</label>
-                <% } else if (ProductoaEditar.condicionProducto=="usado" ) { %>
-                  <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
-                      id="condicionProducto" value="nuevo">Nuevo </label>
-                  <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
-                      id="condicionProducto" value="usado" checked> Usado </label>
-                  <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
-                      id="condicionProducto" value="reacondicionado"> Reacondicionado</label>
-                  <% } else if (ProductoaEditar.condicionProducto=="reacondicionado" ) { %>
-                    <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
-                        id="condicionProducto" value="nuevo">Nuevo </label>
-                    <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
-                        id="condicionProducto" value="usado"> Usado </label>
-                    <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
-                        id="condicionProducto" value="reacondicionado" checked> Reacondicionado</label>
-                    <% } %>
+              <label for="categoriasProducto" class="checkboxCategoria">
+                <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros" checked> Cuadros
+              </label>
             </div>
-          </div>
+            <div>
+              <label for="categoriaProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                  name="categoriasProducto" value="esculturas"> Esculturas</label>
+            </div>
 
-          <div>
-            <label for="precio" class="labelCrear"> Precio Producto
-              <input value="<%= ProductoaEditar.precio %>" id="inputTex" type="text" placeholder="Precio Producto"
-                name="precio">
-            </label>
-          </div>
+            <div>
+              <label for="categoriasProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                  name="categoriasProducto" value="pinturasLienzo"> Pinturas en Lienzo</label>
+            </div>
 
-          <div class="">
-            <button type="reset" class="btn btn-secondary">Borrar Datos</button>
-            <button type="submit" class="btn btn-secondary">Editar</button>
-          </div>
+            <div>
+              <label for="categoriasProducto" class="checkBoxCategoria">
+                <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="fotografias">
+                Fotografias</label>
+            </div>
+
+            <div>
+              <label for="categoriasProducto" clas="checkBoxCategoria">
+                <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="serigrafia">
+                Serigrafia</label>
+            </div>
+            <% } else if (ProductoaEditar.categoriasProducto=="esculturas" ) { %>
+              <div>
+                <label for="categoriasProducto" class="checkboxCategoria">
+                  <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros
+                </label>
+              </div>
+              <div>
+                <label for="categoriaProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                    name="categoriasProducto" value="esculturas" checked> Esculturas</label>
+              </div>
+              <div>
+                <label for="categoriasProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                    name="categoriasProducto" value="pinturasLienzo"> Pinturas en Lienzo</label>
+              </div>
+
+              <div>
+                <label for="categoriasProducto" class="checkBoxCategoria">
+                  <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="fotografias">
+                  Fotografias</label>
+              </div>
+
+              <div>
+                <label for="categoriasProducto" clas="checkBoxCategoria">
+                  <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="serigrafia">
+                  Serigrafia</label>
+              </div>
+              <% } else if (ProductoaEditar.categoriasProducto=="pinturasLienzo" ) { %>
+                <div>
+                  <label for="categoriasProducto" class="checkboxCategoria">
+                    <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros
+                  </label>
+                </div>
+
+                <div>
+                  <label for="categoriaProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                      name="categoriasProducto" value="esculturas"> Esculturas</label>
+                </div>
+                <div>
+                  <label for="categoriasProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                      name="categoriasProducto" value="pinturasLienzo" checked> Pinturas en Lienzo</label>
+                </div>
+                <div>
+                  <label for="categoriasProducto" class="checkBoxCategoria">
+                    <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="fotografias">
+                    Fotografias</label>
+                </div>
+
+                <div>
+                  <label for="categoriasProducto" clas="checkBoxCategoria">
+                    <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="serigrafia">
+                    Serigrafia</label>
+                </div>
+
+                <% } else if (ProductoaEditar.categoriasProducto=="fotografias" ) { %>
+                  <div>
+                    <label for="categoriasProducto" class="checkboxCategoria">
+                      <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros
+                    </label>
+                  </div>
+
+                  <div>
+                    <label for="categoriaProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                        name="categoriasProducto" value="esculturas"> Esculturas</label>
+                  </div>
+
+                  <div>
+                    <label for="categoriasProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                        name="categoriasProducto" value="pinturasLienzo"> Pinturas en Lienzo</label>
+                  </div>
+                  <div>
+                    <label for="categoriasProducto" class="checkBoxCategoria">
+                      <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="fotografias" checked>
+                      Fotografias</label>
+                  </div>
+                  <div>
+                    <label for="categoriasProducto" clas="checkBoxCategoria">
+                      <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="serigrafia">
+                      Serigrafia</label>
+                  </div>
+                  <% } else if (ProductoaEditar.categoriasProducto=="serigrafia" ) { %>
+                    <div>
+                      <label for="categoriasProducto" class="checkboxCategoria">
+                        <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros
+                      </label>
+                    </div>
+
+                    <div>
+                      <label for="categoriaProducto" class="checkBoxCategoria"><input id="inputsChecbox" type="checkbox"
+                          name="categoriasProducto" value="esculturas"> Esculturas</label>
+                    </div>
+
+                    <div>
+                      <label for="categoriasProducto" class="checkBoxCategoria"><input id="inputsChecbox"
+                          type="checkbox" name="categoriasProducto" value="pinturasLienzo"> Pinturas en Lienzo</label>
+                    </div>
+
+                    <div>
+                      <label for="categoriasProducto" class="checkBoxCategoria">
+                        <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="fotografias">
+                        Fotografias</label>
+                    </div>
+                    <div>
+                      <label for="categoriasProducto" clas="checkBoxCategoria">
+                        <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="serigrafia" checked>
+                        Serigrafia</label>
+                    </div>
+
+                    <% } %>
+                      <div>
+                        <label for="foto-Perfil" class="labelCrear"> Imagen de Producto</label>
+                        <div><input type="file" name="fotoProducto" accept=".jpg"></div>
+                      </div>
+
+                      <div>
+                        <label for="nombre-artista" class="labelCrear"> Nombre de Artista
+                          <input value="<%= ProductoaEditar.nombreArtista %>" id="inputTex" type="text"
+                            placeholder="Nombre de Artista" name="nombreArtista" id="nombre-artista">
+                        </label>
+                      </div>
+
+                      <div>
+                        <label for="caracteristicas-producto" class="labelCrear"> Detalle Producto
+                          <textarea id="inputTex" name="caracteristicasProducto" cols="30" rows="10"
+                            placeholder="Detalle Producto"><%= ProductoaEditar.caracteristicasProducto %></textarea>
+                        </label>
+                      </div>
+
+
+                      <div>
+                        <label for="condicionProducto" class="labelCrear"> Condicion Producto </label>
+                        <div>
+                          <% if (ProductoaEditar.condicionProducto=="nuevo" ) { %>
+                            <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                name="condicionProducto" id="condicionProducto" value="nuevo" checked>Nuevo </label>
+                            <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                name="condicionProducto" id="condicionProducto" value="usado"> Usado </label>
+                            <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                name="condicionProducto" id="condicionProducto" value="reacondicionado">
+                              Reacondicionado</label>
+                            <% } else if (ProductoaEditar.condicionProducto=="usado" ) { %>
+                              <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                  name="condicionProducto" id="condicionProducto" value="nuevo">Nuevo </label>
+                              <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                  name="condicionProducto" id="condicionProducto" value="usado" checked> Usado </label>
+                              <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                  name="condicionProducto" id="condicionProducto" value="reacondicionado">
+                                Reacondicionado</label>
+                              <% } else if (ProductoaEditar.condicionProducto=="reacondicionado" ) { %>
+                                <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                    name="condicionProducto" id="condicionProducto" value="nuevo">Nuevo </label>
+                                <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                    name="condicionProducto" id="condicionProducto" value="usado"> Usado </label>
+                                <label for="condicionProducto"><input id="inputsChecbox" type="radio"
+                                    name="condicionProducto" id="condicionProducto" value="reacondicionado" checked>
+                                  Reacondicionado</label>
+                                <% } %>
+                        </div>
+                      </div>
+
+                      <div>
+                        <label for="precio" class="labelCrear"> Precio Producto
+                          <input value="<%= ProductoaEditar.precio %>" id="inputTex" type="text"
+                            placeholder="Precio Producto" name="precio">
+                        </label>
+                      </div>
+
+                      <div class="">
+                        <button type="reset" class="btn btn-secondary">Borrar Datos</button>
+                        <button type="submit" class="btn btn-secondary">Editar</button>
+                      </div>
         </form>
 
       </main>
