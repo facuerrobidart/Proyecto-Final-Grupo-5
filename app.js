@@ -8,12 +8,12 @@ const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 //SETTINGS
-app.use(express.urlencoded({extended: false }));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(cookieParser());
-app.use(session({secret: "este es un secreto" }));
+app.use(session({secret: "este es un secreto"}));
 
 //CARPETAS PUBLICAS
 app.use(express.static(path.resolve(__dirname,"./public")));
@@ -25,6 +25,6 @@ app.use("/user",routerUser);
 
 
 
-app.listen(process.env.PORT || 3000, () => { console.log("Corriendo en puerto 3000"); });
+app.listen(process.env.PORT || 3000, () => { console.log("Corriendo en puerto 3000");});
 
 
