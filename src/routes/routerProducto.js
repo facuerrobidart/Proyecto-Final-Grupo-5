@@ -27,11 +27,12 @@ router.get("/crear", controller.crear);
 router.post("/crear", upload.single("fotoProducto"), controller.crearProducto);
 //router.get("/editar", controller.editar);
 router.get("/all", controller.all);
-router.get("/:id", controller.producto);
+
 
 /*EDITAR PRODUCTO*/
 router.get("/editar/:id", controller.editar);
 router.put("/editar/:id", controller.actualizar);
 
+router.get("/:id", controller.producto);
 
 module.exports = router;

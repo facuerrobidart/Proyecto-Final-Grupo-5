@@ -65,13 +65,28 @@
           <div>
             <label for="condicionProducto" class="labelCrear"> Condicion Producto </label>
             <div>
-              <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
-                  id="condicionProducto" value="nuevo">Nuevo </label>
-              <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
-                  id="condicionProducto" value="usado"> Usado </label>
-              <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
-                  id="condicionProducto" value="Reacondicionado"> Reacondicionado
-              </label>
+              <% if (ProductoaEditar.condicionProducto=="nuevo" ) { %>
+                <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
+                    id="condicionProducto" value="nuevo" checked>Nuevo </label>
+                <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
+                    id="condicionProducto" value="usado"> Usado </label>
+                <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
+                    id="condicionProducto" value="reacondicionado"> Reacondicionado</label>
+                <% } else if (ProductoaEditar.condicionProducto=="usado" ) { %>
+                  <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
+                      id="condicionProducto" value="nuevo">Nuevo </label>
+                  <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
+                      id="condicionProducto" value="usado" checked> Usado </label>
+                  <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
+                      id="condicionProducto" value="reacondicionado"> Reacondicionado</label>
+                  <% } else if (ProductoaEditar.condicionProducto=="reacondicionado" ) { %>
+                    <label for="condicionProducto "><input id="inputsChecbox" type="radio" name="condicionProducto"
+                        id="condicionProducto" value="nuevo">Nuevo </label>
+                    <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
+                        id="condicionProducto" value="usado"> Usado </label>
+                    <label for="condicionProducto"><input id="inputsChecbox" type="radio" name="condicionProducto"
+                        id="condicionProducto" value="reacondicionado" checked> Reacondicionado</label>
+                    <% } %>
             </div>
           </div>
 

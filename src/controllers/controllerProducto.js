@@ -42,6 +42,7 @@ const controller = {
 
         productoNuevo = {
             id: idProducto,
+            titulo: req.body.titulo,
             categoriasProducto: req.body.categoriasProducto,
             fotoProducto: nombreFoto,
             nombreArtista: req.body.nombreArtista,
@@ -55,6 +56,7 @@ const controller = {
         fs.writeFileSync(pathProductos, JSON.stringify(productos, null, " "))
 
         res.redirect("/")
+
 
     },
     /*
@@ -87,11 +89,13 @@ const controller = {
 
         for (let s of productos) {
             if (id == s.id) {
-                //s.categoriasProducto = req.body.categoriasProducto;
-                //s.fotoProducto = nombreFoto
+                s.titulo = req.body.titulo;
+                s.categoriasProducto = req.body.categoriasProducto;
+                s.nombreArtista = req.body.nombreArtista;
+                s.fotoProducto = nombreFoto
                 s.nombreArtista = req.body.nombreArtista;
                 s.caracteristicasProducto = req.body.caracteristicasProducto;
-                // s.condicionProducto = req.body.condicionProducto;
+                s.condicionProducto = req.body.condicionProducto;
                 s.precio = req.body.precio
                 break;
             }
