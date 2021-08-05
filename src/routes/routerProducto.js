@@ -1,23 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("./../controllers/controllerProducto");
-const multer = require("multer")
-const path = require("path")
+const multer = require("multer");
+const path = require("path");
 
 // SETTING Multer
 
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "../../public/images"))
+    cb(null, path.join(__dirname, "../../public/images"));
   },
   filename: (req, file, cb) => {
-    let nombreFoto = file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    cb(null, nombreFoto)
+    let nombreFoto = file.fieldname + "-" + Date.now() + path.extname(file.originalname);
+    cb(null, nombreFoto);
   }
-})
+});
 
-const upload = multer({ storage: storage })
+const upload = multer({storage:storage});
 
 
 router.get("/carrito", controller.carrito);
