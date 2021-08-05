@@ -8,20 +8,20 @@ const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 //SETTINGS
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false }));
 app.use(express.json());
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(cookieParser());
-app.use(session({ secret: "este es un secreto" }));
+app.use(session({secret: "este es un secreto" }));
 
 //CARPETAS PUBLICAS
-app.use(express.static(path.resolve(__dirname, "./public")));
-app.use(express.static(path.resolve(__dirname, "./views")));
+app.use(express.static(path.resolve(__dirname,"./public")));
+app.use(express.static(path.resolve(__dirname,"./views")));
 //RUTAS GLOBALES
-app.use("/", routerIndex);
-app.use("/producto", routerProducto);
-app.use("/user", routerUser);
+app.use("/",routerIndex);
+app.use("/producto",routerProducto);
+app.use("/user",routerUser);
 
 
 
