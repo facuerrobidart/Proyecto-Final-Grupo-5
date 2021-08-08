@@ -1,16 +1,16 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const routerIndex = require("./src/routes/routerindex");
+const routerIndex = require("./src/routes/routerIndex");
 const routerProducto = require("./src/routes/routerProducto");
-const routerUser = require("./src/routes/routeruser");
+const routerUser = require("./src/routes/routerUser");
 const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 //SETTINGS
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.set("view engine","ejs");
+app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(cookieParser());
 app.use(session({secret: "este es un secreto"}));
@@ -25,6 +25,6 @@ app.use("/user",routerUser);
 
 
 
-app.listen(process.env.PORT || 3000,()=>{console.log("Corriendo en puerto 3000");});
+app.listen(process.env.PORT || 3000, () => { console.log("Corriendo en puerto 3000");});
 
 
