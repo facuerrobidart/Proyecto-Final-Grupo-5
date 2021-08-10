@@ -13,7 +13,11 @@ app.use(express.json());
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(cookieParser());
-app.use(session({secret: "este es un secreto"}));
+app.use(session(
+  {secret: "este es un secreto",
+   resave: false,
+   saveUninitialized: false
+}));
 
 //CARPETAS PUBLICAS
 app.use(express.static(path.resolve(__dirname,"./public")));
