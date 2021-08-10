@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const routerIndex = require("./src/routes/routerIndex");
-const routerProducto = require("./src/routes/routerProducto");
-const routerUser = require("./src/routes/routerUser");
-const methodOverride = require("method-override");
+const routerIndex = require('./src/routes/routerindex')
+const routerProducto = require('./src/routes/routerProducto');
+const routerUser = require('./src/routes/routerUser');
+const methodOverride = require('method-override');
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 //SETTINGS
