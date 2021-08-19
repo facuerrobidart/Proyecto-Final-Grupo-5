@@ -26,7 +26,9 @@
     "express-session": "^1.17.2",
     "method-override": "^3.0.0",
     "multer": "^1.4.2",
+    "mysql2": "^2.3.0",
     "nodemon": "^2.0.12",
+    "sequelize": "^6.6.5",
     "session": "^0.1.0"
   },
   "engines": {
