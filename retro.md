@@ -16,3 +16,10 @@ que uno se encuentra cuando utiliza una herramienta nueva.
 Puesta en común del sprint anterior y planificación del sprint 3. A día de la reu-
 nión aún falta trabajo por hacer. Realizamos la división de trabajo y armamos el
 tablero. Creemos que vamos a llegar en tiempo y forma.
+
+
+* 📋 __Reunión 20/8:__
+Puesta en común de sprint anterior y planificación de tareas. Hicimos nuevo tablero 
+de tareas y asignamos a cada uno. Retomar el tema después de un par de semanas de ver
+exclusivamente base de datos hace un poco más complicado porque hay que retomar cono-
+cimientos anteriores.
