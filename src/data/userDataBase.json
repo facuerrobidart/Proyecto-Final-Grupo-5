@@ -28,5 +28,27 @@
   "direccion": "betinoti 2929",
   "ciudad": "cordoba",
   "provincia": "Córdoba"
+ },
+ {
+  "id": 4,
+  "nombre": "Nacho",
+  "apellido": "Nachito",
+  "email": "nacho@gmail.com",
+  "contraseña": "trt4444",
+  "direccion": "calle 123",
+  "ciudad": "caba",
+  "provincia": "Buenos Aires",
+  "imageUser": "imageUser-1629553498525.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "Nacho",
+  "apellido": "Nachito",
+  "email": "nacho@gmail.com",
+  "contraseña": "6363tt",
+  "direccion": "calle 123",
+  "ciudad": "caba",
+  "provincia": "Buenos Aires",
+  "imageUser": "imageUser-1629553634787.jpg"
  }
 ]

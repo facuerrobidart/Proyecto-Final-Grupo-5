@@ -1,17 +1,21 @@
 const fs = require("fs");
+const { dirname } = require("path");
 const path = require("path");
 
 const pathUsuarios = path.join(__dirname, "../../src/data/userDataBase.json");
 const usuarios = JSON.parse(fs.readFileSync(pathUsuarios, "utf-8"));
 
 const controller = {
-    login: (req,res)=>{
+    login: (req, res) => {
         res.render("./users/login");
     },
-    registro: (req,res)=>{
+    registro: (req, res) => {
         res.render("./users/registro");
     },
-    registroUsuario: (req,res) => {
+    registroUsuario: (req, res) => {
+
+        let nombreFoto = req.file.filename;
+
         idUsuario = 0
         for (i = 0; i < usuarios.length; i++) {
             if (idUsuario < usuarios[i].id) {
@@ -19,7 +23,7 @@ const controller = {
             }
         }
         idUsuario = idUsuario + 1
-        let nuevoUsuario= {
+        let nuevoUsuario = {
             id: idUsuario,
             nombre: req.body.nombre,
             apellido: req.body.apellido,
@@ -27,9 +31,10 @@ const controller = {
             contraseña: req.body.contraseña,
             direccion: req.body.direccion,
             ciudad: req.body.ciudad,
-            provincia: req.body.provincia
-            }
-         usuarios.push(nuevoUsuario)
+            provincia: req.body.provincia,
+            imageUser: nombreFoto
+        }
+        usuarios.push(nuevoUsuario)
 
         fs.writeFileSync(pathUsuarios, JSON.stringify(usuarios, null, " "));
 

@@ -2,49 +2,50 @@
 <html>
 
 <%- include('./../partials/head') %>
-<title>Registro</title>
+  <title>Registro</title>
+
   <body>
     <%- include('./../partials/header') %>
       <main class="login">
         <h5 class="titulo">Registrate para ser parte de nuestra comunidad</h5>
         <div class="panel">
-          <form accion="/user/register" method="POST" >
+          <form accion="/user/register" method="POST" enctype="multipart/form-data">
             <div class="form-row">
               <div class="col">
-                <label >Nombre</label>
+                <label>Nombre</label>
                 <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" required>
               </div>
               <div class="col">
-                <label >Apellido</label>
+                <label>Apellido</label>
                 <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label >Email</label>
+                <label>Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com" required>
               </div>
               <div class="form-group col-md-6">
-                <label >Contraseña</label>
+                <label>Contraseña</label>
                 <input type="password" class="form-control" name="contraseña" required>
               </div>
             </div>
             <div class="form-group">
-              <label >Dirección</label>
+              <label>Dirección</label>
               <input type="text" class="form-control" name="direccion" placeholder="Ej: Calle falsa 123" required>
             </div>
             <div class="form-group">
-              <label >Piso/Departamento (Opcional)</label>
+              <label>Piso/Departamento (Opcional)</label>
               <input type="text" class="form-control" name="piso" placeholder="Ej: Piso 7 Dpto 2">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label >Ciudad/Barrio</label>
+                <label>Ciudad/Barrio</label>
                 <input type="text" class="form-control" name="ciudad" required>
               </div>
               <div class="form-group col-md-4">
-                <label >Provincia</label>
-                <select name= "provincia" id="inputState" class="form-control" required>
+                <label>Provincia</label>
+                <select name="provincia" id="inputState" class="form-control" required>
                   <option selected>Elija uno</option>
                   <option value="Buenos Aires">Buenos Aires</option>
                   <option value="Capital Federal">Capital Federal</option>
@@ -73,11 +74,16 @@
                 </select>
               </div>
               <div class="form-group col-md-2">
-                <label >Código Postal</label>
+                <label>Código Postal</label>
                 <input type="text" class="form-control" name="codigoPostal" required>
               </div>
+              <br>
+              <div class="form-group">
+                <label for="imageUser" class="form-control">Seleccionar Imagen:</label>
+                <input type="file" name="imageUser" />
+              </div>
             </div>
-            
+
             <button type="submit" class="btn btn-primary">Registrarse</button>
           </form>
         </div>
