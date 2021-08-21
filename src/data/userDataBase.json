@@ -50,5 +50,27 @@
   "ciudad": "caba",
   "provincia": "Buenos Aires",
   "imageUser": "imageUser-1629553634787.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Astor",
+  "apellido": "Nacho",
+  "email": "nacho@gmail.com",
+  "contraseña": "$2a$10$kzurPClY9Hhql1zDarItWOKX0QSzpbrcKrraHDaVLQKcoZOQMR/y6",
+  "direccion": "calle 123",
+  "ciudad": "caba",
+  "provincia": "Buenos Aires",
+  "imageUser": "imageUser-1629587866065.jpg"
+ },
+ {
+  "id": 7,
+  "nombre": "Astor",
+  "apellido": "Nacho",
+  "email": "nacho@gmail.com",
+  "contraseña": "$2a$10$0AT6jYNMqOpP3CW3daOK2OPDY4VpWaJO48Dy8QtF5GhqMIFOGfI4S",
+  "direccion": "calle 123",
+  "ciudad": "caba",
+  "provincia": "Buenos Aires",
+  "imageUser": "imageUser-1629587939577.jpg"
  }
 ]
