@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./../partials/head') %>
+<title>Tus datos</title>
+    <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/css/datos.css" media="screen">
+  <body>
+    <%- include('./../partials/header') %>
+      <main>
+            <section class="u-clearfix u-section-1" id="sec-29e3">
+                <div class="u-clearfix u-sheet u-sheet-1">
+                <h1 class="u-text u-text-default u-text-1">Tus datos:</h1>
+                <h5 class="u-text u-text-default u-text-2">Nombre de usuario:&nbsp;</h5>
+                <p class="u-text u-text-default u-text-3">username</p>
+                <h5 class="u-text u-text-default u-text-4">Email:</h5>
+                <p class="u-text u-text-default u-text-5">Email</p>
+                <h5 class="u-text u-text-default u-text-6">Nombre:</h5>
+                <p class="u-text u-text-default u-text-8">name</p>
+                <h5 class="u-text u-text-default u-text-7">Apellido:</h5>
+                <p class="u-text u-text-default u-text-9">apellido</p>
+                <h3 class="u-text u-text-default u-text-10">Datos de envío</h3>
+                <h5 class="u-text u-text-default u-text-11">Ciudad:&nbsp;</h5>
+                <p class="u-text u-text-default u-text-12">ciudad</p>
+                <h5 class="u-text u-text-default u-text-13">Provincia:&nbsp;</h5>
+                <p class="u-text u-text-default u-text-14">Provincia</p>
+                <h5 class="u-text u-text-default u-text-15">Dirección:</h5>
+                <p class="u-text u-text-default u-text-16">direccion</p>
+                <h5 class="u-text u-text-default u-text-17">Código Postal:&nbsp;</h5>
+                <p class="u-text u-text-18">CP</p>
+                <form action="/user/info" method="POST">
+                    <button class="u-border-none u-btn u-btn-round u-button-style u-hover-black u-palette-2-base u-radius-50 u-btn-1" name="cerrarSesion" value=false>Cerrar sesión</button>
+                </form>
+            </div>
+          </section>
+      </main>
+      <%- include('./../partials/footer') %>
+  </body>
+
+</html>

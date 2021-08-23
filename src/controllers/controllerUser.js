@@ -42,6 +42,9 @@ const controller = {
 
         res.redirect("/")
 
+    },
+    info: (req,res)=>{
+        res.render("./users/info");
     }
 }
 
