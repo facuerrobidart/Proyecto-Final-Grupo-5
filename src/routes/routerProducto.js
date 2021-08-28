@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require("./../controllers/controllerProducto");
 const multer = require("multer");
 const path = require("path");
+const sinUsuarioMiddleware = require("../../src/middleware/sinUsuarioMiddleware")
 
 // SETTING Multer
 
@@ -21,7 +22,7 @@ const upload = multer({storage:storage});
 
 
 router.get("/carrito", controller.carrito);
-router.get("/crear", controller.crear);
+router.get("/crear",sinUsuarioMiddleware, controller.crear);
 router.post("/crear", upload.single("fotoProducto"), controller.crearProducto);
 router.get("/all", controller.all);
 

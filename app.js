@@ -7,6 +7,8 @@ const routerUser = require('./src/routes/routeruser');
 const methodOverride = require('method-override');
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const usuarioLogueado = require("./src/middleware/usuarioLogueadoMiddleware")
+
 //SETTINGS
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -18,6 +20,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+app.use(usuarioLogueado)
 
 //CARPETAS PUBLICAS
 app.use(express.static(path.resolve(__dirname,"./public")));

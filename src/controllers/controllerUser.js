@@ -22,12 +22,12 @@ const controller = {
         }
             if(usuarioLogueado){
                 let estaBienContraseña = bcrypt.compareSync(req.body.password, usuarioLogueado.contraseña)
-            
+
 
                 if(estaBienContraseña){
                     delete usuarioLogueado.contraseña
                     req.session.usuarioLogueado = usuarioLogueado
-                
+
                 if(req.body.recordarUsuario){
                     res.cookie("email", req.body.email, {maxAge: (1000*60) * 60})
                 }
@@ -35,7 +35,12 @@ const controller = {
                 }
             }
 
-        res.render("user/login", {mensaje: ("las credenciales son invalidas")})
+        res.render("./users/login", {mensaje: ("las credenciales son invalidas")})
+    },
+    logout:(req, res)=>{
+        res.clearCookie("email")
+        req.session.destroy()
+        res.redirect("/")
     },
     registro: (req, res) => {
         res.render("./users/registro");
@@ -70,7 +75,7 @@ const controller = {
 
     },
     info: (req,res)=>{
-        res.render("./users/info");
+        res.render("./users/info", { usuarioLogueado : req.session.usuarioLogueado});
     }
 }
 

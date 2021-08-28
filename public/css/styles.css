@@ -35,6 +35,7 @@ form .busqueda:focus{
 
 footer{
     background-color: beige;
+    margin-top: 50px;
 }
 
 div.tarjetaFooter{
@@ -197,7 +198,7 @@ div.flexLogin{
 
 #inputTex{
     text-align:center;
-    
+
 }
 
 @media (min-width:768px){
