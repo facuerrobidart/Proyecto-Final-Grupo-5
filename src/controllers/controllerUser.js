@@ -11,6 +11,32 @@ const controller = {
     login: (req, res) => {
         res.render("./users/login");
     },
+    procesoLogin: (req, res) =>{
+        let usuarioLogueado;
+        let emailUsuarioLogueado = req.body.email;
+
+        for(let i=0; i < usuarios.length; i++){
+            if(usuarios[i].email == emailUsuarioLogueado){
+                usuarioLogueado = usuarios[i]
+            }
+        }
+            if(usuarioLogueado){
+                let estaBienContraseña = bcrypt.compareSync(req.body.password, usuarioLogueado.contraseña)
+            
+
+                if(estaBienContraseña){
+                    delete usuarioLogueado.contraseña
+                    req.session.usuarioLogueado = usuarioLogueado
+                
+                if(req.body.recordarUsuario){
+                    res.cookie("email", req.body.email, {maxAge: (1000*60) * 60})
+                }
+                return res.redirect("/user/info")
+                }
+            }
+
+        res.render("user/login", {mensaje: ("las credenciales son invalidas")})
+    },
     registro: (req, res) => {
         res.render("./users/registro");
     },

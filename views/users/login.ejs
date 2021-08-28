@@ -9,7 +9,7 @@
       <main>
         <h4 class="login">Login</h4>
         <div class=flexLogin>
-          <form class="login">
+          <form action="/user/login" method="POST"  class="login">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" class="form-control" name="email" placeholder="tumail@proveedor.com">
@@ -19,6 +19,12 @@
               <input type="password" class="form-control" name="password">
             </div>
             <a href="recupContraseña.html">¿Olvidaste tu contraseña?</a>
+            <div>
+              <label>
+              <input id="inputsChecbox" type="checkbox" name="recordarUsuario">    Recordar Usuario
+              </label>
+            </div>
+            
             <div class="BotonEnvio">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

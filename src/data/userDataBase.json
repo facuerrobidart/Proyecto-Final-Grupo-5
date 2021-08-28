@@ -72,5 +72,16 @@
   "ciudad": "caba",
   "provincia": "Buenos Aires",
   "imageUser": "imageUser-1629587939577.jpg"
+ },
+ {
+  "id": 8,
+  "nombre": "Emi",
+  "apellido": "Borgert",
+  "email": "emi@gmail.com",
+  "contraseña": "$2a$10$YgM6SH12JCqEJOu8nAGlFOGnbEZmd2kaixYYNuhwPSBjWb0A8CGPy",
+  "direccion": "las playas",
+  "ciudad": "cordoba",
+  "provincia": "Córdoba",
+  "imageUser": "imageUser-1630153911179.jpg"
  }
 ]
