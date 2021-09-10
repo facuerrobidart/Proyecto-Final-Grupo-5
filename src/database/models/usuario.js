@@ -47,22 +47,22 @@ module.exports = (sequelize,DataTypes) =>{
     
     let config = {camelCase: false, timestamps: false}; 
 
-    const Usuario = sequelize.define(alias,cols,config);
+    const usuario = sequelize.define(alias,cols,config);
 
-    Usuario.associate = function(models){
-        Usuario.hasMany(models.producto,{
+    usuario.associate = function(models){
+        usuario.hasMany(models.producto,{
             as: "productos",
             foreignKey: "usuarios_vendedor_id"
         });
-        Usuario.hasMany(models.Venta,{
+        usuario.hasMany(models.venta,{
             as: "usuarios_productos",
             foreignKey: "usuario_comprador_id"
         });
-        Usuario.belongsTo(models.TipoUsuario,{
+        usuario.belongsTo(models.tipoUsuario,{
             as: "tipos_usuario",
             foreignKey: "tipos_usuario_id"
         })
     }
 
-    return Usuario;
+    return usuario;
 }
