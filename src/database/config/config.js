@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "username": "241888",
+    "password": "DigitalHouse123",
+    "database": "facuerrobidart_proyectodh",
+    "host": "mysql-facuerrobidart.alwaysdata.net",
     "dialect": "mysql"
   },
   "test": {
