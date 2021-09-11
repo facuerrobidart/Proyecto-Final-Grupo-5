@@ -83,5 +83,16 @@
   "ciudad": "cordoba",
   "provincia": "Córdoba",
   "imageUser": "imageUser-1630153911179.jpg"
+ },
+ {
+  "id": 9,
+  "nombre": "nacho",
+  "apellido": "astor",
+  "email": "nacho@gmail.com",
+  "contraseña": "$2a$10$1WkQvOmPWyTTZef8IJ0tsuAB8LQVRx/yJ4GKFNk5AGCaIKxNU7hEW",
+  "direccion": "calle 123",
+  "ciudad": "caba",
+  "provincia": "Buenos Aires",
+  "imageUser": "imageUser-1630272041396.jpg"
  }
 ]

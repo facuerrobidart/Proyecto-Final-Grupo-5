@@ -1,4 +1,4 @@
-module.exports = (sequelize,DataTypes) =>{
+module.exports = (sequelize, DataTypes) => {
     let alias = "usuarios";
     let cols = {
         id: {
@@ -7,58 +7,58 @@ module.exports = (sequelize,DataTypes) =>{
             autoIncrement: true,
             allowNull: false
         },
-        nombre:{
+        nombre: {
             type: DataTypes.STRING(45),
             allowNull: false
         },
-        apellido:{
+        apellido: {
             type: DataTypes.STRING(45),
-            allowNull:false
+            allowNull: false
         },
-        email:{
+        email: {
             type: DataTypes.STRING(100),
             allowNull: false
         },
-        contrasena:{
+        contrasena: {
             type: DataTypes.STRING(100),
-            allowNull:false
+            allowNull: false
         },
-        direccion:{
+        direccion: {
             type: DataTypes.STRING(45),
             allowNull: false
         },
-        ciudad:{
+        ciudad: {
             type: DataTypes.STRING(45),
             allowNull: false
         },
-        provincia:{
+        provincia: {
             type: DataTypes.STRING(45),
             allowNull: false
         },
-        codigo_postal:{
+        codigo_postal: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        tipos_usuario_id:{
+        tipos_usuario_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
     }
-    
-    const config = {camelCase: false, timestamps: false}; 
 
-    const usuario = sequelize.define(alias,cols,config);
+    const config = { camelCase: false, timestamps: false };
 
-    usuario.associate = function(models){
-        usuario.hasMany(models.producto,{
+    const usuario = sequelize.define(alias, cols, config);
+
+    usuario.associate = function (models) {
+        usuario.hasMany(models.producto, {
             as: "productos",
-            foreignKey: "usuarios_vendedor_id"
+            foreignKey: "productos_id"
         });
-        usuario.hasMany(models.venta,{
+        usuario.hasMany(models.venta, {
             as: "usuarios_productos",
             foreignKey: "usuario_comprador_id"
         });
-        usuario.belongsTo(models.tipoUsuario,{
+        usuario.belongsTo(models.tipoUsuario, {
             as: "tipos_usuario",
             foreignKey: "tipos_usuario_id"
         })
