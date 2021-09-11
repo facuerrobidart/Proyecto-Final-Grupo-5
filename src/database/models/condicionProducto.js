@@ -17,13 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     const config = { timestamps: false };
 
     const condicionProducto = sequelize.define(alias, cols, config);
-    /*
-        tipoUsuario.associate = (models) => {
-            tipoUsuario.hasMany(models.usuario,{
-                as: "usuarios",
-                foreignKey: "tipos_usuario_id"
-            })
-        }
-        */
+
+    condicionProducto.associate = (models) => {
+        condicionProducto.hasMany(models.producto, {
+            as: "productos",
+            foreignKey: "condiciones_producto_id"
+        })
+    }
+
     return condicionProducto;
 }

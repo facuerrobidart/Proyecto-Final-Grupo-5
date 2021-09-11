@@ -53,8 +53,16 @@ module.exports = (sequelize, DataTypes) => {
     producto.associate = (models) => {
         producto.hasMany(models.imagenProducto, {
             as: "imagenes_producto",
-            foreignKey: "tipos_usuario_id"
-        })
+            foreignKey: "imagenes_producto_id"
+        });
+        producto.hasMany(models.venta, {
+            as: "usuarios_productos",
+            foreignKey: "productos_id"
+        });
+        producto.belongsTo(models.usuario, {
+            as: "usuarios",
+            foreignKey: "usuarios_vendedor_id"
+        });
     }
 
     return producto;
