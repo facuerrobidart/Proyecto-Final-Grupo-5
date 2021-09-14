@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = "productos";
+    let  alias = "productos";
 
-    const cols = {
+    let cols = {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         descripcion: {
-            type: DataTypes.LONGTEXT,
+            type: DataTypes.STRING(),
             allowNull: false
         },
         precio: {
@@ -28,15 +28,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: true
         },
-        imagenes_producto_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
         categorias_producto_id: {
             type: DataTypes.INTEGER,
-            allowNull: false
+
         },
-        condiciones_producto: {
+        condiciones_producto_id: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
@@ -46,24 +42,35 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
 
-    const config = { timestamps: false };
+    let config = {
+        tableName: "productos",
+        timestamps: false
+    };
 
-    const producto = sequelize.define(alias, cols, config);
+    const Producto = sequelize.define(alias, cols, config);
 
-    producto.associate = (models) => {
-        producto.hasMany(models.imagenProducto, {
+    Producto.associate = (models) => {
+        Producto.hasMany(models.imagenes_producto, {
             as: "imagenes_producto",
-            foreignKey: "imagenes_producto_id"
+            foreignKey: "productos_id"
         });
-        producto.hasMany(models.venta, {
+        Producto.hasMany(models.usuarios_productos, { // venta 
             as: "usuarios_productos",
             foreignKey: "productos_id"
         });
-        producto.belongsTo(models.usuario, {
+        Producto.belongsTo(models.usuarios, {
             as: "usuarios",
             foreignKey: "usuarios_vendedor_id"
         });
+        Producto.belongsTo(models.categorias_producto,{
+            as: "categorias_producto",
+            foreingKey: "categorias_producto_id"
+        });
+        Producto.belongsTo(models.condiciones_producto, {
+            as: "condiciones_producto",
+            foreingKey: "condiciones_producto_id"
+        })
     }
 
-    return producto;
+    return Producto;
 }

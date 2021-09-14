@@ -16,24 +16,24 @@ module.exports = (sequelize,DataTypes) =>{
             allowNull: false
         },
         fecha_transaccion:{
-            type: DataTypes.DATETIME,
+            type: DataTypes.DATE,
             allowNull: false
         }
     };
     const config = {timestamps:false};
 
-    const venta = sequelize.define(alias,cols,config);
+    const Venta = sequelize.define(alias,cols,config);
 
-    venta.associate = function(models){
-        venta.belongsTo(models.usuario,{
+    Venta.associate = function(models){
+        Venta.belongsTo(models.usuarios,{
             as:"usuarios",
             foreignKey: "usuario_comprador_id"
         });
-        venta.belongsTo(models.producto,{
+        Venta.belongsTo(models.productos,{
             as:"productos",
             foreignKey:"productos_id"
         });
     }
 
-    return venta;
+    return Venta;
 }

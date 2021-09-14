@@ -16,13 +16,13 @@ module.exports = (sequelize,DataTypes)=>{
 
     const config = {timestamps:false};
 
-    const tipoUsuario = sequelize.define(alias,cols,config);
+    const TipoUsuario = sequelize.define(alias,cols,config);
 
-    tipoUsuario.associate = (models) => {
-        tipoUsuario.hasMany(models.usuario,{
+    TipoUsuario.associate = (models) => {
+        TipoUsuario.hasMany(models.usuarios,{
             as: "usuarios",
             foreignKey: "tipos_usuario_id"
         })
     }
-    return tipoUsuario;
+    return TipoUsuario;
 }

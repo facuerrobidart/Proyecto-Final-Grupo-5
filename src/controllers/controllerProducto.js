@@ -6,6 +6,8 @@ const path = require("path");
 const pathProductos = path.join(__dirname, "../../src/data/productosDataBase.json");
 const productos = JSON.parse(fs.readFileSync(pathProductos, "utf-8"));
 
+let db = require("../database/models")
+
 
 
 const controller = {
@@ -60,7 +62,7 @@ const controller = {
 
 
     },
-   
+
     all: (req, res) => {
         res.render("./products/listaProductos", { productos: productos });
     },
@@ -112,8 +114,14 @@ const controller = {
         fs.writeFileSync(pathProductos, JSON.stringify(productos, null, ' '));
 
         res.redirect('/');
-    }
+    },
 
+    categoriaProducto: (req, res)=>{
+        db.categorias_producto.findAll()
+            .then((categorias)=>{
+                res.send(categorias)
+            })
+    }
 };
 
 module.exports = controller;
