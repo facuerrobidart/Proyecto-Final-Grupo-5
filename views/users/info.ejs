@@ -12,15 +12,36 @@
                 <div class="u-clearfix u-sheet u-sheet-1">
                 <h1 class="u-text u-text-default u-text-1">Tus datos:</h1>
                 <h5 class="u-text u-text-default u-text-2">Nombre Apellido:&nbsp;</h5>
-                <p class="u-text u-text-default u-text-3"><%= usuarioLogueado.nombre %> <%= usuarioLogueado.apellido %>  </p>
+                <p class="u-text u-text-default u-text-3">
+                
+                  <% for ( let i=0; i < usuarioLogueado.length; i++) { %>
+                      <%= usuarioLogueado[i].nombre %>
+                      <% } %>
+                </p>
                 <h5 class="u-text u-text-default u-text-4">Email:</h5>
-                <p class="u-text u-text-default u-text-5"><%= usuarioLogueado.email %> </p>
+                <p class="u-text u-text-default u-text-5">
+                  <% for ( let i=0; i < usuarioLogueado.length; i++) { %>
+                    <%= usuarioLogueado[i].email %>
+                      <% } %>
+                 </p>
                 <h5 class="u-text u-text-default u-text-11">Ciudad:&nbsp;</h5>
-                <p class="u-text u-text-default u-text-12"> <%= usuarioLogueado.ciudad %> </p>
+                <p class="u-text u-text-default u-text-12">
+                    <% for ( let i=0; i < usuarioLogueado.length; i++) { %>
+                      <%= usuarioLogueado[i].ciudad %>
+                        <% } %>
+                  </p>
                 <h5 class="u-text u-text-default u-text-13">Provincia:&nbsp;</h5>
-                <p class="u-text u-text-default u-text-14"> <%= usuarioLogueado.provincia %></p>
+                <p class="u-text u-text-default u-text-14">
+                    <% for ( let i=0; i < usuarioLogueado.length; i++) { %>
+                      <%= usuarioLogueado[i].provincia %>
+                        <% } %>
+                  </p>
                 <h5 class="u-text u-text-default u-text-15">Dirección:</h5>
-                <p class="u-text u-text-default u-text-16"><%= usuarioLogueado.direccion %></p>
+                <p class="u-text u-text-default u-text-16">
+                  <% for ( let i=0; i < usuarioLogueado.length; i++) { %>
+                    <%= usuarioLogueado[i].direccion %>
+                      <% } %>
+                </p>
                 <form action="/user/logout">
                     <button class="u-border-none u-btn u-btn-round u-button-style u-hover-black u-palette-2-base u-radius-50 u-btn-1" name="cerrarSesion" type="submit">Cerrar sesión</button>
                 </form>

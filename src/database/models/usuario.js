@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         contrasena: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING,
             allowNull: false
         },
         direccion: {

@@ -21,7 +21,7 @@ const upload = multer({ storage: storage });
 
 router.get("/login",conUsuarioMiddleware, controller.login);
 router.post("/login", controller.procesoLogin);
-router.get("/register", controller.registro);
+router.get("/register", conUsuarioMiddleware, controller.registro);
 router.post("/register", upload.single("imageUser"), controller.registroUsuario);
 router.get("/info",sinUsuarioMiddleware, controller.info);
 router.get("/logout", controller.logout)
