@@ -25,7 +25,7 @@ router.get("/carrito", controller.carrito);
 router.get("/crear",sinUsuarioMiddleware, controller.crear);
 router.post("/crear", upload.single("fotoProducto"), controller.crearProducto);
 router.get("/all", controller.all);
-router.get("/tipoProducto", controller.categoriaProducto)
+
 
 
 /*EDITAR PRODUCTO*/

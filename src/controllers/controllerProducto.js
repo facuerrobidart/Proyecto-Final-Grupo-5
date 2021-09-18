@@ -1,4 +1,5 @@
 
+const { promiseImpl } = require("ejs");
 const fs = require("fs");
 const { dirname } = require("path");
 const path = require("path");
@@ -13,115 +14,98 @@ let db = require("../database/models")
 const controller = {
     producto: (req, res) => {
         let id = req.params.id;
-        let producto;
-        for (let p of productos) {
-            if (p.id == id) {
-                producto = p;
-                break;
-            }
-        }
-        if (producto != undefined)
-            res.render("./products/producto", { producto: producto });
-        else
-            res.send("El articulo no existe!!!!");
+        db.productos.findByPk(id)
+        .then((product)=>{
+            let producto = product;
+            if(producto != undefined);
+            res.render("./products/producto", {producto: producto});
+            elseres.send("El articulo no existe!!!");
+        })
     },
     carrito: (req, res) => {
         res.render("./products/carrito-compra");
     },
     crear: (req, res) => {
-        res.render("./products/crearProducto");
+        let usuarioVendedor= req.session.usuarioLogueado;
+        idVendedor = usuarioVendedor[0].id;
+
+        let categoriaProducto = db.categorias_producto.findAll();
+        let condicionProducto = db.condiciones_producto.findAll();
+        Promise.all([categoriasProducto, condicionProducto])
+            .then(([categorias, condiciones])=>{
+            
+                res.render("./products/crearProducto", {categorias: categorias, condiciones: condiciones, idVendedor: idVendedor
+                })
+            })
+        
     },
     crearProducto: (req, res) => {
 
-        nombreFoto = req.file.filename;
+        let nombreImagen = req.file.filename;
 
-        idProducto = 0
-        for (i = 0; i < productos.length; i++) {
-            if (idProducto < productos[i].id) {
-                idProducto = idProducto + 1;
-            }
-        }
-        idProducto = idProducto + 1
-
-        productoNuevo = {
-            id: idProducto,
+        
+        db.productos.create = ({
             titulo: req.body.titulo,
-            categoriasProducto: req.body.categoriasProducto,
-            fotoProducto: nombreFoto,
-            nombreArtista: req.body.nombreArtista,
-            caracteristicasProducto: req.body.caracteristicasProducto,
-            condicionProducto: req.body.condicionProducto,
-            precio: req.body.precio
-        }
+            descripcion: req.body.caracteristicasProducto,
+            precio: req.body.precio,
+            nombre_artista: req.body.nombre_artista,
+            stock: req.body.stock,
+            categorias_producto_id: req.body.categorias_producto_id,
+            condiciones_producto_id: req.body.condiciones_producto_id,
+            usurios_vendedor_id: req.body.usurios_vendedor_id,
+            nombre_imagen: nombre_imagen
+        })
+        res.render("/")
 
-        productos.push(productoNuevo)
-
-        fs.writeFileSync(pathProductos, JSON.stringify(productos, null, " "))
-
-        res.redirect("/")
-
-
+        
     },
 
     all: (req, res) => {
-        res.render("./products/listaProductos", { productos: productos });
+        db.productos.findAll()
+        .then((productos)=>{
+            let products = productos
+            res.render("./products/listaProductos", { products: products });
+        })
+        
     },
 
     editar: (req, res) => {
 
-        let id = req.params.id;
-        let productoEncontrado;
-
-        for (let s of productos) {
-            if (id == s.id) {
-                productoEncontrado = s;
-            }
-        }
-
-        res.render("./products/editarProducto", { ProductoaEditar: productoEncontrado });
+        let idProducto = req.params.id;
+        db.productos.findByPk(idProducto)
+        .then((producto=>{
+            console.log(producto)
+            let ProductoaEditar = producto
+            console.log(ProductoaEditar)
+            res.render("./products/editarProducto", { ProductoaEditar: ProductoaEditar });
+        }))
+                
+             
     },
 
     actualizar: (req, res) => {
 
         let id = req.params.id;
 
-        let productoEncontrado;
+        let nombreImagen;
 
-        for (let s of productos) {
-            if (id == s.id) {
-                productoEncontrado = s;
+        if (req.file) {
+            nombreImagen = req.file.filename}
+
+            db.productos.update({
+                titulo: req.body.titulo,
+                descripcion: req.body.descripcion,
+                precio: req.body.precio,
+                nombre_artista: req.body.nombre_artista,
+                nombre_imagen: req.body.nombre_imagen,
+                
+            },
+        {
+            where: {id:id}
+        })
+            res.render("/")
             }
-        }
+    };
 
-        let nombreImagenEditar = req.file.filename;
-
-        fs.unlinkSync(path.join(__dirname, "../../public/images/", productoEncontrado.fotoProducto));
-
-
-        for (let s of productos) {
-            if (id == s.id) {
-                s.titulo = req.body.titulo;
-                s.categoriasProducto = req.body.categoriasProducto;
-                s.fotoProducto = nombreImagenEditar;
-                s.nombreArtista = req.body.nombreArtista;
-                s.caracteristicasProducto = req.body.caracteristicasProducto;
-                s.condicionProducto = req.body.condicionProducto;
-                s.precio = req.body.precio
-                break;
-            }
-        }
-
-        fs.writeFileSync(pathProductos, JSON.stringify(productos, null, ' '));
-
-        res.redirect('/');
-    },
-
-    categoriaProducto: (req, res)=>{
-        db.categorias_producto.findAll()
-            .then((categorias)=>{
-                res.send(categorias)
-            })
-    }
-};
-
+    
 module.exports = controller;

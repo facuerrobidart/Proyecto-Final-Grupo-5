@@ -1,92 +1,102 @@
 [
-    {
-        "id": 1,
-        "categoriasProducto": "cuadros",
-        "titulo": "Obra de ejemplo",
-        "fotoProducto": "mona-lisa.jpg",
-        "nombreArtista": "Guille Leal",
-        "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
-        "condicionProducto": "Nuevo",
-        "precio": "10000"
-    },
-    {
-        "id": 2,
-        "titulo": "Obra de ejemplo",
-        "categoriasProducto": "pinturas de lienzo",
-        "fotoProducto": "fotoProducto-1627830765649.jpg",
-        "nombreArtista": "Rick Venu",
-        "caracteristicasProducto": "cascadas al lienzo",
-        "condicionProducto": "nuevo",
-        "precio": "10000"
-    },
-    {
-        "id": 3,
-        "categoriasProducto": "cuadros",
-        "titulo": "Obra de ejemplo",
-        "fotoProducto": "mona-lisa.jpg",
-        "nombreArtista": "Guille Leal",
-        "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
-        "condicionProducto": "Nuevo",
-        "precio": "10000"
-    },
-    {
-        "id": 4,
-        "titulo": "Obra de ejemplo",
-        "categoriasProducto": "pinturas de lienzo",
-        "fotoProducto": "fotoProducto-1627830765649.jpg",
-        "nombreArtista": "Rick Venu",
-        "caracteristicasProducto": "cascadas al lienzo",
-        "condicionProducto": "nuevo",
-        "precio": "10000"
-    },
-    {
-        "id": 5,
-        "categoriasProducto": "cuadros",
-        "titulo": "Obra de ejemplo",
-        "fotoProducto": "mona-lisa.jpg",
-        "nombreArtista": "Guille Leal",
-        "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
-        "condicionProducto": "Nuevo",
-        "precio": 10000
-    },
-    {
-        "id": 6,
-        "categoriasProducto": "pinturas de lienzo",
-        "titulo": "Obra de ejemplo",
-        "fotoProducto": "fotoProducto-1627830765649.jpg",
-        "nombreArtista": "Rick Venu",
-        "caracteristicasProducto": "cascadas al lienzo",
-        "condicionProducto": "nuevo",
-        "precio": "10000"
-    },
-    {
-        "id": 7,
-        "categoriasProducto": "cuadros",
-        "titulo": "Obra de ejemplo",
-        "fotoProducto": "mona-lisa.jpg",
-        "nombreArtista": "Guille Leal",
-        "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
-        "condicionProducto": "nuevo",
-        "precio": 10000
-    },
-    {
-        "id": 8,
-        "titulo": "Obra de ejemplo",
-        "categoriasProducto": "pinturas de lienzo",
-        "fotoProducto": "fotoProducto-1627830765649.jpg",
-        "nombreArtista": "Rick Venu",
-        "caracteristicasProducto": "cascadas al lienzo",
-        "condicionProducto": "nuevo",
-        "precio": 10000
-    },
-    {
-        "id": 9,
-        "titulo": "Titulo de ejemplo44",
-        "categoriasProducto": "fotografias",
-        "fotoProducto": "fotoProducto-1628679047814.jpg",
-        "nombreArtista": "Rick Venu44",
-        "caracteristicasProducto": "cascadas al lienzo44",
-        "condicionProducto": "reacondicionado",
-        "precio": "1944"
-    }
+ {
+  "id": 1,
+  "categoriasProducto": "cuadros",
+  "titulo": "Obra de ejemplo",
+  "fotoProducto": "mona-lisa.jpg",
+  "nombreArtista": "Guille Leal",
+  "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
+  "condicionProducto": "Nuevo",
+  "precio": "10000"
+ },
+ {
+  "id": 2,
+  "titulo": "Obra de ejemplo",
+  "categoriasProducto": "pinturas de lienzo",
+  "fotoProducto": "fotoProducto-1627830765649.jpg",
+  "nombreArtista": "Rick Venu",
+  "caracteristicasProducto": "cascadas al lienzo",
+  "condicionProducto": "nuevo",
+  "precio": "10000"
+ },
+ {
+  "id": 3,
+  "categoriasProducto": "cuadros",
+  "titulo": "Obra de ejemplo",
+  "fotoProducto": "mona-lisa.jpg",
+  "nombreArtista": "Guille Leal",
+  "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
+  "condicionProducto": "Nuevo",
+  "precio": "10000"
+ },
+ {
+  "id": 4,
+  "titulo": "Obra de ejemplo",
+  "categoriasProducto": "pinturas de lienzo",
+  "fotoProducto": "fotoProducto-1627830765649.jpg",
+  "nombreArtista": "Rick Venu",
+  "caracteristicasProducto": "cascadas al lienzo",
+  "condicionProducto": "nuevo",
+  "precio": "10000"
+ },
+ {
+  "id": 5,
+  "categoriasProducto": "cuadros",
+  "titulo": "Obra de ejemplo",
+  "fotoProducto": "mona-lisa.jpg",
+  "nombreArtista": "Guille Leal",
+  "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
+  "condicionProducto": "Nuevo",
+  "precio": 10000
+ },
+ {
+  "id": 6,
+  "categoriasProducto": "pinturas de lienzo",
+  "titulo": "Obra de ejemplo",
+  "fotoProducto": "fotoProducto-1627830765649.jpg",
+  "nombreArtista": "Rick Venu",
+  "caracteristicasProducto": "cascadas al lienzo",
+  "condicionProducto": "nuevo",
+  "precio": "10000"
+ },
+ {
+  "id": 7,
+  "categoriasProducto": "cuadros",
+  "titulo": "Obra de ejemplo",
+  "fotoProducto": "mona-lisa.jpg",
+  "nombreArtista": "Guille Leal",
+  "caracteristicasProducto": " Cuadro realizado con tecnica de Serigrafia ",
+  "condicionProducto": "nuevo",
+  "precio": 10000
+ },
+ {
+  "id": 8,
+  "titulo": "Obra de ejemplo",
+  "categoriasProducto": "pinturas de lienzo",
+  "fotoProducto": "fotoProducto-1627830765649.jpg",
+  "nombreArtista": "Rick Venu",
+  "caracteristicasProducto": "cascadas al lienzo",
+  "condicionProducto": "nuevo",
+  "precio": 10000
+ },
+ {
+  "id": 9,
+  "titulo": "Titulo de ejemplo44",
+  "categoriasProducto": "fotografias",
+  "fotoProducto": "fotoProducto-1628679047814.jpg",
+  "nombreArtista": "Rick Venu44",
+  "caracteristicasProducto": "cascadas al lienzo44",
+  "condicionProducto": "reacondicionado",
+  "precio": "1944"
+ },
+ {
+  "id": 10,
+  "titulo": "La barrilada",
+  "categoriasProducto": "cuadros",
+  "fotoProducto": "fotoProducto-1631803737850.jpg",
+  "nombreArtista": "Emilio",
+  "caracteristicasProducto": "Birra en la chata",
+  "condicionProducto": "nuevo",
+  "precio": "1000"
+ }
 ]
