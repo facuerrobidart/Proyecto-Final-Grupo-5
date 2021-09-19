@@ -42,7 +42,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         nombre_imagen: {
             type: DataTypes.STRING
-
         },
     }
 
@@ -64,11 +63,11 @@ module.exports = (sequelize, DataTypes) => {
         });
         Producto.belongsTo(models.categorias_producto,{
             as: "categorias_producto",
-            foreignKey: "categorias_producto_id"
+            foreingnKey: "categorias_producto_id"
         });
         Producto.belongsTo(models.condiciones_producto, {
             as: "condiciones_producto",
-            foreignKey: "condiciones_producto_id"
+            foreingnKey: "condiciones_producto_id"
         })
     }
 
