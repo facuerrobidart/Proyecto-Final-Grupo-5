@@ -39,7 +39,11 @@ module.exports = (sequelize, DataTypes) => {
         usuarios_vendedor_id: {
             type: DataTypes.INTEGER,
             allowNull: false
-        }
+        },
+        nombre_imagen: {
+            type: DataTypes.STRING
+
+        },
     }
 
     let config = {
@@ -50,11 +54,7 @@ module.exports = (sequelize, DataTypes) => {
     const Producto = sequelize.define(alias, cols, config);
 
     Producto.associate = (models) => {
-        Producto.hasMany(models.imagenes_producto, {
-            as: "imagenes_producto",
-            foreignKey: "productos_id"
-        });
-        Producto.hasMany(models.usuarios_productos, { // venta 
+        Producto.hasMany(models.usuarios_productos, { // venta
             as: "usuarios_productos",
             foreignKey: "productos_id"
         });
@@ -64,11 +64,11 @@ module.exports = (sequelize, DataTypes) => {
         });
         Producto.belongsTo(models.categorias_producto,{
             as: "categorias_producto",
-            foreingKey: "categorias_producto_id"
+            foreignKey: "categorias_producto_id"
         });
         Producto.belongsTo(models.condiciones_producto, {
             as: "condiciones_producto",
-            foreingKey: "condiciones_producto_id"
+            foreignKey: "condiciones_producto_id"
         })
     }
 

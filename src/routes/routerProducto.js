@@ -25,13 +25,12 @@ router.get("/carrito", controller.carrito);
 router.get("/crear",sinUsuarioMiddleware, controller.crear);
 router.post("/crear", upload.single("fotoProducto"), controller.crearProducto);
 router.get("/all", controller.all);
-router.get("/tipoProducto", controller.categoriaProducto)
 
 
 /*EDITAR PRODUCTO*/
 router.get("/editar/:id", controller.editar);
 router.put("/editar/:id", upload.single("fotoProducto"), controller.actualizar);
-
+//detalle producto
 router.get("/:id", controller.producto);
 
 module.exports = router;
