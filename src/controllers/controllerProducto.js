@@ -17,9 +17,11 @@ const controller = {
         db.productos.findByPk(id)
         .then((product)=>{
             let producto = product;
-            if(producto != undefined);
-            res.render("./products/producto", {producto: producto});
-            elseres.send("El articulo no existe!!!");
+            if(producto != undefined){
+                res.render("./products/producto", { producto: producto })
+            }
+            else
+            {res.send("El articulo no existe!!!")}
         })
     },
     carrito: (req, res) => {
@@ -29,7 +31,7 @@ const controller = {
         let usuarioVendedor= req.session.usuarioLogueado;
         idVendedor = usuarioVendedor[0].id;
 
-        let categoriaProducto = db.categorias_producto.findAll();
+        let categoriasProducto = db.categorias_producto.findAll();
         let condicionProducto = db.condiciones_producto.findAll();
         Promise.all([categoriasProducto, condicionProducto])
             .then(([categorias, condiciones])=>{
@@ -53,21 +55,7 @@ const controller = {
              nombre_imagen: nombreImagen
          })
 
-        let nombreImagen = req.file.filename;
-
-
-        db.productos.create = ({
-            titulo: req.body.titulo,
-            descripcion: req.body.caracteristicasProducto,
-            precio: req.body.precio,
-            nombre_artista: req.body.nombre_artista,
-            stock: req.body.stock,
-            categorias_producto_id: req.body.categorias_producto_id,
-            condiciones_producto_id: req.body.condiciones_producto_id,
-            usurios_vendedor_id: req.body.usurios_vendedor_id,
-            nombre_imagen: nombre_imagen
-        })
-        res.render("/")
+        res.redirect("/")
 
 
     },
@@ -81,14 +69,12 @@ const controller = {
 
     },
 
-    all: (req, res) => {
+    editar: (req, res) => {
 
         let idProducto = req.params.id;
         db.productos.findByPk(idProducto)
         .then((producto=>{
-            console.log(producto)
             let ProductoaEditar = producto
-            console.log(ProductoaEditar)
             res.render("./products/editarProducto", { ProductoaEditar: ProductoaEditar });
         }))
 
@@ -103,24 +89,20 @@ const controller = {
             nombreImagen = req.file.filename
         }
 
-        let nombreImagen;
-
-        if (req.file) {
-            nombreImagen = req.file.filename}
-
             db.productos.update({
                 titulo: req.body.titulo,
                 descripcion: req.body.descripcion,
                 precio: req.body.precio,
                 nombre_artista: req.body.nombre_artista,
-                nombre_imagen: req.body.nombre_imagen,
+                nombre_imagen: nombreImagen,
 
             },
         {
             where: {id:id}
         })
-            res.render("/")
+        res.redirect("/")
             }
+
     };
 
 

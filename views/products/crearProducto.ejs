@@ -31,13 +31,13 @@
           <select name= "categoriasProducto" class="selectCategorias">
             <option selected> Elija Uno</option>
             <% for(let i=0; i< categorias.length;i++){ %>
-            <option value="<%= categorias[i].id %> ">
-            <%= categorias[i].Categoria %>
+            <option value ="<%= categorias[i].id%> " >
+                 <%= categorias[i].categoria %>
             </option>
             <%}%>
           </select>
 
-
+          <div>
             <label for="foto-Perfil" class="labelCrear"> Imagen de Producto</label>
             <div><input type="file" name="fotoProducto"></div>
           </div>
@@ -59,14 +59,16 @@
           <div>
             <label class="labelCrear"> Condicion Producto </label>
             <div>
-                <select name= "CondicionProducto" class="selectCategoria">
+
+                <select name= "condicionProducto" class="selectCategorias">
                   <option selected>Elija Uno</option>
                   <% for (let i=0; i<condiciones.length; i++){ %>
+                    <option value="<%=condiciones[i].id  %> ">
                     <%= condiciones[i].condicion %>
                   </option>
-                  <%}%>
-
+                  <% } %>
                 </select>
+
             </div>
           </div>
 
@@ -77,16 +79,10 @@
           </div>
           <div>
             <label for="precio" class="labelCrear"> Stock Producto
-              <input id="inputTex" type="text" placeholder="Precio Producto" name="precio">
-            </label>
-          </div>
-
-
-          <div>
-            <label for="precio" class="labelCrear"> Stock Producto
               <input id="inputTex" type="text" placeholder="Precio Producto" name="stock">
             </label>
           </div>
+
 
           <div class="">
             <button type="reset" class="btn btn-secondary">Borrar Datos</button>

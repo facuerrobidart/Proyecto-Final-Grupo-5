@@ -63,11 +63,11 @@ module.exports = (sequelize, DataTypes) => {
         });
         Producto.belongsTo(models.categorias_producto,{
             as: "categorias_producto",
-            foreingnKey: "categorias_producto_id"
+            foreignKey: "categorias_producto_id"
         });
         Producto.belongsTo(models.condiciones_producto, {
             as: "condiciones_producto",
-            foreingnKey: "condiciones_producto_id"
+            foreignKey: "condiciones_producto_id"
         })
     }
 
