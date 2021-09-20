@@ -55,7 +55,11 @@
                         <button type="submit" class="btn btn-secondary">Editar</button>
                       </div>
         </form>
-
+        <div>
+        <form action="/producto/delete/ <%=ProductoaEditar.id%>?_method=DELETE " method="POST">
+          <button type="submit" class="btn btn-secondary"> Eliminar</button>
+        </form>
+        </div>
       </main>
 
       <%- include('./../partials/footer') %>

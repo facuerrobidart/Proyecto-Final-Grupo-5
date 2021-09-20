@@ -32,5 +32,7 @@ router.get("/editar/:id", controller.editar);
 router.put("/editar/:id", upload.single("fotoProducto"), controller.actualizar);
 //detalle producto
 router.get("/:id", controller.producto);
+//delete
+router.delete("/delete/:id", controller.delete)
 
 module.exports = router;

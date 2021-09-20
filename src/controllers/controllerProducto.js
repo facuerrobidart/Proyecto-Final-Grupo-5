@@ -55,9 +55,7 @@ const controller = {
              nombre_imagen: nombreImagen
          })
 
-        res.redirect("/")
-
-
+        res.redirect("/producto/all")
     },
 
     all: (req, res) => {
@@ -66,7 +64,6 @@ const controller = {
             let products = productos
             res.render("./products/listaProductos", { products: products });
         })
-
     },
 
     editar: (req, res) => {
@@ -77,8 +74,6 @@ const controller = {
             let ProductoaEditar = producto
             res.render("./products/editarProducto", { ProductoaEditar: ProductoaEditar });
         }))
-
-
     },
 
     actualizar: (req, res) => {
@@ -95,13 +90,26 @@ const controller = {
                 precio: req.body.precio,
                 nombre_artista: req.body.nombre_artista,
                 nombre_imagen: nombreImagen,
-
             },
         {
             where: {id:id}
         })
-        res.redirect("/")
-            }
+        res.redirect("/producto/all")
+
+    },
+    delete:(req, res)=>{
+        id = req.params.id
+        console.log(id)
+        db.productos.destroy({
+            where: { id : id}
+        })
+        .then((resultado)=>{
+            res.redirect("/producto/all")
+        })
+            .catch((error) => {
+                res.send(error)
+            })
+    }
 
     };
 
