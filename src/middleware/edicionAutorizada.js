@@ -1,9 +1,8 @@
 
 let db = require("../database/models");
 
-let id = req.params.id;
 function edicionAutorizada(){
-    db.productos.findByPk(id)
+    db.productos.findByPk(req.params.id)
         .then((product)=>{
             if (req.session.usuarioLogueado.id == product.usuarios_vendedor_id)
                 next();
