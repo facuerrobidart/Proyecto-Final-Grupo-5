@@ -7,10 +7,10 @@
 <body>
     <%- include('./../partials/header') %>
     <div class='container-fluid'>
-        <% for(let p of productos){%>
+        <% for(let p of products){%>
         <div class="card mx-auto col-md-3 col-10 mt-5">
             <div class= "imgContainer">
-            <img class='mx-auto img-thumbnail' src="/images/<%= p.fotoProducto %>"  width="190" height="200"/>
+            <img class='mx-auto img-thumbnail' src="/images/<%= p.nombre_imagen %>"  width="190" height="200"/>
             </div>
             <div class="card-body text-center mx-auto">
                 <div class='cvp'>

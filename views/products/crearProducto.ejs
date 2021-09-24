@@ -13,6 +13,12 @@
 
         <form action="/producto/crear" method="POST" class="formularioCrear" enctype="multipart/form-data">
 
+
+          <div>
+            <label for="idVendedor" class="labelCrear"> <input id="inputTex" type="hidden"
+                name="idVendedor" value="<%= idVendedor %>"> </label>
+          </div>
+
           <div>
             <label for="titulo" class="labelCrear"> Título <input id="inputTex" type="text" placeholder="Título de obra"
                 name="titulo"></label>
@@ -22,32 +28,14 @@
             <label class="labelCrear"> Categoria de Producto</label>
           </div>
 
-          <div>
-            <label class="checkboxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="cuadros"> Cuadros </label>
-          </div>
-          <div>
-            <label class="checkboxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="esculturas"> Esculturas
-            </label>
-          </div>
-          <div>
-            <label class="checkboxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="pinturas de lienzo"> Pinturas
-              en Lienzo</label>
-          </div>
-          <div>
-            <label class="checkboxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" class="checkboxCategoria"
-                value="fotografia"> Fotografias</label>
-          </div>
-
-          <div>
-
-            <label class="checkboxCategoria">
-              <input id="inputsChecbox" type="checkbox" name="categoriasProducto" value="Serigrafia"> Serigrafia</label>
-          </div>
-          </div>
+          <select name= "categoriasProducto" class="selectCategorias">
+            <option selected> Elija Uno</option>
+            <% for(let i=0; i< categorias.length;i++){ %>
+            <option value ="<%= categorias[i].id%> " >
+                 <%= categorias[i].categoria %>
+            </option>
+            <%}%>
+          </select>
 
           <div>
             <label for="foto-Perfil" class="labelCrear"> Imagen de Producto</label>
@@ -71,14 +59,16 @@
           <div>
             <label class="labelCrear"> Condicion Producto </label>
             <div>
-              <label><input id="inputsChecbox" type="radio" name="condicionProducto" id="condicionProducto"
-                  value="nuevo">
-                Nuevo </label>
-              <label><input id="inputsChecbox" type="radio" name="condicionProducto" id="condicionProducto"
-                  value="usado"> Usado </label>
-              <label><input id="inputsChecbox" type="radio" name="condicionProducto" id="condicionProducto"
-                  value="reacondicionado"> Reacondicionado
-              </label>
+
+                <select name= "condicionProducto" class="selectCategorias">
+                  <option selected>Elija Uno</option>
+                  <% for (let i=0; i<condiciones.length; i++){ %>
+                    <option value="<%=condiciones[i].id  %> ">
+                    <%= condiciones[i].condicion %>
+                  </option>
+                  <% } %>
+                </select>
+
             </div>
           </div>
 
@@ -87,6 +77,12 @@
               <input id="inputTex" type="text" placeholder="Precio Producto" name="precio">
             </label>
           </div>
+          <div>
+            <label for="precio" class="labelCrear"> Stock Producto
+              <input id="inputTex" type="text" placeholder="Precio Producto" name="stock">
+            </label>
+          </div>
+
 
           <div class="">
             <button type="reset" class="btn btn-secondary">Borrar Datos</button>

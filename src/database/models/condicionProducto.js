@@ -14,16 +14,18 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
 
-    const config = { timestamps: false };
+    const config = {
+        tableName: "condiciones_producto",
+        timestamps: false };
 
-    const condicionProducto = sequelize.define(alias, cols, config);
+    const CondicionProducto = sequelize.define(alias, cols, config);
 
-    condicionProducto.associate = (models) => {
-        condicionProducto.hasMany(models.producto, {
+    CondicionProducto.associate = (models) => {
+        CondicionProducto.hasMany(models.productos, {
             as: "productos",
             foreignKey: "condiciones_producto_id"
         })
     }
 
-    return condicionProducto;
+    return CondicionProducto;
 }

@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         contrasena: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING,
             allowNull: false
         },
         direccion: {
@@ -47,22 +47,22 @@ module.exports = (sequelize, DataTypes) => {
 
     const config = { camelCase: false, timestamps: false };
 
-    const usuario = sequelize.define(alias, cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
 
-    usuario.associate = function (models) {
-        usuario.hasMany(models.producto, {
+    Usuario.associate = function (models) {
+        Usuario.hasMany(models.productos, {
             as: "productos",
-            foreignKey: "productos_id"
+            foreignKey: "usuarios_vendedor_id"
         });
-        usuario.hasMany(models.venta, {
+        Usuario.hasMany(models.usuarios_productos, {
             as: "usuarios_productos",
             foreignKey: "usuario_comprador_id"
         });
-        usuario.belongsTo(models.tipoUsuario, {
+        Usuario.belongsTo(models.tipos_usuario, {
             as: "tipos_usuario",
             foreignKey: "tipos_usuario_id"
         })
     }
 
-    return usuario;
+    return Usuario;
 }

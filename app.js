@@ -9,11 +9,13 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const usuarioLogueado = require("./src/middleware/usuarioLogueadoMiddleware")
 
+
 //SETTINGS
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
+
 app.use(cookieParser());
 app.use(session({
     secret: "secreto",
@@ -21,6 +23,7 @@ app.use(session({
     saveUninitialized: false
 }))
 app.use(usuarioLogueado)
+
 
 //CARPETAS PUBLICAS
 app.use(express.static(path.resolve(__dirname,"./public")));

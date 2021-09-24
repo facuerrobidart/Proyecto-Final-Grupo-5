@@ -29,6 +29,7 @@
     "mysql2": "^2.3.0",
     "nodemon": "^2.0.12",
     "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0",
     "session": "^0.1.0"
   },
   "engines": {
