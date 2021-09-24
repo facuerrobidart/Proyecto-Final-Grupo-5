@@ -8,6 +8,7 @@ const productos = JSON.parse(fs.readFileSync(pathProductos, "utf-8"));
 
 
 
+
 const controller = {
     producto: (req, res) => {
         let id = req.params.id;
@@ -60,7 +61,7 @@ const controller = {
 
 
     },
-   
+
     all: (req, res) => {
         res.render("./products/listaProductos", { productos: productos });
     },
