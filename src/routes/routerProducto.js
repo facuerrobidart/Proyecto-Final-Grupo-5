@@ -28,7 +28,7 @@ router.get("/all", controller.all);
 
 
 /*EDITAR PRODUCTO*/
-router.get("/editar/:id",edicionAutorizada(),controller.editar);
+router.get("/editar/:id",edicionAutorizada,controller.editar);
 router.put("/editar/:id", upload.single("fotoProducto"), controller.actualizar);
 //detalle producto
 router.get("/:id", controller.producto);
