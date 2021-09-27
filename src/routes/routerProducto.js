@@ -4,7 +4,7 @@ const controller = require("./../controllers/controllerProducto");
 const multer = require("multer");
 const path = require("path");
 const sinUsuarioMiddleware = require("../../src/middleware/sinUsuarioMiddleware")
-
+const edicionAutorizada = require("../middleware/edicionAutorizada");
 // SETTING Multer
 
 
@@ -28,7 +28,7 @@ router.get("/all", controller.all);
 
 
 /*EDITAR PRODUCTO*/
-router.get("/editar/:id", controller.editar);
+router.get("/editar/:id",edicionAutorizada(),controller.editar);
 router.put("/editar/:id", upload.single("fotoProducto"), controller.actualizar);
 //detalle producto
 router.get("/:id", controller.producto);
