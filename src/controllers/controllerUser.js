@@ -37,8 +37,11 @@ const controller = {
                 else if (error.isEmpty()){ 
                     res.render("./users/login", { mensaje: ("las credenciales son invalidas") });
                 }else{
-                    console.log(error.formatWith());
-                    res.render("./users/login",{error});
+                    if(error.array()[0].param=="contraseña"){
+                        res.render("./users/login",{mensaje: ("La contraseña debe tener al menos 6 caracteres")});
+                    }else{
+                        res.render("./users/login",{mensaje: ("Ingrese un email válido")});
+                    }
                 }
             }
 
