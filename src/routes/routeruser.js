@@ -5,6 +5,9 @@ const multer = require("multer");
 const path = require("path");
 const sinUsuarioMiddleware = require("../../src/middleware/sinUsuarioMiddleware")
 const conUsuarioMiddleware = require("../../src/middleware/conUsuarioMiddleware")
+const {body,check,validationResult} = require("express-validator");
+
+const validaLogin = [check("email").isEmail(),check("contraseña").isLength({min:4})];
 
 // SETTING Multer
 const storage = multer.diskStorage({
@@ -20,7 +23,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get("/login",conUsuarioMiddleware, controller.login);
-router.post("/login", controller.procesoLogin);
+router.post("/login",validaLogin,controller.procesoLogin);
 router.get("/register", conUsuarioMiddleware, controller.registro);
 router.post("/register", upload.single("imageUser"), controller.registroUsuario);
 router.get("/info",sinUsuarioMiddleware, controller.info);
