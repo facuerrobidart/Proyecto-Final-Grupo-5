@@ -14,7 +14,7 @@ const controller = {
         res.render("./users/login");
     },
     procesoLogin:(req, res)=>{
-        const error = validationResult(req);
+        let error = validationResult(req);
         emailUsuario = req.body.email
         db.usuarios.findAll({
             where: { email : emailUsuario}
