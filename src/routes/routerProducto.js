@@ -29,11 +29,11 @@ router.get("/all", controller.all);
 
 
 /*EDITAR PRODUCTO*/
-router.get("/editar/:id",edicionAutorizada,controller.editar);
+router.get("/editar/:id", edicionAutorizada, controller.editar);
 router.put("/editar/:id", upload.single("fotoProducto"), controller.actualizar);
 //detalle producto
 router.get("/:id", controller.producto);
 //delete
-router.delete("/delete/:id", controller.delete)
+router.delete("/delete/:id", edicionAutorizada, controller.delete)
 
 module.exports = router;
