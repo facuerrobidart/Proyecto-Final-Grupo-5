@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { dirname } = require("path");
 const path = require("path");
-
+const {body,validationResult} = require("express-validator");
 const bcrypt = require('bcryptjs');
 
 const pathUsuarios = path.join(__dirname, "../../src/data/userDataBase.json");
@@ -14,7 +14,7 @@ const controller = {
         res.render("./users/login");
     },
     procesoLogin:(req, res)=>{
-
+        let error = validationResult(req);
         emailUsuario = req.body.email
         db.usuarios.findAll({
             where: { email : emailUsuario}
@@ -34,7 +34,15 @@ const controller = {
                     }
                      res.redirect("/user/info")
                 }
-                else { res.render("./users/login", { mensaje: ("las credenciales son invalidas") })}
+                else if (error.isEmpty()){ 
+                    res.render("./users/login", { mensaje: ("las credenciales son invalidas") });
+                }else{
+                    if(error.array()[0].param=="contraseña"){
+                        res.render("./users/login",{mensaje: ("La contraseña debe tener al menos 6 caracteres")});
+                    }else{
+                        res.render("./users/login",{mensaje: ("Ingrese un email válido")});
+                    }
+                }
             }
 
             })
