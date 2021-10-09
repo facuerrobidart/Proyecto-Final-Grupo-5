@@ -22,43 +22,43 @@
             </label>
           </div>
 
-                      <div>
-                        <label for="foto-Perfil" class="labelCrear"> Imagen de Producto</label>
-                        <div><input type="file" name="fotoProducto" accept=".jpg"
-                        value="<%= ProductoaEditar.nombre_imagen %>"></div>
-                      </div>
+          <div>
+            <label for="foto-Perfil" class="labelCrear"> Imagen de Producto</label>
+            <div><input type="file" name="fotoProducto" accept=".jpg" value="<%= ProductoaEditar.nombre_imagen %>">
+            </div>
+          </div>
 
-                      <div>
-                        <label for="nombre-artista" class="labelCrear"> Nombre de Artista
-                          <input value="<%= ProductoaEditar.nombre_artista %>" id="inputTex" type="text"
-                            placeholder="Nombre de Artista" name="nombreArtista" id="nombre-artista">
-                        </label>
-                      </div>
+          <div>
+            <label for="nombre-artista" class="labelCrear"> Nombre de Artista
+              <input value="<%= ProductoaEditar.nombre_artista %>" id="inputTex" type="text"
+                placeholder="Nombre de Artista" name="nombreArtista" id="nombre-artista">
+            </label>
+          </div>
 
-                      <div>
-                        <label for="caracteristicas-producto" class="labelCrear"> Detalle Producto
-                          <textarea id="inputTex" name="caracteristicasProducto" cols="30" rows="10"
-                            placeholder="Detalle Producto"><%= ProductoaEditar.descripcion %></textarea>
-                        </label>
-                      </div>
+          <div>
+            <label for="caracteristicas-producto" class="labelCrear"> Detalle Producto
+              <textarea id="inputTex" name="caracteristicasProducto" cols="30" rows="10"
+                placeholder="Detalle Producto"><%= ProductoaEditar.descripcion %></textarea>
+            </label>
+          </div>
 
 
-                      <div>
-                        <label for="precio" class="labelCrear"> Precio Producto
-                          <input value="<%= ProductoaEditar.precio %>" id="inputTex" type="text"
-                            placeholder="Precio Producto" name="precio">
-                        </label>
-                      </div>
+          <div>
+            <label for="precio" class="labelCrear"> Precio Producto
+              <input value="<%= ProductoaEditar.precio %>" id="inputTex" type="text" placeholder="Precio Producto"
+                name="precio">
+            </label>
+          </div>
 
-                      <div class="">
-                        <button type="reset" class="btn btn-secondary">Borrar Datos</button>
-                        <button type="submit" class="btn btn-secondary">Editar</button>
-                      </div>
+          <div class="">
+            <button type="reset" class="btn btn-secondary">Borrar Datos</button>
+            <button type="submit" class="btn btn-secondary">Editar</button>
+          </div>
         </form>
         <div>
-        <form action="/producto/delete/ <%=ProductoaEditar.id%>?_method=DELETE " method="POST">
-          <button type="submit" class="btn btn-secondary"> Eliminar</button>
-        </form>
+          <form action="/producto/delete/ <%=ProductoaEditar.id%>?_method=DELETE " method="POST">
+            <button type="submit" class="btn btn-secondary"> Eliminar</button>
+          </form>
         </div>
       </main>
 

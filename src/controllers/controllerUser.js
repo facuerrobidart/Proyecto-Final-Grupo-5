@@ -90,24 +90,29 @@ const controller = {
          db.tipos_usuario.findAll()
             .then((tiposUsuarios)=>{
                 let tipos_usuario=tiposUsuarios
-                res.render("./users/registro", { tipos_usuario:tipos_usuario});
+                res.render("./user/registro", { tipos_usuario:tipos_usuario});
             })
 
     },
     registroUsuario: (req, res) => {
+        let errors = validationResult(req);
 
-        db.usuarios.create({
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email:req.body.email,
-            contrasena: bcrypt.hashSync(req.body.contrasena, 5),
-            direccion:req.body.direccion,
-            ciudad: req.body.ciudad,
-            provincia: req.body.provincia,
-            codigo_postal: req.body.codigoPostal,
-            tipos_usuario_id: req.body.tipoUsuario,
-        })
-        res.redirect("/")
+        if (errors.isEmpty){ //si no hay errores procedo
+            db.usuarios.create({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email:req.body.email,
+                contrasena: bcrypt.hashSync(req.body.contrasena, 5),
+                direccion:req.body.direccion,
+                ciudad: req.body.ciudad,
+                provincia: req.body.provincia,
+                codigo_postal: req.body.codigoPostal,
+                tipos_usuario_id: req.body.tipoUsuario,
+            })
+            res.redirect("/");
+        }else{ //si no, devuelvo errores
+            res.render("/user/register",{errores:errors});
+        }
     },
 
 
