@@ -42,7 +42,12 @@ const controller = {
 
     },
     crearProducto: (req, res) => {
-         let nombreImagen = req.file.filename
+
+        let nombreImagen
+        if(req.file){
+            nombreImagen = req.file.filename
+        }
+
          db.productos.create({
              titulo: req.body.titulo,
              descripcion: req.body.caracteristicasProducto,
