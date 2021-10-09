@@ -7,10 +7,10 @@ const sinUsuarioMiddleware = require("../../src/middleware/sinUsuarioMiddleware"
 const edicionAutorizada = require("../middleware/edicionAutorizada");
 const {check} = require("express-validator");
 
-const validacionesProducto = [check("titulo").notEmpty,
-                              check("precio").isNumeric,
-                              check("precio").notEmpty,
-                              check("nombreArtista").notEmpty
+const validacionesProducto = [check("titulo").notEmpty(),
+                              check("precio").isNumeric(),
+                              check("precio").notEmpty(),
+                              check("nombreArtista").notEmpty()
                               ]
 
 
