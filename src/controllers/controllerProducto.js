@@ -83,23 +83,29 @@ const controller = {
 
     actualizar: (req, res) => {
 
-        let id = req.params.id
-        let nombreImagen
+        let id = req.params.id;
+        let nombreImagen;
+        let errors = validationResult(req);
+
         if (req.file) {
             nombreImagen = req.file.filename
         }
-
-        db.productos.update({
-            titulo: req.body.titulo,
-            descripcion: req.body.descripcion,
-            precio: req.body.precio,
-            nombre_artista: req.body.nombre_artista,
-            nombre_imagen: nombreImagen,
-        },
-            {
-                where: { id: id }
-            })
-        res.redirect("/producto/all")
+        if ((req.file.mimetype=="image/jpeg" || req.file.mimetype=="image/png") && errors.isEmpty){
+            db.productos.update({
+                titulo: req.body.titulo,
+                descripcion: req.body.descripcion,
+                precio: req.body.precio,
+                nombre_artista: req.body.nombre_artista,
+                nombre_imagen: nombreImagen,
+            },
+                {
+                    where: { id: id }
+                })
+            res.redirect("/producto/all")
+        }else{
+            let ruta = "/producto/editar" + req.params.id;
+            res.render(ruta,{errores:errors});
+        }
 
     },
     delete: (req, res) => {
