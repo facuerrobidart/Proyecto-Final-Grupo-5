@@ -7,7 +7,17 @@ const sinUsuarioMiddleware = require("../../src/middleware/sinUsuarioMiddleware"
 const conUsuarioMiddleware = require("../../src/middleware/conUsuarioMiddleware")
 const {body,check,validationResult} = require("express-validator");
 
-const validaLogin = [check("email").isEmail(),check("contraseña").isLength({min:6})];
+const validaLogin = [check("email").isEmail(),
+                    check("contraseña").isLength({min:6})];
+const validaRegistro = [check("email").isEmail(),
+                        check("contraseña").isLength({min:6}),
+                        check("nombre").notEmpty(),
+                        check("apellido").notEmpty(),
+                        check("codigo_postal").notEmpty(),
+                        check("direccion").isString(),
+                        check("direccion").notEmpty(),
+                        check("ciudad").isString(),
+                        check("ciudad").notEmpty()];
 
 // SETTING Multer
 const storage = multer.diskStorage({
@@ -25,7 +35,7 @@ const upload = multer({ storage: storage });
 router.get("/login",conUsuarioMiddleware, controller.login);
 router.post("/login",validaLogin,controller.procesoLogin);
 router.get("/register", conUsuarioMiddleware, controller.registro);
-router.post("/register", upload.single("imageUser"), controller.registroUsuario);
+router.post("/register",validaRegistro,upload.single("imageUser"), controller.registroUsuario);
 router.get("/info",sinUsuarioMiddleware, controller.info);
 router.get("/logout", controller.logout)
 

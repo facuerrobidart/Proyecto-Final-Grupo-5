@@ -7,32 +7,48 @@
   <body>
     <%- include('./../partials/header') %>
       <main class="login">
-        <h5 class="titulo">Registrate para ser parte de nuestra comunidad</h5>
+        <h5 class="tituloRegistro">Registrate para ser parte de nuestra comunidad</h5>
         <div class="panel">
-          <form accion="/user/register" method="POST" enctype="multipart/form-data">
+          <form accion="/user/register" method="POST" enctype="multipart/form-data" id="formularioRegistro">
             <div class="form-row">
               <div class="col">
                 <label>Nombre</label>
-                <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" required>
+                <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" id="nombre">
+                <div>
+                  <p class="inputError" id="parrafoErrorNombre"> el Nombre no puede estar vacio</p>
+                </div>
               </div>
               <div class="col">
                 <label>Apellido</label>
-                <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito" required>
+                <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito" id="apellido">
+                <div>
+                  <p class="inputError" id="parrafoErrorApellido"> el Apellido no puede estar vacio</p>
+                </div>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label>Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com" required>
+                <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com" id="email">
+               <div>
+                  <p class="inputError" id="parrafoErrorEmail"> por favor ingrese un email valido</p>
+                  <p class="inputError" id="parrafoErrorArroba"> el email debe contener @</p>
+                </div>
               </div>
+
               <div class="form-group col-md-6">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" name="contrasena" required>
+                <input type="password" class="form-control" name="contrasena" id="contrasena">
+                <div>
+                  <p class="inputIndicaciones" id="parrafoIndicaciones">la Contraseña debe tener al menos 8 caracteres</p>
+                  <p class="inputError" id="parrafoErrorContrasena"> la Contrasena ingresada no es valida </p>
+                </div>
+
               </div>
             </div>
             <div class="form-group">
               <label>Dirección</label>
-              <input type="text" class="form-control" name="direccion" placeholder="Ej: Calle falsa 123" required>
+              <input type="text" class="form-control" name="direccion" placeholder="Ej: Calle falsa 123" >
             </div>
             <div class="form-group">
               <label>Piso/Departamento (Opcional)</label>
@@ -41,16 +57,16 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label>Ciudad/Barrio</label>
-                <input type="text" class="form-control" name="ciudad" required>
+                <input type="text" class="form-control" name="ciudad" >
               </div>
               <div class="form-group col-md-2">
                 <label>Código Postal</label>
-                <input type="text" class="form-control" name="codigoPostal" required>
+                <input type="text" class="form-control" name="codigoPostal" >
               </div>
               <div class="form-group col-md-4">
                 <label>Provincia</label>
-                <select name="provincia" id="inputState" class="form-control" required>
-                  <option selected>Elija uno</option>
+                <select name="provincia"  class="form-control" id="provincia">
+                  <option selected >Elija uno</option>
                   <option value="Buenos Aires">Buenos Aires</option>
                   <option value="Capital Federal">Capital Federal</option>
                   <option value="Catamarca">Catamarca</option>
@@ -76,10 +92,13 @@
                   <option value="Tierra del Fuego">Tierra del Fuego</option>
                   <option value="Tucumán">Tucumán</option>
                 </select>
+                <div>
+                <p class="inputError" id="parrafoErrorProvincia"> debes seleccionar tu Provincia</p>
+                </div>
               </div>
               <div class="form-group col-md-4">
                 <label>Tipo Usuario</label>
-                <select name="tipoUsuario" id="inputState" class="form-control" required>
+                <select name="tipoUsuario" id="tipoUsuario" class="form-control" >
                   <option selected> Elija uno</option>
                   <% for ( let i=0; i<tipos_usuario.length; i++){ %>
                   <option value="<%= tipos_usuario[i].id %>">
@@ -87,6 +106,9 @@
                   </option>
                   <% } %>
                 </select>
+                <div>
+                <p class="inputError" id="parrafoErrorTipoUsuario"> debes seleccionar un Tipo de Usuario</p>
+                </div>
               </div>
 
               <br>
@@ -98,11 +120,16 @@
               <input type="file" name="imageUser" />
             </div>
 
-            <button type="submit" class="btn btn-primary">Registrarse</button>
+                <button type="submit" class="btn btn-primary"  >Registrarse</button>
+             
+
           </form>
+          <div class="errores">
+        <ul></ul>
         </div>
       </main>
       <%- include('./../partials/footer') %>
+      <script src="/js/registroUsuarioValidacion.js"></script>
   </body>
 
 </html>
