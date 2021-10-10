@@ -34,7 +34,7 @@ const controller = {
                     }
                      res.redirect("/user/info")
                 }
-                else if (error.isEmpty()){ 
+                else if (error.isEmpty()){
                     res.render("./users/login", { mensaje: ("las credenciales son invalidas") });
                 }else{
                     if(error.array()[0].param=="contraseña"){
@@ -90,7 +90,7 @@ const controller = {
          db.tipos_usuario.findAll()
             .then((tiposUsuarios)=>{
                 let tipos_usuario=tiposUsuarios
-                res.render("./user/registro", { tipos_usuario:tipos_usuario});
+                res.render("./users/registro", { tipos_usuario:tipos_usuario});
             })
 
     },
