@@ -3,7 +3,7 @@ const { promiseImpl } = require("ejs");
 const fs = require("fs");
 const { dirname } = require("path");
 const path = require("path");
-
+var session = require('express-session');
 const pathProductos = path.join(__dirname, "../../src/data/productosDataBase.json");
 const productos = JSON.parse(fs.readFileSync(pathProductos, "utf-8"));
 
@@ -64,6 +64,33 @@ const controller = {
             .then((productos) => {
                 let products = productos
                 res.render("./products/listaProductos", { products: products });
+            })
+    },
+
+    misProductos: (req, res) => {
+
+        let usuarioVendedor = req.session.usuarioLogueado;
+        let vendedor;
+        if (usuarioVendedor != undefined) {
+            for (let i = 0; i < usuarioVendedor.length; i++) {
+                vendedor = usuarioVendedor[i].id
+            }
+        }
+
+        //console.log(usuarioVendedor);
+        //console.log(vendedor);
+
+        db.productos.findAll({
+            where: {
+                usuarios_vendedor_id: vendedor
+            },
+        })
+            .then((productos) => {
+                let products = productos
+                res.render("./products/misProductos", { products: products, usuarioLogueado: usuarioVendedor });
+            })
+            .catch((error) => {
+                res.send(error)
             })
     },
 
