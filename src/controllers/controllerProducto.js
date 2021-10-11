@@ -3,7 +3,11 @@ const { promiseImpl } = require("ejs");
 const fs = require("fs");
 const { dirname } = require("path");
 const path = require("path");
+<<<<<<< HEAD
 const { validationResult } = require("express-validator");
+=======
+const {validationResult} = require("express-validator");
+>>>>>>> bfb48b49d50609a4d4910779360c058f95a585c6
 const pathProductos = path.join(__dirname, "../../src/data/productosDataBase.json");
 const productos = JSON.parse(fs.readFileSync(pathProductos, "utf-8"));
 
@@ -49,6 +53,7 @@ const controller = {
             nombreImagen = req.file.filename
         }
 
+<<<<<<< HEAD
         db.productos.create({
             titulo: req.body.titulo,
             descripcion: req.body.caracteristicasProducto,
@@ -63,6 +68,8 @@ const controller = {
 
         res.redirect("/producto/all")
         nombreImagen = req.file.filename;
+=======
+>>>>>>> bfb48b49d50609a4d4910779360c058f95a585c6
         let errors = validationResult(req);
         if ((req.file.mimetype == "image/jpeg" || req.file.mimetype == "image/png") && errors.isEmpty) { //valido mimetype y me traigo las validaciones del middleware
             db.productos.create({
