@@ -3,11 +3,7 @@ const { promiseImpl } = require("ejs");
 const fs = require("fs");
 const { dirname } = require("path");
 const path = require("path");
-<<<<<<< HEAD
-var session = require('express-session');
-=======
-const {validationResult} = require("express-validator");
->>>>>>> af1784b3cb53d9e16ac5f8e6308a474f389dbda5
+const { validationResult } = require("express-validator");
 const pathProductos = path.join(__dirname, "../../src/data/productosDataBase.json");
 const productos = JSON.parse(fs.readFileSync(pathProductos, "utf-8"));
 
@@ -48,27 +44,27 @@ const controller = {
     },
     crearProducto: (req, res) => {
 
-        let nombreImagen
-        if(req.file){
+        let nombreImagen;
+        if (req.file) {
             nombreImagen = req.file.filename
         }
 
-         db.productos.create({
-             titulo: req.body.titulo,
-             descripcion: req.body.caracteristicasProducto,
-             precio: req.body.precio,
-             nombre_artista: req.body.nombreArtista,
-             stock: req.body.stock,
-             categorias_producto_id: req.body.categoriasProducto,
-             condiciones_producto_id: req.body.condicionProducto,
-             usuarios_vendedor_id: req.body.idVendedor,
-             nombre_imagen: nombreImagen
-         })
+        db.productos.create({
+            titulo: req.body.titulo,
+            descripcion: req.body.caracteristicasProducto,
+            precio: req.body.precio,
+            nombre_artista: req.body.nombreArtista,
+            stock: req.body.stock,
+            categorias_producto_id: req.body.categoriasProducto,
+            condiciones_producto_id: req.body.condicionProducto,
+            usuarios_vendedor_id: req.body.idVendedor,
+            nombre_imagen: nombreImagen
+        })
 
         res.redirect("/producto/all")
-        let nombreImagen = req.file.filename
+        nombreImagen = req.file.filename;
         let errors = validationResult(req);
-        if ((req.file.mimetype=="image/jpeg" || req.file.mimetype=="image/png") && errors.isEmpty){ //valido mimetype y me traigo las validaciones del middleware
+        if ((req.file.mimetype == "image/jpeg" || req.file.mimetype == "image/png") && errors.isEmpty) { //valido mimetype y me traigo las validaciones del middleware
             db.productos.create({
                 titulo: req.body.titulo,
                 descripcion: req.body.caracteristicasProducto,
@@ -81,8 +77,8 @@ const controller = {
                 nombre_imagen: nombreImagen
             })
             res.redirect("/producto/all");
-        }else{ // si hay algun problema, devuelve al formulario de creacion
-            res.render("./crear",{errores: errors});
+        } else { // si hay algun problema, devuelve al formulario de creacion
+            res.render("./crear", { errores: errors });
         }
     },
 
@@ -140,7 +136,7 @@ const controller = {
         if (req.file) {
             nombreImagen = req.file.filename
         }
-        if ((req.file.mimetype=="image/jpeg" || req.file.mimetype=="image/png") && errors.isEmpty){
+        if ((req.file.mimetype == "image/jpeg" || req.file.mimetype == "image/png") && errors.isEmpty) {
             db.productos.update({
                 titulo: req.body.titulo,
                 descripcion: req.body.descripcion,
@@ -152,9 +148,9 @@ const controller = {
                     where: { id: id }
                 })
             res.redirect("/producto/all")
-        }else{
+        } else {
             let ruta = "/producto/editar" + req.params.id;
-            res.render(ruta,{errores:errors});
+            res.render(ruta, { errores: errors });
         }
 
     },
