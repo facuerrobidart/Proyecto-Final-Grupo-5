@@ -84,6 +84,8 @@ const controller = {
             for (let i = 0; i < usuarioVendedor.length; i++) {
                 vendedor = usuarioVendedor[i].id
             }
+        }else{
+            res.redirect("/users/login");
         }
 
         //console.log(usuarioVendedor);
