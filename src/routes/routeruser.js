@@ -9,15 +9,22 @@ const {body,check,validationResult} = require("express-validator");
 
 const validaLogin = [check("email").isEmail(),
                     check("contraseña").isLength({min:6})];
-const validaRegistro = [check("email").isEmail(),
-                        check("contraseña").isLength({min:6}),
-                        check("nombre").notEmpty(),
-                        check("apellido").notEmpty(),
-                        check("codigo_postal").notEmpty(),
-                        check("direccion").isString(),
-                        check("direccion").notEmpty(),
-                        check("ciudad").isString(),
-                        check("ciudad").notEmpty()];
+const validaRegistro = [check("email")
+                                        .isEmail(),
+                        check("contraseña")
+                                        .isLength({min:8}),
+                        check("nombre")
+                                        .notEmpty(),
+                        check("apellido")
+                                        .notEmpty(),
+                        check("codigo_postal")
+                                        .notEmpty().withMessage("El CP no puede estar vacío"),
+                        check("direccion")
+                                        .isString()
+                                        .notEmpty().withMessage("La dirección no puede estar vacia"),
+                        check("ciudad")
+                                        .isString()
+                                        .notEmpty().withMessage("La ciudad no puede estar vacia")];
 
 // SETTING Multer
 const storage = multer.diskStorage({
