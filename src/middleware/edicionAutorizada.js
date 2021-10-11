@@ -6,7 +6,9 @@ function edicionAutorizada(req, res, next) {
         .then((product) => {
             if (req.session.usuarioLogueado.id != product.usuarios_vendedor_id)
                 return res.redirect("/");
+            else{
+                next();
+            }
         });
-    next();
 }
 module.exports = edicionAutorizada
