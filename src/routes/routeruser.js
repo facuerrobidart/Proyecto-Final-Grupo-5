@@ -44,7 +44,7 @@ router.post("/login",validaLogin,controller.procesoLogin);
 router.get("/register", conUsuarioMiddleware, controller.registro);
 router.post("/register",validaRegistro,upload.single("imageUser"), controller.registroUsuario);
 router.get("/info",sinUsuarioMiddleware, controller.info);
-router.get("/logout", controller.logout)
+router.get("/logout", controller.logout);
 
 
 module.exports = router;

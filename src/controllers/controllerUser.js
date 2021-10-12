@@ -97,7 +97,7 @@ const controller = {
     registroUsuario: (req, res) => {
         let errors = validationResult(req);
 
-        if (errors.isEmpty){ //si no hay errores procedo
+        if (errors.isEmpty()){ //si no hay errores procedo
             db.usuarios.create({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,

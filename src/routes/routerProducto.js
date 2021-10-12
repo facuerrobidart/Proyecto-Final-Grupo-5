@@ -11,7 +11,7 @@ const validacionesProducto = [check("titulo").notEmpty(),
                               check("precio").isNumeric(),
                               check("precio").notEmpty(),
                               check("nombreArtista").notEmpty()
-                              ]
+                              ];
 
 
 // SETTING Multer
