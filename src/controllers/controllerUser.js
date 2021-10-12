@@ -111,7 +111,7 @@ const controller = {
             })
             res.redirect("/");
         }else{ //si no, devuelvo errores
-            res.render("./users/register",{errores:errors});
+            res.render("./users/registro",{errores:errors});
         }
     },
 
