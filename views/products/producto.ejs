@@ -92,16 +92,10 @@
 										<!--options_json-->
 										<!--{"clickType":"add-to-cart","content":""}-->
 										<!--/options_json-->
-										<a href="/producto/carrito"
-											class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1">
-											<!--product_button_content-->Añadir al carrito
-											<!--/product_button_content-->
-										</a>
-										<!--/product_button-->
-										<!--product_button-->
-										<!--options_json-->
-										<!--{"clickType":"add-to-cart","content":"Comprar"}-->
-										<!--/options_json-->
+										<button
+											class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1" onclick="agregaCarrito(producto)">
+											Añadir al carrito
+										</button>
 										<a href="/producto/editar/ <%= producto.id%> "
 											class="u-border-0 u-btn u-button-style u-hover-palette-4-dark-1 u-palette-5-dark-2 u-product-control u-btn-2">
 											<!--product_button_content-->Editar Producto
@@ -126,6 +120,7 @@
 				</section>
 			</main>
 			<%- include('./../partials/footer') %>
+			<script src="/js/agregaCarrito.js"></script>
 	</body>
 
 </html>
