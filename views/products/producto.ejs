@@ -93,22 +93,22 @@
 										<!--{"clickType":"add-to-cart","content":""}-->
 										<!--/options_json-->
 										<button
-											class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1" onclick="agregaCarrito(producto)">
+											class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1"
+											onclick="agregaCarrito(producto)">
 											Añadir al carrito
 										</button>
+										<!--	
 										<a href="/producto/editar/ <%= producto.id%> "
 											class="u-border-0 u-btn u-button-style u-hover-palette-4-dark-1 u-palette-5-dark-2 u-product-control u-btn-2">
-											<!--product_button_content-->Editar Producto
-											<!--/product_button_content-->
+											Editar Producto
 										</a>
-										<!--/product_button-->
 
 										<form action="/producto/delete/ <%=producto.id%>?_method=DELETE " method="POST">
 											<button type="submit"
 												class="u-border-0 u-btn u-button-style u-hover-palette-4-dark-1 u-palette-5-dark-2 u-product-control u-btn-2">
 												Eliminar Producto</button>
 										</form>
-
+									-->
 									</div>
 								</div>
 							</div>
@@ -120,7 +120,7 @@
 				</section>
 			</main>
 			<%- include('./../partials/footer') %>
-			<script src="/js/agregaCarrito.js"></script>
+				<script src="/js/agregaCarrito.js"></script>
 	</body>
 
 </html>
