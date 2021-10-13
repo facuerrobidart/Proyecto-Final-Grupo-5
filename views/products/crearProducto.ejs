@@ -8,11 +8,10 @@
 
 
       <main class="formCrear">
-        <h1 class="titulo"> ¡Hola Bienvenido!!!</h1>
-        <h2 class="titulo"> Contanos que queres Publicar </h2>
+        <h1 class="titulo" id="bienvenida"> ¡Hola Bienvenido!!!</h1>
+        <h2 class="titulo" id="contanos"> Contanos que queres Publicar </h2>
 
         <form action="/producto/crear" method="POST" class="formularioCrear" enctype="multipart/form-data">
-
 
           <div>
             <label for="idVendedor" class="labelCrear"> <input id="inputTex" type="hidden"
@@ -93,6 +92,7 @@
       </main>
 
       <%- include('./../partials/footer') %>
+    <script src="/js/crearProductoValidacion.js"></script>
 
 
   </body>
