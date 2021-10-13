@@ -1,4 +1,3 @@
-
 <header>
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light px-2">
         <img src="/images/pexels-free-creative-stuff-1193743.jpg" alt="logo" class="logoPagina">
@@ -10,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Categorias</a>
+                    <a class="nav-link" href="/producto/misproductos">Mis Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ofertas</a>
@@ -35,15 +34,15 @@
             <!--ICONOS DE USUARIO-->
             <a href="/" class="iconos"><i class="fas fa-sign-out-alt"></i></a>
 
-            <% if ( locals.estalogueado == false) {%>
-            <a href="/user/register" class="iconos"><i class="far fa-user-circle"></i></a>
-            <a href="/user/login" class="iconos"><i class="far fa-user"></i></a>
-            <% } else { %>
-            <a href="/producto/carrito" class="iconos"><i class="fas fa-shopping-cart"></i></a>
-            <a href="/user/info">
-                <p>Perfil Usuario</p>
-            </a>
-            <% } %>
+            <% if ( locals.estalogueado==false) {%>
+                <a href="/user/register" class="iconos"><i class="far fa-user-circle"></i></a>
+                <a href="/user/login" class="iconos"><i class="far fa-user"></i></a>
+                <% } else { %>
+                    <a href="/producto/carrito" class="iconos"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="/user/info">
+                        <p>Perfil Usuario</p>
+                    </a>
+                    <% } %>
 
         </div>
     </nav>
