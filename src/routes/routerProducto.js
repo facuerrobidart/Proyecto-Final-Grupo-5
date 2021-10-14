@@ -5,13 +5,13 @@ const multer = require("multer");
 const path = require("path");
 const sinUsuarioMiddleware = require("../../src/middleware/sinUsuarioMiddleware")
 const edicionAutorizada = require("../middleware/edicionAutorizada");
-const {check} = require("express-validator");
+const { check } = require("express-validator");
 
 const validacionesProducto = [check("titulo").notEmpty(),
-                              check("precio").isNumeric(),
-                              check("precio").notEmpty(),
-                              check("nombreArtista").notEmpty()
-                              ];
+check("precio").isNumeric(),
+check("precio").notEmpty(),
+check("nombreArtista").notEmpty()
+];
 
 
 // SETTING Multer
@@ -30,14 +30,14 @@ const upload = multer({ storage: storage });
 
 router.get("/carrito", controller.carrito);
 router.get("/crear", sinUsuarioMiddleware, controller.crear);
-router.post("/crear",validacionesProducto,upload.single("fotoProducto"), controller.crearProducto);
+router.post("/crear", validacionesProducto, upload.single("fotoProducto"), controller.crearProducto);
 router.get("/all", controller.all);
 router.get("/misproductos", controller.misProductos);
 
 
 
 /*EDITAR PRODUCTO*/
-router.get("/editar/:id",validacionesProducto,edicionAutorizada, controller.editar);
+router.get("/editar/:id", validacionesProducto, edicionAutorizada, controller.editar);
 router.put("/editar/:id", upload.single("fotoProducto"), controller.actualizar);
 //detalle producto
 router.get("/:id", controller.producto);
