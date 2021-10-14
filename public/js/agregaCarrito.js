@@ -15,6 +15,5 @@ function agregaCarrito(titulo,precio,nombre_imagen){
 
     productos.push(agregar);
     localStorage.setItem("productos",JSON.stringify(productos));
-    
     console.log(productos);
 }
