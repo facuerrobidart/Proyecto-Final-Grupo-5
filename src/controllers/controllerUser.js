@@ -36,15 +36,13 @@ const controller = {
                 }
                 else if (error.isEmpty()){
                     res.render("./users/login", { mensaje: ("las credenciales son invalidas") });
+                }else if(error.array()[0].param=="contraseña"){
+                    res.render("./users/login",{mensaje: ("La contraseña debe tener al menos 6 caracteres")});
                 }else{
-                    if(error.array()[0].param=="contraseña"){
-                        res.render("./users/login",{mensaje: ("La contraseña debe tener al menos 6 caracteres")});
-                    }else{
-                        res.render("./users/login",{mensaje: ("Ingrese un email válido")});
-                    }
+                    res.render("./users/login",{mensaje: ("Ingrese un email válido")});
                 }
+                
             }
-
             })
             .catch((error)=>{
                 res.render("./users/login", { mensaje: ("email incorrecto intentelo nuevamente")
