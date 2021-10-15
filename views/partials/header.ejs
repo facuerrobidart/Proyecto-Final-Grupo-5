@@ -32,16 +32,19 @@
             <button class="btn btn-outline-success my-2 my-sm-0 me-auto mx-2 buscar" type="submit"><i
                     class="fas fa-search"></i></button>
             <!--ICONOS DE USUARIO-->
-            <a href="/" class="iconos"><i class="fas fa-sign-out-alt"></i></a>
+            <!-- <a href="/" class="iconos"><i class="fas fa-sign-out-alt"></i></a> -->
+            <a href="/" class="iconos"><i class="fas fa-home"></i></a>
 
             <% if ( locals.estalogueado==false) {%>
                 <a href="/user/register" class="iconos"><i class="far fa-user-circle"></i></a>
                 <a href="/user/login" class="iconos"><i class="far fa-user"></i></a>
                 <% } else { %>
                     <a href="/producto/carrito" class="iconos"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="/user/logout" class="iconos"><i class="fas fa-sign-out-alt"></i></a>
                     <a href="/user/info">
                         <p>Perfil Usuario</p>
                     </a>
+
                     <% } %>
 
         </div>
