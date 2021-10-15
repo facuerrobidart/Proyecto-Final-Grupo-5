@@ -18,6 +18,7 @@ let inputCaracteristicas = document.querySelector("#inputCaracteristicas")
 let inputCondicion = document.querySelector("#condicionProducto")
 let inputPrecio = document.querySelector("#precio")
 let inputStock = document.querySelector("#stock")
+let inputImagen = document.querySelector("#imagenProducto")
 
 
   inputTitulo.addEventListener("blur", function () {
@@ -89,6 +90,18 @@ let inputStock = document.querySelector("#stock")
       document.getElementById("parrafoErrorCondicion").classList.remove("inputErrorActivo")
     }
   })
+
+  inputImagen.addEventListener("blur", function () {
+    
+  if (inputImagen.value == "") {
+    document.getElementById("parrafoErrorImagen").classList.remove("inputError")
+    document.getElementById("parrafoErrorImagen").classList.add("inputErrorActivo")
+  }
+  else {
+    document.getElementById("parrafoErrorImagen").classList.add("inputError")
+    document.getElementById("parrafoErrorImagen").classList.remove("inputErrorActivo")
+  }
+})
 
   inputPrecio.addEventListener("blur", function () {
 

@@ -5,6 +5,8 @@ window.onload=function(){
   let inputEmail = document.querySelector("#inputEmail")
   let inputContrasena = document.querySelector("#inputContrasena")
 
+  inputEmail.focus() // cuando cargue la vista el cursor esta posicionado en el input de email
+
   inputEmail.addEventListener("blur", function () {
 
     if (inputEmail.value == "") {
