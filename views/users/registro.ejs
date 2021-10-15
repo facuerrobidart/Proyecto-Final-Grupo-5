@@ -13,14 +13,20 @@
             <div class="form-row">
               <div class="col">
                 <label>Nombre</label>
-                <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" id="nombre">
+                <div class="input-formulario">
+                  <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" id="nombre">
+                  <i class="formulario__validacion-estado fas fa-times-circle" id="iconoNombre"></i>
+                </div>
                 <div>
                   <p class="inputError" id="parrafoErrorNombre"> el Nombre no puede estar vacio</p>
                 </div>
               </div>
               <div class="col">
                 <label>Apellido</label>
+                <div class="input-formulario">
                 <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito" id="apellido">
+                <i class="formulario__validacion-estado fas fa-times-circle" id="iconoApellido"></i>
+                </div>
                 <div>
                   <p class="inputError" id="parrafoErrorApellido"> el Apellido no puede estar vacio</p>
                 </div>
@@ -29,8 +35,11 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label>Email</label>
+                <div class="input-formulario">
                 <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com" id="email">
-               <div>
+                <i class="formulario__validacion-estado fas fa-times-circle" id="iconoEmail"></i>
+                </div>
+                <div>
                   <p class="inputError" id="parrafoErrorEmail"> por favor ingrese un email valido</p>
                   <p class="inputError" id="parrafoErrorArroba"> el email debe contener @</p>
                 </div>
@@ -38,7 +47,10 @@
 
               <div class="form-group col-md-6">
                 <label>Contraseña</label>
+                <div class="input-formulario">
                 <input type="password" class="form-control" name="contrasena" id="contrasena">
+                <i class="formulario__validacion-estado fas fa-times-circle" id="iconoContrasena"></i>
+                </div>
                 <div>
                   <p class="inputIndicaciones" id="parrafoIndicaciones">la Contraseña debe tener al menos 8 caracteres</p>
                   <p class="inputError" id="parrafoErrorContrasena"> la Contrasena ingresada no es valida </p>
@@ -121,7 +133,7 @@
             </div>
 
                 <button type="submit" class="btn btn-primary"  >Registrarse</button>
-             
+
 
           </form>
           <div class="errores">
