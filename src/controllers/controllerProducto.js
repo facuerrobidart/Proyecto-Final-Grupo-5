@@ -50,6 +50,7 @@ const controller = {
         }
 
         let errors = validationResult(req);
+        console.log(req.file);
         if ((req.file.mimetype == "image/jpeg" || req.file.mimetype == "image/png") && errors.isEmpty) { //valido mimetype y me traigo las validaciones del middleware
             db.productos.create({
                 titulo: req.body.titulo,

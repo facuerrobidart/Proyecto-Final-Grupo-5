@@ -65,6 +65,7 @@ h5.titulo{
     margin-bottom: 20px;
     text-align: center;
 
+
 }
 .login{
     margin: 20px;
@@ -234,11 +235,28 @@ div.flexLogin{
     color: blue
 
 }
+.input-formulario{
+    position: relative
+}
+
+.formulario__validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+    .input-formulario .formulario__validacion-estado :focus{
+    opacity: 1;
+}
+
 
 @media (min-width:768px){
     form.login{
         width: 50%;
-        height: 100%;
+        height: 150%;
     }
     div.flexLogin{
         height: 50vh;
