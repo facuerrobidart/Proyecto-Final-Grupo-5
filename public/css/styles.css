@@ -91,6 +91,11 @@ h5.titulo{
 
 }
 
+.contenedor-carrito li {
+    list-style: none;
+    margin-left: 10px;
+}
+
 .contenedor-carrito div{
 
     border: solid 1px black;
