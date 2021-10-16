@@ -22,7 +22,9 @@
                                 <p class="card-text">$<%= p.precio %>
                                 </p>
                                 <a href="/producto/<%=p.id%> " class="btn details px-auto">Detalle Producto</a><br />
-                                <a href="/producto/carrito" class="btn cart px-auto">Añadir a carrito</a>
+                                <a href="/producto/carrito" class="btn cart px-auto"
+                                    onclick="agregaCarrito('<%=p.titulo%>','<%=p.precio%>','<%=p.nombre_imagen%>')">Añadir
+                                    a carrito</a>
                             </div>
                         </div>
                     </div>
@@ -30,6 +32,7 @@
             </div>
 
             <%- include('./../partials/footer') %>
+                <script src="/js/agregaCarrito.js"></script>
     </body>
 
 </html>
