@@ -25,12 +25,13 @@
                 </li>
             </ul>
             <!--BUSQUEDA-->
-            <form class="form-inline my-2 my-lg-0 buscador w-50">
-                <input class="busqueda form-control mr-sm-2 ml-auto" type="search" placeholder="Buscá algo increible"
-                    aria-label="Busqueda">
+            <form action="/producto/buscar" method="GET" class="form-inline my-2 my-lg-0 buscador w-50">
+                <input class="busqueda form-control mr-sm-2 ml-auto" type="text" placeholder="Buscá algo increible"
+                    aria-label="Busqueda" name="titulo" id="titulo">
             </form>
             <button class="btn btn-outline-success my-2 my-sm-0 me-auto mx-2 buscar" type="submit"><i
                     class="fas fa-search"></i></button>
+
             <!--ICONOS DE USUARIO-->
             <!-- <a href="/" class="iconos"><i class="fas fa-sign-out-alt"></i></a> -->
             <a href="/" class="iconos"><i class="fas fa-home"></i></a>

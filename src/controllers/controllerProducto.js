@@ -3,11 +3,12 @@ const { promiseImpl } = require("ejs");
 const fs = require("fs");
 const { dirname } = require("path");
 const path = require("path");
-const {validationResult} = require("express-validator");
+const { validationResult } = require("express-validator");
 const pathProductos = path.join(__dirname, "../../src/data/productosDataBase.json");
 const productos = JSON.parse(fs.readFileSync(pathProductos, "utf-8"));
 
 let db = require("../database/models")
+const Op = db.Sequelize.Op;
 
 
 
@@ -85,7 +86,7 @@ const controller = {
             for (let i = 0; i < usuarioVendedor.length; i++) {
                 vendedor = usuarioVendedor[i].id
             }
-        }else{
+        } else {
             res.redirect("/user/login");
         }
 
@@ -155,6 +156,34 @@ const controller = {
             .catch((error) => {
                 res.send(error)
             })
+    },
+    buscar: (req, res) => {
+
+        let buscar = req.body.titulo;
+        console.log(buscar);
+
+        db.productos.findAll({
+            where: {
+                titulo: {
+                    [Op.like]: '%' + buscar + '%'
+                    //[Op.like]: req.body.titulo
+                }
+            },
+        })
+
+            .then((productos) => {
+
+                let prod = productos;
+                console.log(prod);
+                if (prod.length !== 0) {
+                    res.render("./products/listaProductos", { products: productos });
+                } else {
+                    res.send("Producto no encontrado")
+                    //
+                }
+            })
+
+
     }
 
 };
