@@ -21,7 +21,7 @@ for (let i = 0; i < productos.length; i++) {
     precio.innerHTML += '<li>' + "$ " + productos[i].precio + '</li>';
     cantidad.innerHTML += '<li>' + 1 + '</li>';
     subTotal.innerHTML += '<li>' + "$ " + 1 * productos[i].precio + '</li>';
-    totalizador = totalizador + (productos[i].precio * 1);
+    totalizador = totalizador + parseFloat(productos[i].precio);
     total.innerHTML = "$ " + totalizador;
 }
 
