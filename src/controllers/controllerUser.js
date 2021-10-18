@@ -25,7 +25,8 @@ const controller = {
                 if(usuarioLogueado){
                     for( let i=0; i<usuarioLogueado.length; i++){
                         contrasenaUsuario = usuarioLogueado[i].contrasena }
-                let contrasenaCorrecta = bcrypt.compareSync(req.body.password, contrasenaUsuario)
+                let contrasenaCorrecta = bcrypt.compareSync(req.body.password, contrasenaUsuario);
+                console.log(error.array());
                 if(contrasenaCorrecta){
                     req.session.usuarioLogueado = usuarioLogueado
 
@@ -35,8 +36,8 @@ const controller = {
                      res.redirect("/user/info")
                 }
                 else if (error.isEmpty()){
-                    res.render("./users/login", { mensaje: ("las credenciales son invalidas") });
-                }else if(error.array()[0].param=="contraseña"){
+                    res.render("./users/login", {mensaje: ("las credenciales son invalidas") });
+                }else if(error.array()[0].param=="password"){
                     res.render("./users/login",{mensaje: ("La contraseña debe tener al menos 6 caracteres")});
                 }else{
                     res.render("./users/login",{mensaje: ("Ingrese un email válido")});

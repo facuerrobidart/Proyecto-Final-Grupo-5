@@ -8,7 +8,7 @@ const conUsuarioMiddleware = require("../../src/middleware/conUsuarioMiddleware"
 const {body,check,validationResult} = require("express-validator");
 
 const validaLogin = [check("email").isEmail(),
-                    check("contraseña").isLength({min:6})];
+                    check("password").isLength({min:6})];
 const validaRegistro = [check("email")
                                         .isEmail(),
                         check("contraseña")
