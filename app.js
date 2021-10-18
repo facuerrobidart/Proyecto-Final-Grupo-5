@@ -8,9 +8,10 @@ const methodOverride = require('method-override');
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const usuarioLogueado = require("./src/middleware/usuarioLogueadoMiddleware")
-
+const cors = require("cors");
 
 //SETTINGS
+app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.set("view engine", "ejs");
