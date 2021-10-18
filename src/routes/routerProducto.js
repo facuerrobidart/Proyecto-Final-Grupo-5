@@ -28,7 +28,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 //Ruta para buscar producto
-router.get('/buscar', controller.buscar);
+router.post('/buscar', controller.buscar);
 
 router.get("/carrito", controller.carrito);
 router.get("/crear", sinUsuarioMiddleware, controller.crear);

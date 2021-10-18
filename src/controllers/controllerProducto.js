@@ -159,27 +159,23 @@ const controller = {
     },
     buscar: (req, res) => {
 
-        let buscar = req.body.titulo;
-        console.log(buscar);
+        let buscado = req.body.buscar;
+        console.log(buscado);
 
         db.productos.findAll({
             where: {
                 titulo: {
-                    [Op.like]: '%' + buscar + '%'
-                    //[Op.like]: req.body.titulo
+                    [Op.like]: '%' + buscado + '%'
                 }
             },
         })
-
             .then((productos) => {
-
                 let prod = productos;
-                console.log(prod);
                 if (prod.length !== 0) {
                     res.render("./products/listaProductos", { products: productos });
                 } else {
-                    res.send("Producto no encontrado")
-                    //
+                    //res.send("Producto no encontrado")
+                    res.redirect("/producto/all");
                 }
             })
 
