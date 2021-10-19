@@ -36,7 +36,7 @@ router.post("/crear", validacionesProducto, upload.single("fotoProducto"), contr
 router.get("/all", controller.all);
 router.get("/misproductos", controller.misProductos);
 router.get("/productosAPI",controller.productosAPI);
-
+router.get("/categoriasAPI",controller.categoriasAPI);
 /*EDITAR PRODUCTO*/
 router.get("/editar/:id", validacionesProducto, edicionAutorizada, controller.editar);
 router.put("/editar/:id", upload.single("fotoProducto"), controller.actualizar);

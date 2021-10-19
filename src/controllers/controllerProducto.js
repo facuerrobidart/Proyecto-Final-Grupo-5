@@ -50,6 +50,12 @@ const controller = {
             });
 
     },
+    categoriasAPI: (req,res)=>{
+        db.categorias_producto.findAll()
+            .then((categorias)=>{
+                res.json(categorias);
+            });
+    },
     carrito: (req, res) => {
         res.render("./products/carrito-compra");
     },
