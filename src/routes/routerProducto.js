@@ -35,7 +35,7 @@ router.get("/crear", sinUsuarioMiddleware, controller.crear);
 router.post("/crear", validacionesProducto, upload.single("fotoProducto"), controller.crearProducto);
 router.get("/all", controller.all);
 router.get("/misproductos", controller.misProductos);
-
+router.get("/productosAPI",controller.productosAPI);
 
 
 /*EDITAR PRODUCTO*/

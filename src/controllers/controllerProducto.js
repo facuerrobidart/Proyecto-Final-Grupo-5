@@ -25,6 +25,21 @@ const controller = {
                 else { res.send("El articulo no existe!!!") }
             })
     },
+    productosAPI: (req,res) =>{
+        let result = {}; //objeto vacio
+        db.productos.findAll()
+            .then((productos) => {
+                result.products=productos;
+                result.count=productos.length;
+                db.productos.count({col:"categorias_producto_id",group:"categorias_producto_id"})
+                    .then((agrupado)=>{
+                        console.log(agrupado);
+                        result.countByCategory=agrupado;
+                        res.json(result);
+                    });
+            });
+
+    },
     carrito: (req, res) => {
         res.render("./products/carrito-compra");
     },
@@ -89,10 +104,6 @@ const controller = {
         } else {
             res.redirect("/user/login");
         }
-
-        //console.log(usuarioVendedor);
-        //console.log(vendedor);
-
         db.productos.findAll({
             where: {
                 usuarios_vendedor_id: vendedor
@@ -178,9 +189,7 @@ const controller = {
                     res.redirect("/producto/all");
                 }
             })
-
-
-    }
+    },
 
 };
 
