@@ -25,6 +25,16 @@ const controller = {
                 else { res.send("El articulo no existe!!!") }
             })
     },
+    productoUnicoAPI: (req, res) => {
+        let id = req.params.id;
+        db.productos.findByPk(id)
+            .then((product) => {
+                if (product!= undefined) {
+                    res.json(product);
+                }
+                else { res.send("El articulo no existe!!!") }
+            })
+    },
     productosAPI: (req,res) =>{
         let result = {}; //objeto vacio
         db.productos.findAll()

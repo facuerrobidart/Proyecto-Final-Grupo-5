@@ -37,12 +37,12 @@ router.get("/all", controller.all);
 router.get("/misproductos", controller.misProductos);
 router.get("/productosAPI",controller.productosAPI);
 
-
 /*EDITAR PRODUCTO*/
 router.get("/editar/:id", validacionesProducto, edicionAutorizada, controller.editar);
 router.put("/editar/:id", upload.single("fotoProducto"), controller.actualizar);
 //detalle producto
 router.get("/:id", controller.producto);
+router.get("/productoAPI/:id",controller.productoUnicoAPI);
 //delete
 router.delete("/delete/:id", edicionAutorizada, controller.delete)
 
