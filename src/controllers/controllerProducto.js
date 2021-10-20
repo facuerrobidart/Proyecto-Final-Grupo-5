@@ -41,7 +41,7 @@ const controller = {
             .then((productos) => {
                 result.products=productos;
                 result.count=productos.length;
-                db.productos.count({col:"categorias_producto_id",group:"categorias_producto_id"})
+                db.productos.count({attributes:["categorias_producto_id"],group:"categorias_producto_id"})
                     .then((agrupado)=>{
                         console.log(agrupado);
                         result.countByCategory=agrupado;
