@@ -98,7 +98,7 @@ const controller = {
     },
 
     usuariosAPI: (req, res) => {
-        db.usuarios.findAll()
+        db.usuarios.findAll({ attributes: ['id', 'nombre', 'apellido', 'email', 'direccion', 'ciudad', 'provincia', 'codigo_postal', 'tipos_usuario_id'] })
             .then((usuario) => {
                 return res.status(200).json({
                     //status: 200,
