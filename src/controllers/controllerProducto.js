@@ -39,17 +39,10 @@ const controller = {
         let result = {}; //objeto vacio
         db.productos.findAll()
             .then((productos) => {
-<<<<<<< HEAD
                 result.products = productos;
                 result.count = productos.length;
-                db.productos.count({ col: "categorias_producto_id", group: "categorias_producto_id" })
+                db.productos.count({ attributes: ["categorias_producto_id", "categorias_producto.categoria"], group: "categorias_producto_id", include: "categorias_producto" })
                     .then((agrupado) => {
-=======
-                result.products=productos;
-                result.count=productos.length;
-                db.productos.count({attributes:["categorias_producto_id","categorias_producto.categoria"],group:"categorias_producto_id",include:"categorias_producto"})
-                    .then((agrupado)=>{
->>>>>>> 69ca6a6a22165e0e2eb717b8f2fb6bf8308b552a
                         console.log(agrupado);
                         result.countByCategory = agrupado;
                         res.json(result);
