@@ -29,30 +29,30 @@ const controller = {
         let id = req.params.id;
         db.productos.findByPk(id)
             .then((product) => {
-                if (product!= undefined) {
+                if (product != undefined) {
                     res.json(product);
                 }
                 else { res.send("El articulo no existe!!!") }
             })
     },
-    productosAPI: (req,res) =>{
+    productosAPI: (req, res) => {
         let result = {}; //objeto vacio
         db.productos.findAll()
             .then((productos) => {
-                result.products=productos;
-                result.count=productos.length;
-                db.productos.count({col:"categorias_producto_id",group:"categorias_producto_id"})
-                    .then((agrupado)=>{
+                result.products = productos;
+                result.count = productos.length;
+                db.productos.count({ col: "categorias_producto_id", group: "categorias_producto_id" })
+                    .then((agrupado) => {
                         console.log(agrupado);
-                        result.countByCategory=agrupado;
+                        result.countByCategory = agrupado;
                         res.json(result);
                     });
             });
 
     },
-    categoriasAPI: (req,res)=>{
+    categoriasAPI: (req, res) => {
         db.categorias_producto.findAll()
-            .then((categorias)=>{
+            .then((categorias) => {
                 res.json(categorias);
             });
     },
