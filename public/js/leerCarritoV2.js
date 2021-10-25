@@ -30,5 +30,6 @@ function eliminarCarrito(titulo){
     console.log(pos);
     productos.splice(pos,1);
     console.log(productos);
+    localStorage.setItem("productos", JSON.stringify(productos));
     refresh();
 }
