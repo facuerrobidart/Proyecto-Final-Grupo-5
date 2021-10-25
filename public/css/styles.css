@@ -12,9 +12,7 @@ div.tarjetaFooter{
     display: flex;
     justify-content: right;
 }
-form .busqueda:focus{
-    color:white;
-}
+
 .busqueda button{
     height: fit-content;
     justify-content: center;
@@ -32,7 +30,6 @@ form .busqueda:focus{
 .buscador{
     margin-left:2%;
 }
-
 footer{
     background-color: beige;
 }

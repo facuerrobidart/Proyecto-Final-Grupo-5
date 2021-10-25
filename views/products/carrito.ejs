@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<%- include('./../partials/head') %>
+<link rel="stylesheet" href="/css/carrito.css">
+<body>
+<%- include('./../partials/header') %>
+<div class="contenedor">
+<div class="card">
+    <div class="row">
+        <div class="col-md-8 cart">
+            <div class="title">
+                <div class="row">
+                    <div class="col">
+                        <h4><b>Carrito</b></h4>
+                    </div>
+                    <div class="col align-self-center text-right text-muted">3 items</div>
+                </div>
+            </div>
+            <div class="contenedorCarrito">
+            </div>
+            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+        </div>
+        <div class="col-md-4 summary">
+            <div>
+                <h5><b>Resumen</b></h5>
+            </div>
+            <hr>
+            <div class="row totales">
+            </div>
+            <form>
+                <p>Envio</p> <select>
+                    <option class="text-muted">Coordinar con el vendedor &dollar;0</option>
+                    <option class="text-muted">Retirar en correo &dollar;500</option>
+                    <option class="text-muted">Envio a domicilio &dollar;600</option>
+                </select>
+                <p>Codigo de descuento</p> <input id="code" placeholder="Codigo">
+            </form>
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAL</div>
+                <div class="col text-right total"></div>
+            </div> <button class="btnCarrito">CHECKOUT</button>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/js/leerCarritoV2.js"></script>
+<%- include('./../partials/footer.ejs') %>
+</body>
+
+</html>
