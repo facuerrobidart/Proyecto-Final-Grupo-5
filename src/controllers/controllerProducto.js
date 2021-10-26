@@ -59,6 +59,9 @@ const controller = {
     carrito: (req, res) => {
         res.render("./products/carrito-compra");
     },
+    carritoV2: (req, res) => {
+        res.render("./products/carrito");
+    },
     crear: (req, res) => {
         let usuarioVendedor = req.session.usuarioLogueado;
         idVendedor = usuarioVendedor[0].id;
@@ -130,7 +133,7 @@ const controller = {
                 res.render("./products/misProductos", { products: products, usuarioLogueado: usuarioVendedor });
             })
             .catch((error) => {
-                res.send(error)
+                res.send(error);
             })
     },
 

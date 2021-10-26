@@ -30,25 +30,25 @@ const controller = {
                     console.log(error.array());
                     if (contrasenaCorrecta) {
                         req.session.usuarioLogueado = usuarioLogueado
-
                         if (req.body.recordarUsuario) {
-                            res.cookie("email", req.body.email, { maxAge: (1000 * 60) * 60 })
+                            res.cookie("email", req.body.email, {maxAge: (1000 * 60) * 60})
                         }
-                        res.redirect("/user/info")
+                        console.log(req.session.usuarioLogueado);
+                        res.redirect("/user/info");
                     }
                     else if (error.isEmpty()) {
-                        res.render("./users/login", { mensaje: ("las credenciales son invalidas") });
+                        res.render("./users/loginV2", { mensaje: ("Las credenciales son invalidas") });
                     } else if (error.array()[0].param == "password") {
-                        res.render("./users/login", { mensaje: ("La contraseña debe tener al menos 6 caracteres") });
+                        res.render("./users/loginV2", { mensaje: ("La contraseña debe tener al menos 6 caracteres") });
                     } else {
-                        res.render("./users/login", { mensaje: ("Ingrese un email válido") });
+                        res.render("./users/loginV2", { mensaje: ("Ingrese un email válido") });
                     }
 
                 }
             })
             .catch((error) => {
-                res.render("./users/login", {
-                    mensaje: ("email incorrecto intentelo nuevamente")
+                res.render("./users/loginV2", {
+                    mensaje: ("Email incorrecto intentelo nuevamente")
                 })
             })
 
@@ -94,7 +94,10 @@ const controller = {
     },
 
     info: (req, res) => {
-        res.render("./users/info", { usuarioLogueado: req.session.usuarioLogueado });
+        let enviar = req.session.usuarioLogueado;
+        enviar[0].contrasena="";
+        console.log(enviar);
+        res.render("./users/infoV2", { usuarioLogueado: enviar }); //NO ENVIA CONTRASEÑA AL FRONT
     },
 
     usuariosAPI: (req, res) => {
@@ -125,8 +128,10 @@ const controller = {
                 }
                 else { res.send("El usuario no existe!!!") }
             })
+    },
+    loginV2: (req,res)=>{
+        res.render("./users/loginV2");
     }
-
 }
 
 

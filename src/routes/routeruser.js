@@ -45,6 +45,8 @@ router.get("/register", conUsuarioMiddleware, controller.registro);
 router.post("/register", validaRegistro, upload.single("imageUser"), controller.registroUsuario);
 router.get("/info", sinUsuarioMiddleware, controller.info);
 router.get("/logout", controller.logout);
+router.get("/loginV2",conUsuarioMiddleware,controller.loginV2);
+router.post("/loginV2", validaLogin, controller.procesoLogin);
 //API's
 router.get("/usuariosAPI", controller.usuariosAPI);
 router.get("/usuarioAPI/:id", controller.usuarioUnicoAPI);

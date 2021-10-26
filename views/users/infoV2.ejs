@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./../partials/head') %>
+<title>Tus datos</title>
+  <body>
+    <%- include('./../partials/header') %>
+    <div class="container mt-5 mb-5">
+        <div class="main-body"> 
+              <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg" alt="Admin" class="rounded-circle" width="150">
+                        <div class="mt-3">
+                          <h4><%= usuarioLogueado[0].nombre + " " + usuarioLogueado[0].apellido%></h4>
+                          <a class="btn btn-primary" href="/producto/misproductos">Mis productos</a>
+                          <a class="btn btn-outline-primary" href="/producto/crear">Agregar productos</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Nombre</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%= usuarioLogueado[0].nombre + " " + usuarioLogueado[0].apellido%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%= usuarioLogueado[0].email %>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Provincia</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%= usuarioLogueado[0].provincia%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Ciudad</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%= usuarioLogueado[0].ciudad%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Direccion</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <%= usuarioLogueado[0].direccion%>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-12">
+                            <form action="/user/logout">
+                                <button class="btn btn-info" name="cerrarSesion" type="submit">Cerrar sesión</button>
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+        </div>
+    <%- include('./../partials/footer') %>
+  </body>
+
+</html>

@@ -12,8 +12,13 @@ div.tarjetaFooter{
     display: flex;
     justify-content: right;
 }
-form .busqueda:focus{
-    color:white;
+div.containerLogin{
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 .busqueda button{
     height: fit-content;
@@ -32,9 +37,13 @@ form .busqueda:focus{
 .buscador{
     margin-left:2%;
 }
-
 footer{
     background-color: beige;
+    height: auto;
+}
+
+#login{
+    background: #ddd;
 }
 
 div.tarjetaFooter{
@@ -169,6 +178,7 @@ form.login{
     padding: 3%;
     width:95%;
 }
+
 div.flexLogin{
     display: flex;
     justify-content: center;

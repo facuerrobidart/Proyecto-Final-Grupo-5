@@ -31,6 +31,7 @@ const upload = multer({ storage: storage });
 router.post('/buscar', controller.buscar);
 
 router.get("/carrito", controller.carrito);
+router.get("/carritoV2",controller.carritoV2);
 router.get("/crear", sinUsuarioMiddleware, controller.crear);
 router.post("/crear", validacionesProducto, upload.single("fotoProducto"), controller.crearProducto);
 router.get("/all", controller.all);
