@@ -12,7 +12,14 @@ div.tarjetaFooter{
     display: flex;
     justify-content: right;
 }
-
+div.containerLogin{
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
 .busqueda button{
     height: fit-content;
     justify-content: center;
@@ -33,6 +40,10 @@ div.tarjetaFooter{
 footer{
     background-color: beige;
     height: auto;
+}
+
+#login{
+    background: #ddd;
 }
 
 div.tarjetaFooter{
