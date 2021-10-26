@@ -30,11 +30,11 @@ const controller = {
                     console.log(error.array());
                     if (contrasenaCorrecta) {
                         req.session.usuarioLogueado = usuarioLogueado
-
                         if (req.body.recordarUsuario) {
-                            res.cookie("email", req.body.email, { maxAge: (1000 * 60) * 60 })
+                            res.cookie("email", req.body.email, {maxAge: (1000 * 60) * 60})
                         }
-                        res.redirect("/user/info")
+                        console.log(req.session.usuarioLogueado);
+                        res.redirect("/user/info");
                     }
                     else if (error.isEmpty()) {
                         res.render("./users/loginV2", { mensaje: ("Las credenciales son invalidas") });
@@ -48,7 +48,7 @@ const controller = {
             })
             .catch((error) => {
                 res.render("./users/loginV2", {
-                    mensaje: ("email incorrecto intentelo nuevamente")
+                    mensaje: ("Email incorrecto intentelo nuevamente")
                 })
             })
 
@@ -94,7 +94,10 @@ const controller = {
     },
 
     info: (req, res) => {
-        res.render("./users/info", { usuarioLogueado: req.session.usuarioLogueado });
+        let enviar = req.session.usuarioLogueado;
+        enviar[0].contrasena="";
+        console.log(enviar);
+        res.render("./users/infoV2", { usuarioLogueado: enviar }); //NO ENVIA CONTRASEÑA AL FRONT
     },
 
     usuariosAPI: (req, res) => {
