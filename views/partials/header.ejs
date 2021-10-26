@@ -39,18 +39,23 @@
             <!--<a href="/" class="iconos"><i class="fas fa-home"></i></a>
             <a href="/producto/carritoV2" class="iconos"><i class="fas fa-shopping-cart"></i></a>-->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item mt-4 ml-4">
-                    <% if ( locals.user==undefined) {%>
+                <% if ( locals.user==undefined) {%>
+                <li class="nav-item ml-2 mt-2 mb-2">
                     <a class="nav-link" href="/user/loginV2">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item mt-2 mb-2">
+                    <a class="nav-link" href="/user/register">Registrate</a>
+                </li>
                     <% } else { %>
+                    <li class="nav-item ml-2 mt-2 mb-2">
                         <a class="nav-link" href="/user/info">Ver Perfil</a>
-                    <% } %>-->
+                    </li>
+                    <% } %>
+                <li class="nav-item mt-2 mb-2">
+                    <a href="/producto/carritoV2" class="nav-link ml-2"><i class="fas fa-shopping-cart fa-lg"></i></a>
                 </li>
-                <li class="nav-item mt-4 ml-">
-                    <a href="/producto/carritoV2" class="nav-link ml-2"><i class="fas fa-shopping-cart"></i></a>
-                </li>
-                <li class="nav-item mt-4 ml-">
-                    <a href="/" class="nav-link ml-2"><i class="fas fa-home"></i></a>
+                <li class="nav-item mt-2 mb-2">
+                    <a href="/" class="nav-link ml-2"><i class="fas fa-home fa-lg"></i></a>
                 </li>
             </ul>
 

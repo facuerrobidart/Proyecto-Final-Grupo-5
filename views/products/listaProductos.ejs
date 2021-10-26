@@ -9,20 +9,20 @@
         <%- include('./../partials/header') %>
             <div class='container-fluid'>
                 <% for(let p of products){%>
-                    <div class="card mx-auto col-md-3 col-10 mt-5">
+                    <div class="card col-md-3 col-10 mt-5">
                         <div class="imgContainer">
                             <img class='mx-auto img-thumbnail' src="/images/<%= p.nombre_imagen %>" width="190"
                                 height="200" />
                         </div>
-                        <div class="card-body text-center mx-auto">
-                            <div class='cvp'>
+                        <div class="card-body text-center mx-auto w-100">
+                            <div class='cvp w-100'>
                                 <h5 class="card-title font-weight-bold">
                                     <%= p.titulo %>
                                 </h5>
                                 <p class="card-text">$<%= p.precio %>
                                 </p>
-                                <a href="/producto/<%=p.id%> " class="btn details px-auto">Detalle Producto</a><br />
-                                <a href="/producto/carrito" class="btn cart px-auto"
+                                <a href="/producto/<%=p.id%> " class="btn btn-success w-100 mb-1">Detalle Producto</a><br />
+                                <a href="/producto/carrito" class="btn btn-primary w-100 mt-1"
                                     onclick="agregaCarrito('<%=p.titulo%>','<%=p.precio%>','<%=p.nombre_imagen%>')">Añadir
                                     a carrito</a>
                             </div>

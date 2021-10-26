@@ -71,7 +71,7 @@ const controller = {
         Promise.all([categoriasProducto, condicionProducto])
             .then(([categorias, condiciones]) => {
 
-                res.render("./products/crearProducto", {
+                res.render("./products/crearProductoV2", {
                     categorias: categorias, condiciones: condiciones, idVendedor: idVendedor
                 })
             })
@@ -121,7 +121,7 @@ const controller = {
                 vendedor = usuarioVendedor[i].id
             }
         } else {
-            res.redirect("/user/login");
+            res.redirect("/user/loginV2");
         }
         db.productos.findAll({
             where: {
