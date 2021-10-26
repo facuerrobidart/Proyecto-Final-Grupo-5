@@ -71,7 +71,7 @@ const controller = {
         Promise.all([categoriasProducto, condicionProducto])
             .then(([categorias, condiciones]) => {
 
-                res.render("./products/crearProductoV2", {
+                res.render("./products/crearProducto", {
                     categorias: categorias, condiciones: condiciones, idVendedor: idVendedor
                 })
             })
@@ -140,11 +140,15 @@ const controller = {
     editar: (req, res) => {
 
         let idProducto = req.params.id;
-        db.productos.findByPk(idProducto)
-            .then((producto => {
-                let ProductoaEditar = producto
-                res.render("./products/editarProducto", { ProductoaEditar: ProductoaEditar });
-            }))
+        let ProductoaEditar = db.productos.findByPk(idProducto);
+        let categoriasProducto = db.categorias_producto.findAll();
+        let condicionProducto = db.condiciones_producto.findAll();
+        Promise.all([categoriasProducto, condicionProducto,ProductoaEditar])
+            .then(([categorias, condiciones,producto]) => {
+                res.render("./products/editarProductoV2", {
+                    ProductoaEditar:producto,categorias: categorias, condiciones: condiciones});
+            })
+        
     },
 
     actualizar: (req, res) => {
@@ -156,19 +160,37 @@ const controller = {
         if (req.file) {
             nombreImagen = req.file.filename
         }
-        if ((req.file.mimetype == "image/jpeg" || req.file.mimetype == "image/png") && errors.isEmpty) {
+        if (req.file==undefined && errors.isEmpty){ //no hay cambio de imagen
             db.productos.update({
                 titulo: req.body.titulo,
-                descripcion: req.body.descripcion,
+                descripcion: req.body.caracteristicasProducto,
                 precio: req.body.precio,
-                nombre_artista: req.body.nombre_artista,
-                nombre_imagen: nombreImagen,
+                nombre_artista: req.body.nombreArtista,
+                stock: req.body.stock,
+                categorias_producto_id: req.body.categoriasProducto,
+                condiciones_producto_id: req.body.condicionProducto
             },
                 {
                     where: { id: id }
                 })
-            res.redirect("/producto/all")
-        } else {
+            res.redirect("/producto/misproductos");
+        } else if ((req.file.mimetype == "image/jpeg" || req.file.mimetype == "image/png") && errors.isEmpty) {
+            db.productos.update({
+                titulo: req.body.titulo,
+                descripcion: req.body.caracteristicasProducto,
+                precio: req.body.precio,
+                nombre_artista: req.body.nombreArtista,
+                nombre_imagen: nombreImagen,
+                stock: req.body.stock,
+                categorias_producto_id: req.body.categoriasProducto,
+                condiciones_producto_id: req.body.condicionProducto
+            },
+                {
+                    where: { id: id }
+                })
+            res.redirect("/producto/misproductos");
+        }
+        else{
             let ruta = "/producto/editar" + req.params.id;
             res.render(ruta, { errores: errors });
         }
