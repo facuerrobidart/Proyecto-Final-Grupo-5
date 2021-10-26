@@ -37,17 +37,17 @@ const controller = {
                         res.redirect("/user/info")
                     }
                     else if (error.isEmpty()) {
-                        res.render("./users/login", { mensaje: ("las credenciales son invalidas") });
+                        res.render("./users/loginV2", { mensaje: ("Las credenciales son invalidas") });
                     } else if (error.array()[0].param == "password") {
-                        res.render("./users/login", { mensaje: ("La contraseña debe tener al menos 6 caracteres") });
+                        res.render("./users/loginV2", { mensaje: ("La contraseña debe tener al menos 6 caracteres") });
                     } else {
-                        res.render("./users/login", { mensaje: ("Ingrese un email válido") });
+                        res.render("./users/loginV2", { mensaje: ("Ingrese un email válido") });
                     }
 
                 }
             })
             .catch((error) => {
-                res.render("./users/login", {
+                res.render("./users/loginV2", {
                     mensaje: ("email incorrecto intentelo nuevamente")
                 })
             })
