@@ -125,8 +125,10 @@ const controller = {
                 }
                 else { res.send("El usuario no existe!!!") }
             })
+    },
+    loginV2: (req,res)=>{
+        res.render("./users/loginV2");
     }
-
 }
 
 
