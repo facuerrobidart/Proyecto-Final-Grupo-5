@@ -36,6 +36,6 @@ app.use("/user", routerUser);
 
 
 
-app.listen(process.env.PORT || 3000, () => { console.log("Corriendo en puerto 3000"); });
+app.listen(process.env.PORT || 3001, () => { console.log("Corriendo en puerto 3001"); });
 
 
