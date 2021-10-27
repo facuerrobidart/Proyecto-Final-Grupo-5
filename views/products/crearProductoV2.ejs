@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<%- include('./../partials/head') %>
+<title>Agregar Producto</title>
+  <body>
+    <%- include('./../partials/header') %>
+    <div class="containerAdd pt-4 pb-4">
+    <div class="container formAdd w-75 ">
+  
+        <section class="panel panel-default">
+      <div class="panel-heading "> 
+      <h3 class="panel-title pt-4 text-center">Añadir Producto</h3> 
+        </div> 
+      <div class="panel-body">
+        
+      <form id="formularioProducto" action="/producto/crear" method="POST" class="formularioCrear" enctype="multipart/form-data">      
+        <div>
+            <label for="idVendedor" class="labelCrear"> <input id="inputTex" type="hidden"
+                name="idVendedor" value="<%= idVendedor %>"> </label>
+        </div> 
+        <div class="form-group">
+          <label for="titulo" class="col-sm-3 control-label">Titulo</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="titulo" id="inputTitulo">
+          </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+            <label for="nombreArtista" class="col-sm-3 control-label">Nombre artista</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" name="nombreArtista" id="nombreArtista">
+            </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="caracteristicasProducto" class="col-sm-3 control-label">Descripcion</label>
+          <div class="col-sm-9">
+            <textarea name="caracteristicasProducto" id="inputCaracteristicas" cols="105" rows="10"
+            placeholder="Detalle del Producto"></textarea>
+          </div>
+          <div>
+              <p class="inputError" id="parrafoErrorCaracteristicas"> debes ingresar el detalle del producto</p>
+            </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="precio" class="col-sm-3 control-label">Precio</label>
+          <div class="col-sm-3">
+            <input id="precio" type="text" placeholder="Precio producto" name="precio">
+          </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="stock" class="col-sm-3 control-label">Stock</label>
+          <div class="col-sm-3">
+            <input id="stock" type="text" name="stock">
+          </div>
+          <div>
+            <p class="inputError" id="parrafoErrorStock"> debes cargar el stock del producto</p>
+          </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <div class="col-sm-3">
+            <label class="control-label" for="fotoProducto">Imagen (jpg/png):</label>
+            <input type="file" name="fotoProducto" id="imagenProducto">
+          </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="condicionProducto" class="col-sm-3 control-label">Categoria</label>
+          <div class="col-sm-3">
+            <select class="form-control" name="categoriasProducto" id="inputCategoria">
+                <option selected>Elija Uno</option>
+                <% for(let i=0; i< categorias.length;i++){ %>
+                    <option value ="<%= categorias[i].id%> " >
+                        <%= categorias[i].categoria %>
+                    </option>
+                <%}%>
+            </select>
+          </div>
+          <label for="condicionProducto" class="col-sm-3 control-label mt-2">Condicion</label>
+          <div class="col-sm-3">
+            <select class="form-control" name= "condicionProducto" id="condicionProducto">
+                <option selected>Elija Uno</option>
+                <% for (let i=0; i<condiciones.length; i++){ %>
+                    <option value="<%=condiciones[i].id  %> ">
+                    <%= condiciones[i].condicion %>
+                  </option>
+                <% } %>
+            </select>
+          </div>
+          </div>
+        </div> <!-- form-group // -->
+        <hr>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary mb-4">Agregar producto</button>
+            <button type="submit" class="btn btn-danger mb-4">Eliminar datos</button>
+          </div>
+        </div> <!-- form-group // -->
+      </form>
+        
+      </div><!-- panel-body // -->
+      </section><!-- panel// -->
+      
+        
+      </div> <!-- container// -->
+    </div>
+    <%- include('./../partials/footer') %>
+    <script src="/js/crearProductoValidacion.js"></script>
+  </body>
+
+</html>

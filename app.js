@@ -23,9 +23,12 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
-app.use(usuarioLogueado)
+app.use(usuarioLogueado);
 
-
+app.use(function(req, res, next) {
+    res.locals.user = req.session.usuarioLogueado;
+    next();
+});
 //CARPETAS PUBLICAS
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(express.static(path.resolve(__dirname, "./views")));

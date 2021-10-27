@@ -7,32 +7,32 @@
 
     <body>
         <%- include('./../partials/header') %>
-            <h5 class="card-title font-weight-bold">
-                <% for ( let i=0; i < usuarioLogueado.length; i++) { %>
+            <div class="alert alert-primary text-center" role="alert">
+                    <% for ( let i=0; i < usuarioLogueado.length; i++) { %>
                     Hola <%= usuarioLogueado[i].nombre +" " + usuarioLogueado[i].apellido  %>, estos son tus productos publicados!
                         <% } %>
-            </h5>
+            </div>
 
             <div class='container-fluid'>
                 <% for(let p of products){%>
-                    <div class=" card mx-auto col-md-3 col-10 mt-5">
+                    <div class=" card mx-auto col-md-3 col-10 mt-5 h-50">
                         <div class="imgContainer">
                             <img class='mx-auto img-thumbnail' src="/images/<%= p.nombre_imagen %>" width="190"
                                 height="200" />
                         </div>
                         <div class="card-body text-center mx-auto">
                             <div class='cvp'>
-                                <h5 class="card-title font-weight-bold">
+                                <h5 class="card-title font-weight-bold h-50">
                                     <%= p.titulo %>
                                 </h5>
                                 <p class="card-text">$<%= p.precio %>
                                 </p>
-                                <a href="/producto/<%=p.id%> " class="btn details px-auto">Detalle Producto</a>
+                                <a href="/producto/<%=p.id%> " class="btn btn-info px-auto w-100 mt-2">Detalle Producto</a>
                                 <br />
-                                <a href="/producto/editar/ <%= p.id%> " class="btn details px-auto"> Editar Producto</a>
+                                <a href="/producto/editar/ <%= p.id%> " class="btn btn-warning px-auto w-100 mt-2"> Editar Producto</a>
                                 <br />
                                 <form action="/producto/delete/ <%=p.id%>?_method=DELETE " method="POST">
-                                    <button type="submit" class="btn cart  px-auto">
+                                    <button type="submit" class="btn btn-danger px-auto w-100 mt-2">
                                         Eliminar Producto</button>
                                 </form>
                                 <br />

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<%- include('./../partials/head') %>
+<title>Editar Producto</title>
+  <body>
+    <%- include('./../partials/header') %>
+    <div class="containerAdd pt-4 pb-4">
+    <div class="container formAdd w-75 ">
+  
+        <section class="panel panel-default">
+      <div class="panel-heading "> 
+      <h3 class="panel-title pt-4 text-center">Añadir Producto</h3> 
+        </div> 
+      <div class="panel-body">
+        
+      <form action="/producto/editar/<%=ProductoaEditar.id%>?_method=PUT" id="formularioProducto" method="POST" enctype="multipart/form-data">      
+        <div>
+            <label for="idVendedor" class="labelCrear"> <input id="inputTex" type="hidden"
+                name="idVendedor" value="<%= ProductoaEditar.usuarios_vendedor_id%>"> </label>
+        </div> 
+        <div class="form-group">
+          <label for="titulo" class="col-sm-3 control-label">Titulo</label>
+          <div class="col-sm-9">
+            <input value="<%= ProductoaEditar.titulo %>" type="text" class="form-control" name="titulo" id="inputTitulo" required>
+          </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+            <label for="nombreArtista" class="col-sm-3 control-label">Nombre artista</label>
+            <div class="col-sm-9">
+              <input value="<%= ProductoaEditar.nombre_artista %>" type="text" class="form-control" name="nombreArtista" id="nombreArtista" required>
+            </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="caracteristicasProducto" class="col-sm-3 control-label">Descripcion</label>
+          <div class="col-sm-9">
+            <textarea name="caracteristicasProducto" id="inputCaracteristicas" cols="105" rows="10" required><%= ProductoaEditar.descripcion %></textarea>
+          </div>
+          <div>
+              <p class="inputError" id="parrafoErrorCaracteristicas"> debes ingresar el detalle del producto</p>
+            </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="precio" class="col-sm-3 control-label">Precio</label>
+          <div class="col-sm-3">
+            <input value="<%= ProductoaEditar.precio%>" id="precio" type="text" name="precio" required>
+          </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="stock" class="col-sm-3 control-label">Stock</label>
+          <div class="col-sm-3">
+            <input value="<%= ProductoaEditar.stock %>" id="stock" type="text" name="stock" required>
+          </div>
+          <div>
+            <p class="inputError" id="parrafoErrorStock"> debes cargar el stock del producto</p>
+          </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <div class="col-sm-3">
+            <label class="control-label" for="fotoProducto">Imagen (jpg/png):</label>
+            <input value="<%= ProductoaEditar.nombre_imagen %>" type="file" name="fotoProducto" id="imagenProducto" >
+          </div>
+        </div> <!-- form-group // -->
+        <div class="form-group">
+          <label for="condicionProducto" class="col-sm-3 control-label">Categoria</label>
+          <div class="col-sm-3">
+            <select class="form-control" name="categoriasProducto" id="inputCategoria" required>
+                <option selected>Elija Uno</option>
+                <% for(let i=0; i< categorias.length;i++){ %>
+                    <% if(ProductoaEditar.categorias_producto_id==categorias[i].id){ %>
+                        <option selected value ="<%= categorias[i].id%> " >
+                            <%= categorias[i].categoria %>
+                        </option>
+                    <% } else { %>
+                        <option value ="<%= categorias[i].id%> " >
+                            <%= categorias[i].categoria %>
+                        </option>
+                    <% } %>
+                <%}%>
+            </select>
+          </div>
+          <label for="condicionProducto" class="col-sm-3 control-label mt-2">Condicion</label>
+          <div class="col-sm-3">
+            <select class="form-control" name= "condicionProducto" id="condicionProducto" required>
+                <% for (let i=0; i<condiciones.length; i++){ %>
+                    <% if (ProductoaEditar.condicionProducto == condiciones[i].id){ %>
+                        <option selected value="<%=condiciones[i].id  %>">
+                        <%= condiciones[i].condicion %>
+                        </option>
+                        <% }else{ %>
+                            <option selected value="<%=condiciones[i].id  %>">
+                                <%= condiciones[i].condicion %>
+                            </option>
+                        <% } %>
+                <% } %>
+            </select>
+          </div>
+          </div>
+        </div> <!-- form-group // -->
+        <hr>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">Editar</button>
+          </div>
+        </div> <!-- form-group // -->
+      </form>
+        <form action="/producto/delete/ <%=ProductoaEditar.id%>?_method=DELETE " method="POST">
+            <button type="submit" class="btn btn-danger ml-4 mb-4">Eliminar item</button>
+        </form>
+        
+      </div><!-- panel-body // -->
+      </section><!-- panel// -->
+      
+        
+      </div> <!-- container// -->
+    </div>
+    <%- include('./../partials/footer') %>
+    <script src="/js/crearProductoValidacion.js"></script>
+  </body>
+
+</html>
