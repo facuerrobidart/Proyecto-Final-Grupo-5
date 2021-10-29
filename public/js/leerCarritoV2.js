@@ -13,7 +13,7 @@ for (let prod of productos) {
     let param = "'" + prod.titulo + "'"
     contieneCarrito.innerHTML += '<div class="row"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src=/images/' + prod.nombre_imagen + '></div><div class="col"><div class="row text-muted">Shirt</div><div class="row">' + prod.titulo + '</div></div><div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div><div class="col">&dollar;' + parseFloat(prod.precio) + '<span class="close" onclick="eliminarCarrito(' + param + ')" >&#10005;</span></div></div></div>'
 }
-divTotales.innerHTML = '<div class="col" style="padding-left:0;">ITEMS ' + productos.length + '</div><div class="col text-right">&dollar;' + parseFloat(subtotal) + '</div>';
+divTotales.innerHTML = '<div class="col" style="padding-left:0;">Items: ' + productos.length + '</div><div class="col text-right">&dollar;' + parseFloat(subtotal) + '</div>';
 total.innerHTML = '&dollar; ' + parseFloat(subtotal);
 
 
@@ -25,7 +25,7 @@ function refresh() {
         contieneCarrito.innerHTML += '<div class="row"><div class="row main align-items-center"><div class="col-2"><img class="img-fluid" src=/images/' + prod.nombre_imagen + '></div><div class="col"><div class="row text-muted">Shirt</div><div class="row">' + prod.titulo + '</div></div><div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div><div class="col">&dollar;' + parseFloat(prod.precio) + '<span class="close" onclick=eliminarCarrito(' + prod.titulo + ') >&#10005;</span></div></div></div>'
     }
 
-    divTotales.innerHTML = '<div class="col" style="padding-left:0;">ITEMS ' + productos.length + '</div><div class="col text-right">&dollar;' + parseFloat(subtotal) + '</div>';
+    divTotales.innerHTML = '<div class="col" style="padding-left:0;">Items: ' + productos.length + '</div><div class="col text-right">&dollar;' + parseFloat(subtotal) + '</div>';
     total.innerHTML = '&dollar; ' + parseFloat(subtotal);
 
 }
@@ -37,4 +37,8 @@ function eliminarCarrito(titulo) {
     console.log(productos);
     localStorage.setItem("productos", JSON.stringify(productos));
     refresh();
+}
+
+function vaciarCarrito() {
+    localStorage.clear();
 }

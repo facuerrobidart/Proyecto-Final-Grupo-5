@@ -112,10 +112,10 @@
                 <label>Tipo Usuario</label>
                 <select name="tipoUsuario" id="tipoUsuario" class="form-control" >
                   <option selected> Elija uno</option>
-                  <% for ( let i=0; i<tipos_usuario.length; i++){ %>
-                  <option value="<%= tipos_usuario[i].id %>">
-                    <%= tipos_usuario[i].nombre_tipos_usuario %>
-                  </option>
+                  <% for (tipo of tipos_usuario) { %>
+                    <option value=" <%= tipo.id %> ">
+                      <%= tipo.nombre_tipos_usuario %>
+                    </option>
                   <% } %>
                 </select>
                 <div>
@@ -132,9 +132,7 @@
               <input type="file" name="imageUser" />
             </div>
 
-                <button type="submit" class="btn btn-primary"  >Registrarse</button>
-
-
+                <button type="submit" class="btn btn-primary" >Registrarse</button>
           </form>
           <div class="errores">
         <ul></ul>
