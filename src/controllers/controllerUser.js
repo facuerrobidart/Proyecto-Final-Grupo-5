@@ -61,9 +61,9 @@ const controller = {
     registro: (req, res) => {
         db.tipos_usuario.findAll()
             .then((tiposUsuarios) => {
-                let tipos_usuario = tiposUsuarios
-                res.render("./users/registro", { tipos_usuario: tipos_usuario });
+                res.render("./users/registro", { tipos_usuario: tiposUsuarios });
             })
+            .catch((e)=>{console.log(e)});
 
     },
     registroUsuario: (req, res) => {
