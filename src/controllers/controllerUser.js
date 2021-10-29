@@ -70,10 +70,12 @@ const controller = {
         let errors = validationResult(req);
         let tipos_usuario;
 
-        db.tipos_usuario.findAll()
-            .then((tiposUsuarios) => {
-                tipos_usuario = tiposUsuarios;
-            });
+         db.tipos_usuario.findAll()
+             .then((tiposUsuarios) => {
+                 tipos_usuario = tiposUsuarios;
+             });
+
+             console.log(tipos_usuario)
 
         if (errors.isEmpty()) { //si no hay errores procedo
             db.usuarios.create({
