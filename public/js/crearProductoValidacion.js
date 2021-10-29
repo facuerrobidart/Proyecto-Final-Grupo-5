@@ -1,19 +1,19 @@
 
 window.onload=function(){
 
-let bienvenida = document.querySelector("#bienvenida")
-let contanos = document.querySelector("#contanos")
+// let bienvenida = document.querySelector("#bienvenida")
+// let contanos = document.querySelector("#contanos")
 
-bienvenida.addEventListener("mouseover", function(){
-  bienvenida.style.color = "blue"
-})
-contanos.addEventListener("mouseover", function(){
-  contanos.style.color = "blue"
-})
+// bienvenida.addEventListener("mouseover", function(){
+//   bienvenida.style.color = "blue"
+// })
+// contanos.addEventListener("mouseover", function(){
+//   contanos.style.color = "blue"
+// })
 
 let inputTitulo = document.querySelector("#inputTitulo")
 let inputCategoria = document.querySelector("#inputCategoria")
-let inputNombreArtista = document.querySelector("#nombre-artista")
+  let inputNombreArtista = document.querySelector("#nombreArtista")
 let inputCaracteristicas = document.querySelector("#inputCaracteristicas")
 let inputCondicion = document.querySelector("#condicionProducto")
 let inputPrecio = document.querySelector("#precio")
@@ -92,7 +92,7 @@ let inputImagen = document.querySelector("#imagenProducto")
   })
 
   inputImagen.addEventListener("blur", function () {
-    
+
   if (inputImagen.value == "") {
     document.getElementById("parrafoErrorImagen").classList.remove("inputError")
     document.getElementById("parrafoErrorImagen").classList.add("inputErrorActivo")
