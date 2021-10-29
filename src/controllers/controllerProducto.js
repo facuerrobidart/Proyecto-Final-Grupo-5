@@ -71,7 +71,7 @@ const controller = {
         Promise.all([categoriasProducto, condicionProducto])
             .then(([categorias, condiciones]) => {
 
-                res.render("./products/crearProducto", {
+                res.render("./products/crearProductoV2", {
                     categorias: categorias, condiciones: condiciones, idVendedor: idVendedor
                 })
             })
@@ -100,7 +100,7 @@ const controller = {
             })
             res.redirect("/producto/all");
         } else { // si hay algun problema, devuelve al formulario de creacion
-            res.render("./crearV2", { errores: errors });
+            res.render("./crearProductoV2", { errores: errors });
         }
     },
 

@@ -70,12 +70,8 @@ const controller = {
     },
     registroUsuario: (req, res) => {
         let errors = validationResult(req);
-        let tipos_usuario;
-
-        db.tipos_usuario.findAll()
-            .then((tiposUsuarios) => {
-                tipos_usuario = tiposUsuarios;
-            });
+        
+        console.log(req.body);
 
         if (errors.isEmpty()) { //si no hay errores procedo
             db.usuarios.create({
@@ -91,7 +87,14 @@ const controller = {
             })
             res.redirect("/");
         } else { //si no, devuelvo errores
-            res.render("./users/registro", { tipos_usuario: tipos_usuario, errores: errors });
+            db.tipos_usuario.findAll()
+            .then((tiposUsuarios) => {
+                let tipos = tiposUsuarios;
+                console.log(tipos);
+                res.render("./users/registro", { tipos_usuario: tipos, errores: errors});
+                console.log(errors);
+            })
+            .catch((e)=>{console.log(e)});   
         }
     },
 
