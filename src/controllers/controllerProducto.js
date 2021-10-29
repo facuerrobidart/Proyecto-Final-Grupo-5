@@ -100,7 +100,7 @@ const controller = {
             })
             res.redirect("/producto/all");
         } else { // si hay algun problema, devuelve al formulario de creacion
-            res.render("./crear", { errores: errors });
+            res.render("./crearV2", { errores: errors });
         }
     },
 
