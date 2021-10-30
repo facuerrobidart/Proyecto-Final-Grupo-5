@@ -92,12 +92,13 @@
 										<!--options_json-->
 										<!--{"clickType":"add-to-cart","content":""}-->
 										<!--/options_json-->
-
-										<button
-											class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1"
-											onclick="agregaCarrito('<%=producto.titulo%>','<%=producto.precio%>','<%=producto.nombre_imagen%>')">
-											Añadir al carrito
-										</button>
+										<a href="/producto/carritoV2">
+											<button
+												class="u-btn u-button-style u-hover-grey-75 u-palette-4-base u-product-control u-btn-1"
+												onclick="agregaCarrito('<%=producto.titulo%>','<%=producto.precio%>','<%=producto.nombre_imagen%>')">
+												Añadir al carrito
+											</button>
+										</a>
 										<!--	
 										<a href="/producto/editar/ <%= producto.id%> "
 											class="u-border-0 u-btn u-button-style u-hover-palette-4-dark-1 u-palette-5-dark-2 u-product-control u-btn-2">
