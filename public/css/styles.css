@@ -69,8 +69,10 @@ p.copy{
 div.panel{
     display:inline-block;
     margin: 1%;
-    width: 98%;
-    padding: 1%;
+    padding-right: 2%;
+    background-color: white;
+    margin-bottom: 2vh;
+    border-radius: 25px;
 }
 
 h5.titulo{
@@ -277,6 +279,13 @@ div.flexLogin{
     opacity: 1;
 }
 
+.registerBody{
+    background-color: #ddd;
+}
+div.registerWrapper{
+    background-color: #ddd;
+    padding-bottom: 2vh;
+}
 
 @media (min-width:768px){
     form.login{
@@ -286,5 +295,10 @@ div.flexLogin{
     div.flexLogin{
         height: 50vh;
     }
-
+    div.panel{
+        width: 60vw;
+    }
+    div.registerWrapper{
+        text-align: center;
+    }
 }
