@@ -21,19 +21,27 @@
         <div class="form-group">
           <label for="titulo" class="col-sm-3 control-label">Titulo</label>
           <div class="col-sm-9">
-            <input value="<%= ProductoaEditar.titulo %>" type="text" class="form-control" name="titulo" id="inputTitulo" required>
+            <input value="<%= ProductoaEditar.titulo %>" type="text" class="form-control" name="titulo" id="inputTitulo" >
+            <i class="formulario__validacion-estado fas fa-times-circle" id="iconoTitulo"></i>
+          </div>
+          <div>
+            <p class="inputError" id="parrafoErrorTitulo"> el Titulo del producto no puede estar vacio</p>
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">
             <label for="nombreArtista" class="col-sm-3 control-label">Nombre artista</label>
             <div class="col-sm-9">
-              <input value="<%= ProductoaEditar.nombre_artista %>" type="text" class="form-control" name="nombreArtista" id="nombreArtista" required>
+              <input value="<%= ProductoaEditar.nombre_artista %>" type="text" class="form-control" name="nombreArtista" id="nombreArtista" >
+              <i class="formulario__validacion-estado fas fa-times-circle" id="iconoNombreArtista"></i>
             </div>
+          <div>
+            <p class="inputError" id="parrafoErrorNombreArtista"> debes ingresar el Nombre del Artista</p>
+          </div>
         </div> <!-- form-group // -->
         <div class="form-group">
           <label for="caracteristicasProducto" class="col-sm-3 control-label">Descripcion</label>
           <div class="col-sm-9">
-            <textarea name="caracteristicasProducto" id="inputCaracteristicas" cols="105" rows="10" required><%= ProductoaEditar.descripcion %></textarea>
+            <textarea name="caracteristicasProducto" id="inputCaracteristicas" cols="105" rows="10" ><%= ProductoaEditar.descripcion %></textarea>
           </div>
           <div>
               <p class="inputError" id="parrafoErrorCaracteristicas"> debes ingresar el detalle del producto</p>
@@ -42,13 +50,18 @@
         <div class="form-group">
           <label for="precio" class="col-sm-3 control-label">Precio</label>
           <div class="col-sm-3">
-            <input value="<%= ProductoaEditar.precio%>" id="precio" type="text" name="precio" required>
+            <input value="<%= ProductoaEditar.precio%>" id="precio" type="text" name="precio" class="form-control">
+            <i class="formulario__validacion-estado fas fa-times-circle" id="iconoPrecio"></i>
+          </div>
+          <div>
+            <p class="inputError" id="parrafoErrorPrecio">Indica el Precio del Producto</p>
           </div>
         </div> <!-- form-group // -->
         <div class="form-group">
           <label for="stock" class="col-sm-3 control-label">Stock</label>
           <div class="col-sm-3">
-            <input value="<%= ProductoaEditar.stock %>" id="stock" type="text" name="stock" required>
+            <input value="<%= ProductoaEditar.stock %>" id="stock" type="text" name="stock" class="form-control">
+            <i class="formulario__validacion-estado fas fa-times-circle" id="iconoStock"></i>
           </div>
           <div>
             <p class="inputError" id="parrafoErrorStock"> debes cargar el stock del producto</p>
@@ -59,11 +72,15 @@
             <label class="control-label" for="fotoProducto">Imagen (jpg/png):</label>
             <input value="<%= ProductoaEditar.nombre_imagen %>" type="file" name="fotoProducto" id="imagenProducto" >
           </div>
+          <div>
+            <p class="inputError" id="parrafoErrorImagen"> debes Cargar una imagen de tu Producto</p>
+          </div>
+
         </div> <!-- form-group // -->
         <div class="form-group">
           <label for="condicionProducto" class="col-sm-3 control-label">Categoria</label>
           <div class="col-sm-3">
-            <select class="form-control" name="categoriasProducto" id="inputCategoria" required>
+            <select class="form-control" name="categoriasProducto" id="inputCategoria" >
                 <option selected>Elija Uno</option>
                 <% for(let i=0; i< categorias.length;i++){ %>
                     <% if(ProductoaEditar.categorias_producto_id==categorias[i].id){ %>
@@ -77,10 +94,13 @@
                     <% } %>
                 <%}%>
             </select>
+            <div>
+              <p class="inputError" id="parrafoErrorCategoria"> debes seleccionar una Categoria de Producto</p>
+            </div>
           </div>
           <label for="condicionProducto" class="col-sm-3 control-label mt-2">Condicion</label>
           <div class="col-sm-3">
-            <select class="form-control" name= "condicionProducto" id="condicionProducto" required>
+            <select class="form-control" name= "condicionProducto" id="condicionProducto" >
                 <% for (let i=0; i<condiciones.length; i++){ %>
                     <% if (ProductoaEditar.condicionProducto == condiciones[i].id){ %>
                         <option selected value="<%=condiciones[i].id  %>">
@@ -93,6 +113,9 @@
                         <% } %>
                 <% } %>
             </select>
+            <div>
+              <p class="inputError" id="parrafoErrorCondicion"> debes seleccionar la Condicion del Producto</p>
+            </div>
           </div>
           </div>
         </div> <!-- form-group // -->
@@ -106,6 +129,9 @@
         <form action="/producto/delete/ <%=ProductoaEditar.id%>?_method=DELETE " method="POST">
             <button type="submit" class="btn btn-danger ml-4 mb-4">Eliminar item</button>
         </form>
+        <div class="errores">
+          <ul></ul>
+        </div>
 
       </div><!-- panel-body // -->
       </section><!-- panel// -->
