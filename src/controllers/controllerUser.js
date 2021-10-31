@@ -68,6 +68,16 @@ const controller = {
             .catch((e)=>{console.log(e)});
 
     },
+    registroV2: (req, res) => {
+        db.tipos_usuario.findAll()
+            .then((tiposUsuarios) => {
+                let tipos = tiposUsuarios;
+                console.log(tipos);
+                res.render("./users/registroV2", { tipos_usuario: tiposUsuarios });
+            })
+            .catch((e)=>{console.log(e)});
+
+    },
     registroUsuario: (req, res) => {
         let errors = validationResult(req);
 

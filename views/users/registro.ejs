@@ -4,140 +4,139 @@
 <%- include('./../partials/head') %>
   <title>Registro</title>
 
-  <body>
+  <body class="registerBody">
     <%- include('./../partials/header') %>
-      <main class="login">
-        <h5 class="tituloRegistro">Registrate para ser parte de nuestra comunidad</h5>
-        <div class="panel">
-          <form accion="/user/register" method="POST" enctype="multipart/form-data" id="formularioRegistro">
-            <div class="form-row">
-              <div class="col">
-                <label>Nombre</label>
-                <div class="input-formulario">
-                  <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" id="nombre">
-                  <i class="formulario__validacion-estado fas fa-times-circle" id="iconoNombre"></i>
-                </div>
-                <div>
-                  <p class="inputError" id="parrafoErrorNombre"> el Nombre no puede estar vacio</p>
-                </div>
-              </div>
-              <div class="col">
-                <label>Apellido</label>
-                <div class="input-formulario">
-                <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito" id="apellido">
-                <i class="formulario__validacion-estado fas fa-times-circle" id="iconoApellido"></i>
-                </div>
-                <div>
-                  <p class="inputError" id="parrafoErrorApellido"> el Apellido no puede estar vacio</p>
-                </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label>Email</label>
-                <div class="input-formulario">
-                <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com" id="email">
-                <i class="formulario__validacion-estado fas fa-times-circle" id="iconoEmail"></i>
-                </div>
-                <div>
-                  <p class="inputError" id="parrafoErrorEmail"> por favor ingrese un email valido</p>
-                  <p class="inputError" id="parrafoErrorArroba"> el email debe contener @</p>
-                </div>
-              </div>
-
-              <div class="form-group col-md-6">
-                <label>Contraseña</label>
-                <div class="input-formulario">
-                <input type="password" class="form-control" name="contrasena" id="contrasena">
-                <i class="formulario__validacion-estado fas fa-times-circle" id="iconoContrasena"></i>
-                </div>
-                <div>
-                  <p class="inputIndicaciones" id="parrafoIndicaciones">la Contraseña debe tener al menos 8 caracteres</p>
-                  <p class="inputError" id="parrafoErrorContrasena"> la Contrasena ingresada no es valida </p>
-                </div>
-
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Dirección</label>
-              <input type="text" class="form-control" name="direccion" placeholder="Ej: Calle falsa 123" >
-            </div>
-            <div class="form-group">
-              <label>Piso/Departamento (Opcional)</label>
-              <input type="text" class="form-control" name="piso" placeholder="Ej: Piso 7 Dpto 2">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label>Ciudad/Barrio</label>
-                <input type="text" class="form-control" name="ciudad" >
-              </div>
-              <div class="form-group col-md-2">
-                <label>Código Postal</label>
-                <input type="text" class="form-control" name="codigoPostal" >
-              </div>
-              <div class="form-group col-md-4">
-                <label>Provincia</label>
-                <select name="provincia"  class="form-control" id="provincia">
-                  <option selected >Elija uno</option>
-                  <option value="Buenos Aires">Buenos Aires</option>
-                  <option value="Capital Federal">Capital Federal</option>
-                  <option value="Catamarca">Catamarca</option>
-                  <option value="Chaco">Chaco</option>
-                  <option value="Chubut">Chubut</option>
-                  <option value="Córdoba">Córdoba</option>
-                  <option value="Corrientes">Corrientes</option>
-                  <option value="Entre Ríos">Entre Ríos</option>
-                  <option value="Formosa">Formosa</option>
-                  <option value="Jujuy">Jujuy</option>
-                  <option value="La Pampa">La Pampa</option>
-                  <option value="La Rioja">La Rioja</option>
-                  <option value="Mendoza">Mendoza</option>
-                  <option value="Misiones">Misiones</option>
-                  <option value="Neuquén">Neuquén</option>
-                  <option value="Río Negro">Río Negro</option>
-                  <option value="Salta">Salta</option>
-                  <option value="San Juan">San Juan</option>
-                  <option value="San Luis">San Luis</option>
-                  <option value="Santa Cruz">Santa Cruz</option>
-                  <option value="Santa Fe">Santa Fe</option>
-                  <option value="Santiago del Estero">Santiago del Estero</option>
-                  <option value="Tierra del Fuego">Tierra del Fuego</option>
-                  <option value="Tucumán">Tucumán</option>
-                </select>
-                <div>
-                <p class="inputError" id="parrafoErrorProvincia"> debes seleccionar tu Provincia</p>
-                </div>
-              </div>
-              <div class="form-group col-md-4">
-                <label>Tipo Usuario</label>
-                <select name="tipoUsuario" id="tipoUsuario" class="form-control" >
-                  <option selected> Elija uno</option>
-                  <% for (tipo of tipos_usuario) { %>
-                    <option value=" <%= tipo.id %> ">
-                      <%= tipo.nombre_tipos_usuario %>
-                    </option>
-                  <% } %>
-                </select>
-                <div>
-                <p class="inputError" id="parrafoErrorTipoUsuario"> debes seleccionar un Tipo de Usuario</p>
-                </div>
-              </div>
-
-              <br>
-
-            </div>
-
-            <div class="form-group">
-              <label for="imageUser" class="form-control">Seleccionar Imagen Usuario:</label>
-              <input type="file" name="imageUser" />
-            </div>
-
-                <button type="submit" class="btn btn-primary" >Registrarse</button>
-          </form>
-          <div class="errores">
-        <ul></ul>
+        <div class="alert alert-primary">
+          <p class="tituloRegistro">Registrate para ser parte de nuestra comunidad</p>
         </div>
-      </main>
+        <div class="registerWrapper">
+          <div class="panel">
+            <form accion="/user/register" method="POST" id="formularioRegistro">
+              <div class="form-group form-row">
+                <div class="col-md-6">
+                  <label>Nombre</label>
+                  <div class="input-formulario">
+                    <input name="nombre" type="text" class="form-control" placeholder="Ej: Cosme" id="nombre">
+                    <i class="formulario__validacion-estado fas fa-times-circle" id="iconoNombre"></i>
+                  </div>
+                  <div>
+                    <p class="inputError" id="parrafoErrorNombre"> el Nombre no puede estar vacio</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label>Apellido</label>
+                  <div class="input-formulario">
+                  <input name="apellido" type="text" class="form-control" placeholder="Ej: Fulanito" id="apellido">
+                  <i class="formulario__validacion-estado fas fa-times-circle" id="iconoApellido"></i>
+                  </div>
+                  <div>
+                    <p class="inputError" id="parrafoErrorApellido"> El Apellido no puede estar vacio</p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row form-group">
+                <div class="col-md-6">
+                  <label>Email</label>
+                  <div class="input-formulario">
+                  <input type="email" class="form-control" name="email" placeholder="Ej: miemail@proveedor.com" id="email">
+                  <i class="formulario__validacion-estado fas fa-times-circle" id="iconoEmail"></i>
+                  </div>
+                  <div>
+                    <p class="inputError" id="parrafoErrorEmail"> por favor ingrese un email valido</p>
+                    <p class="inputError" id="parrafoErrorArroba"> el email debe contener @</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label>Contraseña</label>
+                  <div class="input-formulario">
+                  <input type="password" class="form-control" name="contrasena" id="contrasena">
+                  <i class="formulario__validacion-estado fas fa-times-circle" id="iconoContrasena"></i>
+                  </div>
+                  <div>
+                    <p class="inputIndicaciones" id="parrafoIndicaciones">la Contraseña debe tener al menos 8 caracteres</p>
+                    <p class="inputError" id="parrafoErrorContrasena"> la Contrasena ingresada no es valida </p>
+                  </div>
+
+                </div>
+              </div>
+              <div class="form-row form-group ">
+                <div class="col-md-6">
+                  <label>Dirección</label>
+                  <input type="text" class="form-control" name="direccion" placeholder="Ej: Calle falsa 123" >
+                </div>
+                <div class="col-md-6">
+                  <label>Piso/Departamento (Opcional)</label>
+                  <input type="text" class="form-control" name="piso" placeholder="Ej: Piso 7 Dpto 2">
+                </div>
+              </div>
+              <div class="form-row form-group">
+                <div class="col-md-6">
+                  <label>Ciudad/Barrio</label>
+                  <input type="text" class="form-control" name="ciudad" >
+                </div>
+                <div class="col-md-2">
+                  <label>Código Postal</label>
+                  <input type="text" class="form-control" name="codigoPostal" >
+                </div>
+              </div>
+              <div class="form-row form-group">
+                <div class="col-md-4">
+                  <label>Provincia</label>
+                  <select name="provincia"  class="form-control" id="provincia">
+                    <option selected >Elija uno</option>
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="Capital Federal">Capital Federal</option>
+                    <option value="Catamarca">Catamarca</option>
+                    <option value="Chaco">Chaco</option>
+                    <option value="Chubut">Chubut</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Corrientes">Corrientes</option>
+                    <option value="Entre Ríos">Entre Ríos</option>
+                    <option value="Formosa">Formosa</option>
+                    <option value="Jujuy">Jujuy</option>
+                    <option value="La Pampa">La Pampa</option>
+                    <option value="La Rioja">La Rioja</option>
+                    <option value="Mendoza">Mendoza</option>
+                    <option value="Misiones">Misiones</option>
+                    <option value="Neuquén">Neuquén</option>
+                    <option value="Río Negro">Río Negro</option>
+                    <option value="Salta">Salta</option>
+                    <option value="San Juan">San Juan</option>
+                    <option value="San Luis">San Luis</option>
+                    <option value="Santa Cruz">Santa Cruz</option>
+                    <option value="Santa Fe">Santa Fe</option>
+                    <option value="Santiago del Estero">Santiago del Estero</option>
+                    <option value="Tierra del Fuego">Tierra del Fuego</option>
+                    <option value="Tucumán">Tucumán</option>
+                  </select>
+                  <div>
+                  <p class="inputError" id="parrafoErrorProvincia"> debes seleccionar tu Provincia</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label>Tipo Usuario</label>
+                  <select name="tipoUsuario" id="tipoUsuario" class="form-control" >
+                    <option selected> Elija uno</option>
+                    <% for (tipo of tipos_usuario) { %>
+                      <option value=" <%= tipo.id %> ">
+                        <%= tipo.nombre_tipos_usuario %>
+                      </option>
+                    <% } %>
+                  </select>
+                  <div>
+                    <p class="inputError" id="parrafoErrorTipoUsuario"> debes seleccionar un Tipo de Usuario</p>
+                  </div>
+                </div>
+              </div>
+                <br>
+              <button type="submit" class="form-group btn btn-primary float-left" >Registrarse</button>
+            </form>
+            <div class="errores">
+          <ul></ul>
+        </div>
+      </div>
+      </div>
       <%- include('./../partials/footer') %>
       <script src="/js/registroUsuarioValidacion.js"></script>
   </body>

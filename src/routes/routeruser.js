@@ -9,7 +9,7 @@ const { body, check, validationResult } = require("express-validator");
 
 const validaLogin = [check("email").isEmail(),
 check("password").isLength({ min: 6 })];
-/*const validaRegistro = [
+const validaRegistro = [
     check("email")
         .isEmail(),
     check("contrasena")
@@ -26,7 +26,7 @@ check("password").isLength({ min: 6 })];
     check("ciudad")
         .isString()
         .notEmpty().withMessage("La ciudad no puede estar vacia")
-    ];*/
+    ];
 
 // SETTING Multer
 const storage = multer.diskStorage({
@@ -44,7 +44,8 @@ const upload = multer({ storage: storage });
 router.get("/login", conUsuarioMiddleware, controller.login);
 router.post("/login", validaLogin, controller.procesoLogin);
 router.get("/register", conUsuarioMiddleware, controller.registro);
-router.post("/register", upload.single("imageUser"), controller.registroUsuario);
+router.get("/registerV2", conUsuarioMiddleware, controller.registroV2);
+router.post("/register",validaRegistro,upload.single("imageUser"), controller.registroUsuario);
 router.get("/info", sinUsuarioMiddleware, controller.info);
 router.get("/logout", controller.logout);
 router.get("/loginV2",conUsuarioMiddleware,controller.loginV2);
