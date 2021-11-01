@@ -147,27 +147,27 @@ window.onload=function(){
     let errores = []
 
     if(inputNombre.value == ""){
-      errores.push(" Por Favor ingresa tu Nombre")
+      errores.push("Por favor ingresa tu Nombre")
     }
     if(inputApellido.value == ""){
-      errores.push("Por Favor ingresa tu Apellido")
+      errores.push("Por favor ingresa tu Apellido")
     }
     if(inputEmail.value == "" || inputEmail.value.indexOf("@")  < 0){
-      errores.push("Debes Ingresar un email valido")
+      errores.push("Debes ingresar un email valido")
     }
     if(inputContrasena.value == "" || inputContrasena.value.length < 8){
-      errores.push("la contraseña Ingresada no es valida")
+      errores.push("La contraseña ingresada no es valida")
     }
     if(inputProvincia.value == "Elija uno"){
-      errores.push("Debes seleccionar tu Provincia")
+      errores.push("Debes seleccionar tu provincia")
     }
     if(inputTipoUsuario.value == "Elija uno"){
-      errores.push("Debes Seleccionar tu Tipo de Usuario")
+      errores.push("Debes seleccionar tu tipo de Usuario")
     }
 
     if ( errores.length > 0){
       evento.preventDefault()
-      let ulErrores = document.querySelector("div.errores ul")
+      let ulErrores = document.querySelector("div.erroresRegistro ul")
       ulErrores.innerHTML = ""
       for(let i=0; i<errores.length; i++){
         ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
