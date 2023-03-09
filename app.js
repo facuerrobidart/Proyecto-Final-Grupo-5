@@ -25,7 +25,7 @@ app.use(session({
 }))
 app.use(usuarioLogueado);
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.locals.user = req.session.usuarioLogueado;
     next();
 });
@@ -40,5 +40,4 @@ app.use("/user", routerUser);
 
 
 app.listen(process.env.PORT || 3001, () => { console.log("Corriendo en puerto 3001"); });
-
 

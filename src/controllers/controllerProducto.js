@@ -11,8 +11,6 @@ let db = require("../database/models")
 const Op = db.Sequelize.Op;
 
 
-
-
 const controller = {
     producto: (req, res) => {
         let id = req.params.id;
@@ -143,12 +141,13 @@ const controller = {
         let ProductoaEditar = db.productos.findByPk(idProducto);
         let categoriasProducto = db.categorias_producto.findAll();
         let condicionProducto = db.condiciones_producto.findAll();
-        Promise.all([categoriasProducto, condicionProducto,ProductoaEditar])
-            .then(([categorias, condiciones,producto]) => {
+        Promise.all([categoriasProducto, condicionProducto, ProductoaEditar])
+            .then(([categorias, condiciones, producto]) => {
                 res.render("./products/editarProductoV2", {
-                    ProductoaEditar:producto,categorias: categorias, condiciones: condiciones});
+                    ProductoaEditar: producto, categorias: categorias, condiciones: condiciones
+                });
             })
-        
+
     },
 
     actualizar: (req, res) => {
@@ -160,7 +159,7 @@ const controller = {
         if (req.file) {
             nombreImagen = req.file.filename
         }
-        if (req.file==undefined && errors.isEmpty){ //no hay cambio de imagen
+        if (req.file == undefined && errors.isEmpty) { //no hay cambio de imagen
             db.productos.update({
                 titulo: req.body.titulo,
                 descripcion: req.body.caracteristicasProducto,
@@ -190,7 +189,7 @@ const controller = {
                 })
             res.redirect("/producto/misproductos");
         }
-        else{
+        else {
             let ruta = "/producto/editar" + req.params.id;
             res.render(ruta, { errores: errors });
         }
